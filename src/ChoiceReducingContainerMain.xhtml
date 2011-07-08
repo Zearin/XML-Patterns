@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Choice Reducing Container</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Choice Reducing Container." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c213 {color: #000000; font-size: 80%}
+  span.c212 {font-size: 64%}
+  span.c211 {font-size: 80%}
+  span.c210 {color: #000000; font-size: 64%}
+  div.c209 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c209">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c210"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c211">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c212">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Choice Reducing Container
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "ChoiceReducingContainerPrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>When
+                        creating large DTDs, authors are required
+                        to learn a large number of attributes and
+                        elements, and where they can be positioned
+                        in order to know how to use the DTD. By
+                        reducing the number of choices that the
+                        author has to make at any point in the DTD
+                        by group related elements beneath newly
+                        introduced elements, the learning
+                        requirements of the author can be reduced.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>In a
+                        complex DTD with many elements and
+                        attributes, a user of a document can be
+                        overwhelmed with the number of choices that
+                        have to be made. With many options users
+                        have a difficult time knowing all of the
+                        elements available and the order that these
+                        appear in.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>In large,
+                        general-purpose DTDs where many logical
+                        units are presented, and the documents are
+                        expected to be authored by humans.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>When
+                        the underlying order of the data to be
+                        represented, or to make DTDs applicable in
+                        many situations, large numbers of logical
+                        units need to appear in the DTD. However,
+                        presenting large numbers of attributes and
+                        elements makes the DTD more difficult to
+                        learn by authors of documents.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>Present
+                        only a limited number of choices to the
+                        author at any point within the document. If
+                        the author has the choice of insert 100
+                        different elements at some point in the
+                        document, it can be difficult to know how
+                        to proceed. By grouping elements into
+                        related sets, the number choices to be made
+                        at any one point can be reduced. The author
+                        has to choose between only a few higher
+                        level groups instead of many more detailed
+                        elements.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>Here is a
+                        DTD that presents several choices to the
+                        author:
+                        <pre>
+                            <span class="sample">
+
+&lt;!ELEMENT Doc
+( Para
+| OrderedList
+| UnorderedList
+| Figure
+| Artwork )+&gt;
+
+                            </span>
+                          
+</pre>The author here is present with a choice of 5 different
+elements to choose from after creating the Doc element. This choice
+could be limited by introducing new elements and grouping some of
+the existing elements together as children of the new elements like
+this:
+                        <pre>
+                            <span class="sample">
+
+&lt;!ELEMENT Doc (Para | List | Illustration )+)&gt;
+&lt;!ELEMENT List (OrderedList | UnorderedList )&gt;
+&lt;!ELEMENT Illustration (Figure | Artwork )&gt;
+
+                            </span>
+                          
+</pre>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>Once the
+                        Choice Reducing Pattern is applied, the
+                        learning requirements placed on the author
+                        of documents is reduced. Application of
+                        this pattern can however lead to an
+                        increase in the overall number of element
+                        types in the DTD. The number of elements in
+                        the above example went from 6 to 8 when the
+                        Group Choice pattern was applied. This can
+                        make the overall complexity of the DTD
+                        higher. It can also increase the size of
+                        documents.
+
+                        <p>The Choice Reducing Pattern hides
+                        choices from the authors of documents by
+                        introducing new elements that hide the
+                        details of a piece of the document that the
+                        author might not care about at that point
+                        in time. By introducing a single higher
+                        level element, the number of choices the
+                        author needs to make is lower, thereby
+                        reducing the learning requirements of the
+                        author.</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>
+
+                        <p>This Choice Reducing Container is
+                        similar to the <a href=
+                        "OptionalContainerElementMain.shtml">Optional
+                        Container Element</a> in that they both try
+                        to make the DTD easier to use by the author
+                        by introducing new element types. Existing
+                        elements are grouped together as children
+                        of the new element. One difference between
+                        the two is the context they are used in.
+                        The Choice Reducing Container relates
+                        elements that are all choices in a content
+                        group while the <a href=
+                        "OptionalContainerElementMain.shtml">Optional
+                        Container Element</a> relates optional
+                        elements from the content group.</p>
+
+                        <p>The motivation for the two is also
+                        different. In the Choice Reducing
+                        Container, the amount of information at any
+                        one point is reduced, but it is not
+                        intended to reduce the overall complexity
+                        of the document for a single author. The
+                        <a href=
+                        "OptionalContainerElementMain.shtml">Optional
+                        Container Element</a> hides parts of the
+                        structure permanently from the view of
+                        individual authors. It is likely that some
+                        authors will never use certain parts of
+                        large DTDs.</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">eferences:</span></p>See <a href=
+                        "books.shtml#0136422993">Structuring XML
+                        Documents</a>, Section 4.2.1 - Limiting
+                        Choices.
+                      </div><br />
+                      <hr />
+                    </div>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c212"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c213">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/ChoiceReducingContainerMain.shtml"
+                  dc:title="XML Design Pattern - Choice Reducing Container"
+                  dc:identifier="http://www.xmlpatterns.com/ChoiceReducingContainerMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

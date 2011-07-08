@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Envelope</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Envelope." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Envelope</h1>
+
+    <h2>Abstract</h2>Provide a document type which is defined to be
+    a holder for other, arbitrary XML data.
+
+    <h2>Problem</h2>Different sets of data need to be delivered to
+    a system in a consistent way.
+
+    <h2>Context</h2>This pattern applies when different sets of
+    data need to be used in some system. The structure of the data
+    itself varies, or is not known at the time the system is being
+    built.
+
+    <h2>Forces</h2>
+
+    <div>
+      This pattern allows for Flexibility by allowing elements from
+      other documents to be embedded into a consistent holder.
+    </div>
+
+    <div>
+      This pattern allows for a separation of concerns between
+      different document types. Mixing issues such as transport
+      with document data is usually not a good idea.
+    </div>
+
+    <h2>Solution</h2>Create a document type which will act as a
+    holder for the varying set of data.
+
+    <h2>Examples</h2>This example shows a very simple envelope
+    which consists of sender and a receiver children elements. Note
+    the use of two different namespaces to allow an XML parser to
+    read the document, which contains elements from both the
+    Envelope (envelope.dtd) and the embedded data (my-stuff.dtd)
+    <pre>
+        <tt>
+
+&lt;e:Envelope xmlsns:e="http://xmlpatterns.com/envelope.dtd"&gt;
+&lt;e:sender name="bob"/&gt;
+&lt;e:receiver name="http://xmlpatterns.com/message-receiver.cgi"/&gt;
+&lt;myStuff:message xmlsns:e="http://xmlpatterns.com/my-stuff.dtd"&gt;
+This is my message
+&lt;/myStuff:message&gt;
+&lt;/e:Envelope&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>The Envelope is used as a delivery mechanism
+    for XML data. Document types created for holding domain data
+    should not be responsible, for defining transport ways to do
+    deal with things such as transport, security, delivery and
+    packaging. The envelope provide for a clear separation between
+    these things and the data itself.
+
+    <h2>Related Patterns</h2>This is similar to the <cite>Catch-All
+    Element</cite>, except that the the document type of the
+    Envelope pattern exists solely as an holder for other data and,
+    the <cite>Catch-All Element</cite> is for embedding new
+    elements within exsisting data.
+
+    <h2>Known Uses</h2><cite>SOAP (Simple Object Access
+    Protocol)</cite> (http://www.w3.org/TR/SOAP/) is an Envelope
+    for doing remote transport of messages.
+
+    <h2>References</h2>
+  </div>
+</body>
+</html>

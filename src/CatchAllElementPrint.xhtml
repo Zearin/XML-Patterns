@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Catch-All Element</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Catch-All Element." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Catch-All Element</h1>
+
+    <h2>Abstract</h2>A container element for dealing with unknown
+    elements within the document.
+
+    <h2>Problem</h2>Users need to be able to insert marked up text
+    into the document that the document designer cannot foresee.
+    For example, it is often necessary to have some presentation
+    specific markup inside of a document. If this unexpected markup
+    is spread throughout the document, then processors might have a
+    hard time dealing with it.
+
+    <h2>Context</h2>When documents are going to need to have the
+    flexibility to include elements from other namespaces.
+
+    <h2>Forces</h2>
+
+    <div>
+      Allowing elements from other document types allows you to
+      save development costs and time by reusing schemas instead of
+      developing them.
+    </div>
+
+    <div>
+      Allowing documents to use other schemas allows for great
+      flexibility.
+    </div>
+
+    <h2>Solution</h2>Create a new element which will serve as a
+    container for elements of a new schema.
+
+    <h2>Examples</h2>This example shows how a document that
+    describes a car would allow a comment element that includes
+    elements from HTML.
+    <pre>
+        <tt>
+
+&lt;car&gt;
+ &lt;model&gt;Pinto&lt;/model&gt;
+ &lt;year&gt;1979&lt;/year&gt;
+ &lt;comment&gt;
+  &lt;xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml"&gt;
+   This car &lt;xhtml:b&gt;runs great!&lt;/xhtml:b&gt;
+  &lt;/xhtml:p&gt;
+ &lt;/comment&gt;
+&lt;/car&gt;
+
+        </tt>
+      
+</pre>
+
+    <p>To allow this type of inclusion using an XML Schema, use the
+    any element as follows:</p>
+    <pre>
+<tt>
+&lt;element name="car"&gt;
+  &lt;complexType&gt;
+    &lt;sequence&gt;
+     &lt;element name="model" type="string"/&gt;
+     &lt;element name="year"   type="string"/&gt;
+     &lt;element name="comment"&gt;
+      &lt;complexType&gt;
+       &lt;sequence&gt;
+        &lt;any namespace="http://www.w3.org/1999/xhtml"
+             minOccurs="1" maxOccurs="unbounded"
+             processContents="skip"/&gt;
+       &lt;/sequence&gt;
+      &lt;/complexType&gt;
+     &lt;/element&gt;
+    &lt;/sequence&gt;
+   &lt;/complexType&gt;
+&lt;/element&gt;
+
+</tt>
+</pre>
+
+    <p>For details on the use of the any element see: The XML
+    Schema Part 0: Primer Section 5.5 Any Element, Any Attribute
+    (http://www.w3.org/TR/xmlschema-0/#any)</p>
+
+    <h2>Discussion</h2>
+
+    <p>The element within the catch-all element are from a
+    namespace outside of the namespace of the document-type being
+    created.</p>
+
+    <p>This tag acts as a warning to processors that some markup
+    from another namespace is about to be encountered.</p>
+
+    <h2>Related Patterns</h2>The <cite>Envelope</cite> pattern uses
+    a similar mechanism, but the intent of the Envelope is to wrap
+    a document without adding any domain data of its own. The
+    intent of the Catch-All Element is to allow authors to mix data
+    from separate document types.
+
+    <h2>Known Uses</h2>The Real Estate DTD <cite>RELML</cite>
+    (http://www.csn.net/public/design/rsdesign.html) uses an
+    <tt>OTHER</tt> as a catch all element.
+  </div>
+</body>
+</html>

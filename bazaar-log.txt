@@ -1,0 +1,42 @@
+------------------------------------------------------------
+revno: 6
+committer: Zearin <tony@gonk.net>
+branch nick: com.xmlpatterns
+timestamp: Thu 2009-11-19 13:12:43 -0500
+message:
+  Fixed DOCTYPE (changed loose to strict)
+------------------------------------------------------------
+revno: 5
+committer: Zearin <tony@gonk.net>
+branch nick: com.xmlpatterns
+timestamp: Thu 2009-11-19 13:10:37 -0500
+message:
+  Removed all <font> tags.
+------------------------------------------------------------
+revno: 4
+committer: Zearin <tony@gonk.net>
+branch nick: com.xmlpatterns
+timestamp: Thu 2009-11-19 13:07:05 -0500
+message:
+  Removed all <center> elements.
+------------------------------------------------------------
+revno: 3
+committer: Zearin <tony@gonk.net>
+branch nick: com.xmlpatterns
+timestamp: Thu 2009-11-19 13:05:51 -0500
+message:
+  changed DOCTYPE from HTML 4.0 to HTML 4.01
+------------------------------------------------------------
+revno: 2
+committer: Zearin <tony@gonk.net>
+branch nick: com.xmlpatterns
+timestamp: Thu 2009-11-19 12:46:31 -0500
+message:
+  Skeleton of an XProc script added.
+------------------------------------------------------------
+revno: 1
+committer: Zearin <tony@gonk.net>
+branch nick: com.xmlpatterns
+timestamp: Thu 2009-11-19 12:37:01 -0500
+message:
+  initial import

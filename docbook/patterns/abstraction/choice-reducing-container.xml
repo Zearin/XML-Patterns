@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Choice Reducing Container</title>
+		
+		<abstract>
+			<para>When creating large DTDs, authors are required to learn a large number of attributes
+				and elements, and where they can be positioned in order to know how to use the DTD. By
+				reducing the number of choices that the author has to make at any point in the DTD by
+				group related elements beneath newly introduced elements, the learning requirements of
+				the author can be reduced.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>In a complex DTD with many elements and attributes, a user of a document can be
+			overwhelmed with the number of choices that have to be made. With many options users
+			have a difficult time knowing all of the elements available and the order that these
+			appear in.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>In large, general-purpose DTDs where many logical units are presented, and the
+			documents are expected to be authored by humans.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>When the underlying order of the data to be represented, or to make DTDs applicable in
+			many situations, large numbers of logical units need to appear in the DTD. However,
+			presenting large numbers of attributes and elements makes the DTD more difficult to
+			learn by authors of documents.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Present only a limited number of choices to the author at any point within the
+			document. If the author has the choice of insert 100 different elements at some point in
+			the document, it can be difficult to know how to proceed. By grouping elements into
+			related sets, the number choices to be made at any one point can be reduced. The author
+			has to choose between only a few higher level groups instead of many more detailed
+			elements.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<example>
+			<title>Example</title>
+			<para>Here is a DTD that presents several choices to the author:</para>
+
+			<literallayout language="dtd">
+&lt;!ELEMENT Doc
+( Para
+| OrderedList
+| UnorderedList
+| Figure
+| Artwork )+&gt;</literallayout>
+		</example>
+
+
+		<example>
+			<title>Example</title>
+			<para>The author here is present with a choice of 5 different elements to choose from
+				after creating the Doc element. This choice could be limited by introducing new
+				elements and grouping some of the existing elements together as children of the new
+				elements like this:</para>
+
+
+			<literallayout language="dtd">
+&lt;!ELEMENT Doc (Para | List | Illustration )+)&gt;
+&lt;!ELEMENT List (OrderedList | UnorderedList )&gt;
+&lt;!ELEMENT Illustration (Figure | Artwork )&gt;
+                </literallayout>
+		</example>
+	</section>
+
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Once the Choice Reducing Pattern is applied, the learning requirements placed on the
+			author of documents is reduced. Application of this pattern can however lead to an
+			increase in the overall number of element types in the DTD. The number of elements in
+			the above example went from 6 to 8 when the Group Choice pattern was applied. This can
+			make the overall complexity of the DTD higher. It can also increase the size of
+			documents.</para>
+		<para>The Choice Reducing Pattern hides choices from the authors of documents by introducing
+			new elements that hide the details of a piece of the document that the author might not
+			care about at that point in time. By introducing a single higher level element, the
+			number of choices the author needs to make is lower, thereby reducing the learning
+			requirements of the author.</para>
+	</section>
+
+
+	<section>
+		<title>Related Patterns</title>
+
+		<para>This Choice Reducing Container is similar to the Optional Container Element in that
+			they both try to make the DTD easier to use by the author by introducing new element
+			types. Existing elements are grouped together as children of the new element. One
+			difference between the two is the context they are used in. The Choice Reducing
+			Container relates elements that are all choices in a content group while the Optional
+			Container Element relates optional elements from the content group.</para>
+		<para>The motivation for the two is also different. In the Choice Reducing Container, the
+			amount of information at any one point is reduced, but it is not intended to reduce the
+			overall complexity of the document for a single author. The Optional Container Element
+			hides parts of the structure permanently from the view of individual authors. It is
+			likely that some authors will never use certain parts of large DTDs.</para>
+	</section>
+	<section>
+		<title>Known Uses</title>
+		<para>…</para>
+	</section>
+
+
+	<section>
+		<title>References</title>
+		<para>See Structuring XML Documents, Section 4.2.1 - Limiting Choices.</para>
+	</section>
+</section>

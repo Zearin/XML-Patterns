@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<book 
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0">
+	
+	<info>
+		<title>XML Design Patterns</title>
+		
+		<author>
+			<personname>
+				<firstname>Toivo</firstname>
+				<surname>Lainevool</surname>
+			</personname>
+			
+			<email>info@xmlpatterns.com</email>
+			<uri>http://www.xmlpatterns.com</uri>
+		</author>
+		
+		
+		<editor>
+			<personname>
+				<firstname>Anthony</firstname>
+				<othername>M.</othername>
+				<surname>Rogers</surname>
+			</personname>
+			
+			<email>zearin@users.sourceforge.net</email>
+		</editor>
+	</info>
+	
+	<part>
+		<title>Home</title>
+		
+		<article>
+			<title>XML Design Patterns</title>
+			
+			<para>Welcome to XMLPatterns.com, the site about designing good XML structure with patterns.</para>
+			<para>There are 28 <link xl:href="patterns/patterns.part.xml">XML Design Patterns</link>. If you are new to software design patterns, a good place to start is the <link xl:href="intro/introduction.part.xml">Introductory Material</link>.</para>
+			<para>In the years since XMLPatterns.com was launched, XML has moved from being a relatively obscure technology to being a part of the everyday technologies that software developers use. Since XML design patterns are an excellent way to pass knowledge on from the experts to XML newcomers, they have become more important then ever. Designing good XML structure using DTDs, W3C XML Schema or RelaxNG does not always come easily, and hopefully the patterns on this site will be able to help out.</para>
+			<para>Please feel free to <link xl:href="mailto:info@xmlpatterns.com">email</link> feedback about this site.</para>
+			<para>Thanks for visiting!</para>
+		</article>
+	</part>
+	
+	<xi:include href="intro/introduction.part.xml" />
+	<xi:include href="patterns/patterns.part.xml" />
+	<xi:include href="books/books.part.xml" />
+	<xi:include href="links/links.part.xml" />
+	<xi:include href="about/about.xml" />
+	
+</book>

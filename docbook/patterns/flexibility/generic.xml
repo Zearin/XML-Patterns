@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Generic Element</title>
+
+		<abstract>
+			<para>To provide flexibility to users of the document, designers can provide an element
+				type that is very generic. The use of the Generic Element is not well specified by
+				the documents type. This allows for authors to use the document type in ways that
+				may not have been foreseen.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>The designer does not know exactly what the users of the document intend to do with
+			the document and needs to add flexibility to the document type.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This is useful in general purpose document types, when flexibility is needed.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Flexibility is required to make some document types useful. This pattern can effect
+			the ease of processing of the document type.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Provide a new element that does not have a specific meaning.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<literallayout language="xml">
+&lt;Paragraph&gt;
+Albert Camus&apos; &lt;General type=&quot;book&quot;&gt;The Stranger&lt;/General&gt;
+is an existentialist novel.
+&lt;/Paragraph&gt;
+</literallayout>
+	</section>
+
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Not providing enough flexibility can make document authors use the wrong element for
+			markup. This can lead to documents that are difficult to understand, and mistakes in
+			processing occur.</para>
+		<para>This flexibility can make processing software difficult to create. Adding Role
+			Attributes to the Generic Element can help provide the processing software some clues as
+			to how to process the element.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>A <link xl:href="/patterns/flexibility/role.xml">Role Attribute</link> is often used in conjunction with Generic Elements.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>The div and span elements in XHTML.</para>
+	</section>
+
+	<section>
+		<title>References</title>
+		<para>The Fielded Text example from The XML &amp; SGML Cookbook page 2-48, uses Generic
+			Elements.</para>
+	</section>
+
+</section>

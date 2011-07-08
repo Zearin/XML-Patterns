@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Flyweight</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Flyweight." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Flyweight</h1>
+
+    <h2>Abstract</h2>If the same information is included at many
+    different points in a document the information can be placed in
+    just one place, and shared from each place in the document that
+    needs to refer to it.
+
+    <h2>Problem</h2>Placing the same information in many different
+    place can cause several problems:
+
+    <ul>
+      <li>Mistakes can be made in copying the information</li>
+
+      <li>If the data changes, all occurrences of the information
+      must be located and changed. This makes maintenance of the
+      document difficult.</li>
+
+      <li>Documents can become quite large if the same information
+      is repeated over and over again.</li>
+    </ul>
+
+    <h2>Context</h2>This is a very general pattern, almost any
+    document type can make use of it. This pattern can be used
+    anywhere where the same information must be repeated more than
+    once in a document. The repeated data can occur in the document
+    declaration, or in the document instance itself.
+
+    <h2>Forces</h2>This pattern can effect the length of the
+    document, maintainability, and readability of the document.
+
+    <h2>Solution</h2>Place the shared information in just one
+    place, and make references to it from every place in the
+    document that needs to include this information. There are
+    several ways to do this:
+
+    <ul>
+      <li>Use XML Entity Declarations. These provide a way to do
+      text substitutions inside of a document. <cite>The XML
+      Specification Section 4.2 Entity Declarations</cite>
+      (http://www.w3.org/TR/REC-xml#sec-entity-decl)</li>
+
+      <li>Use the XLink attribute xlink:show="embed". This
+      technique has the advantage of using a standard, so some
+      tools may be available to do the processing. This is defined
+      in <cite>The W3C's XML Linking Language Specification</cite>
+      (http://www.w3.org/TR/xlink/#link-behaviors)</li>
+
+      <li>Use ID and IDREF attributes. A reference can be made to
+      an entity via an IDREF attribute. Applications processing
+      this will need to do the processing to do this type of
+      Flyweight.</li>
+    </ul>See the Examples section for an example of each of the
+    above techniques.
+
+    <h2>Examples</h2>
+
+    <div>
+      <h3>XML Entities</h3>This example shows how XML Entities can
+      be used to put a piece of information in just one place, and
+      then have it appear in multiple places in the document.
+      <pre>
+          <tt>
+
+&lt;!DOCTYPE Doc[
+&lt;!ENTITY TITLE "My Document"&gt;
+]&gt;
+&lt;Document&gt;
+&lt;title&gt;&amp;TITLE;&lt;/title&gt;
+&lt;H1&gt;&amp;TITLE;&lt;/H1&gt;
+This is my paragraph.
+&lt;/Document&gt;
+
+          </tt>
+        
+</pre>
+    </div>
+
+    <div>
+      <h3>XLink</h3>This document shows the use of XLink attributes
+      to include the contents of a document in two different
+      places. Since XLink is a standard it is possible that
+      existing tools could be used to do the substitution.
+      <pre>
+          <tt>
+
+&lt;Document&gt;
+&lt;title&gt;
+&lt;include xlink:show="embed"
+xlink:href="titledoc.txt"/&gt;
+&lt;/title&gt;
+&lt;h1&gt;
+&lt;include xlink:show="embed"
+xlink:href="titledoc.txt"/&gt;
+&lt;/h1&gt;
+This is my paragraph.
+&lt;/Document&gt;
+
+          </tt>
+        
+</pre>
+    </div>
+
+    <div>
+      <h3>ID and IDREF</h3>This shows how ID and IDREF attributes
+      can be used as a Flyweight. Note thats this would require
+      some extra work on the part of the processing software to do
+      the substitution.
+      <pre>
+          <tt>
+
+&lt;Document&gt;
+&lt;text id="title"&gt;My Document&lt;/text&gt;
+&lt;title IDREF="title"/&gt;
+&lt;h1 IDREF="title"/&gt;
+&lt;/Document&gt;
+
+          </tt>
+        
+</pre>
+    </div>
+
+    <h2>Discussion</h2>
+
+    <p>This pattern can greatly enhance the maintainability of a
+    document, if the same data is repeated several times, and that
+    data changes, every occurrence of that data must be found and
+    updated. This can be a tedious and error prone task. Having the
+    data in only one place allows all occurrences of it to be
+    changed at once.</p>
+
+    <p>The Flyweight pattern should not be used if the shared
+    information can vary over time. This would increase the
+    maintenance burden of the document.</p>
+
+    <p>Readability of the document can suffer if the Flyweight
+    pattern is used, readers are forced to reference a different
+    section of the document when looking at the contents.</p>
+
+    <h2>Related Patterns</h2>See <cite>Declare Before First
+    Use</cite> for suggestions on where to place the shared
+    information.
+
+    <h2>Known Uses</h2>
+
+    <p>XHTML uses a a common attributes parameter entity that is a
+    Flyweight.</p>
+
+    <p><cite>The XML &amp; SGML Cookbook</cite> page 1-126 mentions
+    the Flyweight pattern.</p>
+  </div>
+</body>
+</html>

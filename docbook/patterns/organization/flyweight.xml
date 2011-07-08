@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+ 		<title>Flyweight</title>
+
+		<abstract>
+			<para>If the same information is included at many different points in a document the
+				information can be placed in just one place, and shared from each place in the document
+				that needs to refer to it.</para>
+		</abstract>
+	</info>
+
+	
+	<section>
+		<title>Problem</title>
+
+		<para>Placing the same information in many different place can cause several
+			problems:</para>
+
+		<itemizedlist>
+			<listitem>
+				<para>Mistakes can be made in copying the information</para>
+			</listitem>
+			<listitem>
+				<para>If the data changes, all occurrences of the information must be located and
+					changed. This makes maintenance of the document difficult.</para>
+			</listitem>
+			<listitem>
+				<para>Documents can become quite large if the same information is repeated over and
+					over again.</para>
+			</listitem>
+		</itemizedlist>
+	</section>
+	<section>
+		<title>Context</title>
+
+		<para>This is a very general pattern, almost any document type can make use of it. This
+			pattern can be used anywhere where the same information must be repeated more than once
+			in a document. The repeated data can occur in the document declaration, or in the
+			document instance itself.</para>
+	</section>
+	<section>
+		<title>Forces</title>
+
+		<para>This pattern can effect the length of the document, maintainability, and readability
+			of the document.</para>
+	</section>
+	<section>
+		<title>Solution</title>
+
+		<para>Place the shared information in just one place, and make references to it from every
+			place in the document that needs to include this information. There are several ways to
+			do this:</para>
+
+		<itemizedlist>
+			<listitem>
+				<para>Use XML Entity Declarations. These provide a way to do text substitutions
+					inside of a document. The XML Specification Section 4.2 Entity
+					Declarations</para>
+			</listitem>
+			<listitem>
+				<para>Use the XLink attribute xlink:show=&quot;embed&quot;. This technique has the
+					advantage of using a standard, so some tools may be available to do the
+					processing. This is defined in The W3C&apos;s XML Linking Language
+					Specification</para>
+			</listitem>
+			<listitem>
+				<para>Use ID and IDREF attributes. A reference can be made to an entity via an IDREF
+					attribute. Applications processing this will need to do the processing to do
+					this type of Flyweight.</para>
+			</listitem>
+		</itemizedlist>
+		<para>See the Examples section for an example of each of the above techniques.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+		<example>
+			<title>XML Entities</title>
+			<para>This example shows how XML Entities can be used to put a piece of information in
+				just one place, and then have it appear in multiple places in the document.</para>
+
+			<literallayout language="xml">
+&lt;!DOCTYPE Doc[
+&lt;!ENTITY TITLE &quot;My Document&quot;&gt;
+]&gt;
+&lt;Document&gt;
+&lt;title&gt;&amp;TITLE;&lt;/title&gt;
+&lt;H1&gt;&amp;TITLE;&lt;/H1&gt;
+This is my paragraph.
+&lt;/Document&gt;
+</literallayout>
+		</example>
+		<example>
+			<title>XLink</title>
+			<para>This document shows the use of XLink attributes to include the contents of a
+				document in two different places. Since XLink is a standard it is possible that
+				existing tools could be used to do the substitution.</para>
+
+			<literallayout language="xml">
+&lt;Document&gt;
+&lt;title&gt;
+&lt;include xlink:show=&quot;embed&quot;
+xlink:href=&quot;titledoc.txt&quot;/&gt;
+&lt;/title&gt;
+&lt;h1&gt;
+&lt;include xlink:show=&quot;embed&quot;
+xlink:href=&quot;titledoc.txt&quot;/&gt;
+&lt;/h1&gt;
+This is my paragraph.
+&lt;/Document&gt;
+</literallayout>
+		</example>
+
+		<example>
+			<title>ID and IDREF</title>
+			<para>This shows how ID and IDREF attributes can be used as a Flyweight. Note thats this
+				would require some extra work on the part of the processing software to do the
+				substitution.</para>
+
+			<literallayout language="xml">                              
+&lt;Document&gt;
+&lt;text id=&quot;title&quot;&gt;My Document&lt;/text&gt;
+&lt;title IDREF=&quot;title&quot;/&gt;
+&lt;h1 IDREF=&quot;title&quot;/&gt;
+&lt;/Document&gt;
+</literallayout>
+		</example>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+
+		<para>This pattern can greatly enhance the maintainability of a document, if the same data
+			is repeated several times, and that data changes, every occurrence of that data must be
+			found and updated. This can be a tedious and error prone task. Having the data in only
+			one place allows all occurrences of it to be changed at once.</para>
+		<para>The Flyweight pattern should not be used if the shared information can vary over time.
+			This would increase the maintenance burden of the document.</para>
+		<para>Readability of the document can suffer if the Flyweight pattern is used, readers are
+			forced to reference a different section of the document when looking at the
+			contents.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>See <link xl:href="/patterns/metadata/declare-before.xml">Declare Before First Use</link> for suggestions on where to place the shared
+			information.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>XHTML uses a a <link xl:href="/patterns/consistency/common-attributes.xml">Common Attributes</link> parameter entity that is a Flyweight.</para>
+		<para>The XML &amp; SGML Cookbook page 1-126 mentions the Flyweight pattern.</para>
+	</section>
+</section>

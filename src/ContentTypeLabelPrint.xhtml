@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Content Type Label</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Content Type Label." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Content Type Label</h1>
+
+    <h2>Abstract</h2>Parameter entities are created to represent
+    different types of values within a DTD.
+
+    <h2>Problem</h2>DTDs provide limited type information for
+    content of attributes and elements. Type information is often
+    useful to have in a language.
+
+    <h2>Context</h2>Any time DTDs are used and it is useful to
+    convey type information.
+
+    <h2>Forces</h2>Expressing type information helps in creating
+    understandable and maintainable DTDs.
+
+    <h2>Solution</h2>Create parameter entities to represent
+    different data types. These parameters can be used in attribute
+    and element content descriptions.
+
+    <h2>Examples</h2>The following DTD fragment is taken from a
+    payroll system. The first line defines a parameter entity to
+    represent a employee number type. In each place in the DTD
+    where a employee number is needed as content, this parameter
+    entity is used.
+    <pre>
+        <tt>
+
+&lt;!ENTITY % EmployeeNum "NMTOKEN"&gt;
+
+&lt;!ELEMENT Order (LineItem*)&gt;
+
+&lt;!ELEMENT Employee (Name, Address)&gt;
+&lt;!ATTLIST Employee Number %EmployeeNum;&gt;
+
+&lt;!ELEMENT PayRecord (Period, Hours)&gt;
+&lt;!ATTLIST PayRecord Employee %EmployeeNum;&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>
+
+    <div>
+      This pattern does not change the structure or constraints of
+      the documents that are instances of the DTD, but it does make
+      the DTD easier to understand and maintain.
+    </div>
+
+    <div>
+      This pattern increases understandability of the DTD by
+      documenting the intended use of the content types to readers
+      of the DTD. Looking at the above example we can see that it
+      becomes obvious that the Employee's Number attribute and the
+      PayRecord's Employee attribute contain the same type of
+      value. If they were both just NMTOKENs this may not have been
+      as obvious.
+    </div>
+
+    <div>
+      Maintainability of DTDs is increased by allowing all related
+      content types to be changed from a single place. For
+      instance, in the Examples section above if the company this
+      payroll system was created for merges with another company,
+      and the employee numbers from the new company can contain a
+      space, the "NMTOKEN" attribute type is no longer valid. By
+      changing the EmployeeNum parameter entity to "CDATA", all
+      references to the employee number in the DTD can be changed.
+    </div>
+
+    <h2>Related Patterns</h2>This is an example of a
+    <cite>Flyweight</cite>.
+
+    <h2>Known Uses</h2><cite>XHTML</cite>
+    (http://www.w3.org/TR/xhtml1/) uses Content Type Labels
+    extensively. For example:
+    <pre>
+        <tt>
+
+&lt;!ENTITY % URI "CDATA"&gt;
+&lt;!-- a Uniform Resource Identifier, see [RFC2396] --&gt;
+
+&lt;!ENTITY % FrameTarget "NMTOKEN"&gt;
+&lt;!-- render in this frame --&gt;
+
+&lt;!-- document base URI --&gt;
+
+&lt;!ELEMENT base EMPTY&gt;
+&lt;!ATTLIST base
+href        %URI;          #IMPLIED
+target      %FrameTarget;  #IMPLIED
+&gt;
+
+        </tt>
+      
+</pre>The above excepts shows how Content Type Labels are used to
+make it clearer what is expected in the attributes of the
+<tt>base</tt> element.
+
+    <h2>References</h2>The document <cite>XML Modularization of
+    HTML 4.0</cite>
+    (http://www.altheim.com/specs/xhtml/NOTE-xhtml-modular.html#sec2.2.1)
+    by Murray Altheim explains the use of this pattern in XHTML.
+  </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Common Attributes</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Common Attributes." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Common Attributes</h1>
+
+    <h2>Abstract</h2>Provide a set of attributes that can be placed
+    on all, or most, elements in the document type.
+
+    <h2>Problem</h2>There are properties that belong to every
+    element in the document. These properties need to be presented
+    to the document author in an understandable way.
+
+    <h2>Context</h2>This is a widely applicable pattern and can be
+    used anywhere that a large number of elements need the same
+    attributes applied. It is a common technique for attributes
+    such as IDs, security, and roles.
+
+    <h2>Forces</h2>The usability of the document type depends a lot
+    on consistency, and this pattern can be used to add
+    consistency.
+
+    <h2>Solution</h2>Create a common set of attributes that will be
+    used by all or most of the elements in the document type.
+
+    <h2>Examples</h2>
+
+    <div>
+      <h3>Common Attributes in DTDs</h3>
+
+      <p>This examples shows a DTD that has two common attributes,
+      <tt>id</tt> and <tt>role</tt>, on its all of its elements.
+      The common attribute definition is placed in a parameter
+      entity which is referenced by all of the ATTLIST
+      definitions.</p>
+      <pre>
+            <tt>
+
+&lt;!ENTITY % common.att
+'id   ID      #IMPLIED
+role NMTOKEN #IMPLIED'&gt;
+
+&lt;!ELEMENT Person (FirstName, LastName)&gt;
+&lt;!ATTLIST Person %common.att;&gt;
+
+&lt;!ELEMENT FirstName (#PCDATA)&gt;
+&lt;!ATTLIST FirstName %common.att;&gt;
+
+&lt;!ELEMENT LastName (#PCDATA)&gt;
+&lt;!ATTLIST LastName %common.att;&gt;
+
+            </tt>
+          
+</pre>
+    </div>
+
+    <div>
+      <h3>Common Attributes in XML Schemas</h3>This example shows
+      how to implement the same document structure as the above
+      examples using the <cite>XSL Schema language Attributes
+      Groups</cite> (http://www.w3.org/TR/xmlschema-0/#AttrGroups)
+      .
+      <pre>
+          <tt>
+
+&lt;?xml version="1.0"?&gt;
+&lt;schema xmlns="http://www.w3.org/1999/XMLSchema"
+targetNamespace="http://www.xmlpatterns.com/XMLSchema-fragment"
+xmlns:xsf="http://www.xmlpatterns.com/XMLSchema-fragment"&gt;
+
+&lt;attributeGroup name="CommonAtts"&gt;
+&lt;attribute name="id" type="ID"/&gt;
+&lt;attribute name="role" type="NMTOKEN"/&gt;
+&lt;/attributeGroup&gt;
+
+&lt;complexType name="NameType"&gt;
+&lt;attributeGroup ref="CommonAtts"/&gt;
+&lt;/complexType&gt;
+
+&lt;complexType name="PersonType" content="elementOnly"&gt;
+&lt;element name="FirstName" type="xsf:NameType"/&gt;
+&lt;element name="LastName" type="xsf:NameType"/&gt;
+&lt;attributeGroup ref="CommonAtts"/&gt;
+&lt;/complexType&gt;
+
+&lt;element name="Person" type="xsf:PersonType"/&gt;
+
+&lt;/schema&gt;
+
+          </tt>
+        
+</pre>
+    </div>
+
+    <h2>Discussion</h2>
+
+    <p>Global attributes often add many choices at any point in the
+    document. Users have more selections available to them, and
+    this could complicate authoring, however, some of the
+    complexity that adding attributes to every element brings is
+    lessened if these attributes are applied consistently. If users
+    can expect the same common attribute on every element, it does
+    not take a lot of extra effort to process the information. It
+    will be easier to author or process a document that has a
+    consistently applied set of common attributes on all elements
+    compared to one that has inconsistently applied attributes on
+    most of the elements.</p>
+
+    <p>An ID attribute is a typical use for a common attribute. It
+    is useful to be able to reference any element in the document
+    using this.</p>
+
+    <h2>Related Patterns</h2>The common attributes are usually
+    declared in a <cite>Flyweight</cite> to help maintainability.
+
+    <h2>Known Uses</h2>The <cite>XMLspec DTD Common Attributes
+    Chapter</cite>
+    (http://www.w3.org/XML/1998/06/xmlspec-report-v21.htm#cmnatts)
+    explains the use of common attributes in the DTD.
+
+    <p>XHTML defines a set of core attributes. These attributes are
+    applied to almost every element in the XHTML document type. The
+    core attributes are defined like this:</p>
+    <pre>
+          <tt>
+
+&lt;!ENTITY % coreattrs
+"id     ID           #IMPLIED
+class  CDATA        #IMPLIED
+style  %StyleSheet; #IMPLIED
+title  %Text;       #IMPLIED"
+&gt;
+
+          </tt>
+        
+</pre>Even the simple line break element has these attributes added
+to it:
+    <pre>
+          <tt>
+
+&lt;!ELEMENT br EMPTY&gt;  &lt;!-- forced line break --&gt;
+&lt;!ATTLIST br
+%coreattrs;
+&gt;
+
+          </tt>
+        
+</pre>
+
+    <h2>References</h2>See <cite>Structuring XML Documents</cite>,
+    Section 3.2.4: Global Attributes. Thanks to <cite>Hans C.
+    Arents</cite> for supplying the correct XSL Schema definition
+    used in the pattern.
+  </div>
+</body>
+</html>

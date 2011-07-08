@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Use XML</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Use XML." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Use XML</h1>
+
+    <h2>Abstract</h2>XML technology can be used to represent
+    structured information. This pattern helps determine when XML
+    is an appropriate solution.
+
+    <h2>Problem</h2>When data in a system needs to be imported or
+    exported, it needs some type of representation. There are many
+    possible representations for example: Comma Separated Values,
+    Java Object Serialization, Proprietary Binary Formats, HTML,
+    CORBA IIOP Streams, RDBMS tables, and of course XML. Choosing
+    the proper representation for the data can be difficult.
+
+    <h2>Context</h2>XML can be an appropriate choice when one or
+    more of the following is needed:
+
+    <ul>
+      <li>Content needs to be separate from its formatting.</li>
+
+      <li>Data is shared between computers, applications or
+      organizations.</li>
+
+      <li>Human readable representation is needed.</li>
+
+      <li>Readily available tools and resources.</li>
+    </ul>There are some situations where XML may not be a good
+    choice, among them is systems where:
+
+    <ul>
+      <li>Terseness is important.</li>
+
+      <li>In a homogeneous environment.</li>
+    </ul>
+
+    <h2>Forces</h2>There are many forces to take into account when
+    considering a data representation. Among the ones that XML can
+    provide are simplicity, openness, extensibility,
+    interoperability, and a technology with proven use.
+
+    <h2>Solution</h2>Use XML for data representations.
+
+    <h2>Examples</h2>
+
+    <h2>Discussion</h2>It is impossible to have a complete
+    discussion of the factors involved in make the decision of a
+    data representation in the space of a single pattern, but it
+    can try to provide some pointers.
+
+    <h2>Related Patterns</h2>All other patterns in this language
+    depend on first using this pattern, because they assume that
+    XML is being used.
+
+    <h2>Known Uses</h2>There are many places where XML is being
+    used successfully. Here is a small sampling of them.
+
+    <ul>
+      <li>Data syndication. XML has been popular in this area, and
+      several XML languages have been developed for this purpose.
+
+        <ul>
+          <li><cite>The Information and Content Exchange (ICE)
+          Protocol</cite> (http://www.icestandard.org)</li>
+
+          <li><cite>moreover.com</cite> (http://w.moreover.com/)
+          provides news feeds in several different XML
+          flavors.</li>
+
+          <li>News can be syndicated to browsers via <cite>Rich
+          Site Summary</cite>
+          (http://www.xml.com/pub/a/2002/12/18/dive-into-xml.html)</li>
+        </ul>
+      </li>
+
+      <li>Data exchange protocols for transport of messages from
+      one system to another across a network.
+
+        <ul>
+          <li><cite>SOAP (Simple Object Access Protocol)</cite>
+          (http://www.w3.org/TR/SOAP/)</li>
+        </ul>
+      </li>
+
+      <li>Configuration files J2EE uses <cite>Deployment
+      Descriptors</cite> (http://java.sun.com/xml/ns/j2ee/) to
+      configure various components</li>
+
+      <li>Test Scripting The <cite>XML Test Suite</cite>
+      (http://xmltestsuite.sourceforge.net/)</li>
+
+      <li>Log files The
+      <cite>LOGML</cite>(http://www.cs.rpi.edu/~puninj/LOGML/)
+      specification is designed to describe log reports of web
+      servers</li>
+
+      <li>Web content management
+
+        <ul>
+          <li>See <cite>Ronald Bourret's Content Management Systems
+          page</cite>
+          (http://www.rpbourret.com/xml/ProdsCMS.htm)</li>
+        </ul>
+      </li>
+
+      <li><cite>Wireless Application Data (WAP)</cite>
+      (http://www.openmobilealliance.org/)</li>
+    </ul>
+
+    <h2>References</h2>
+
+    <p>For more information:</p>
+
+    <p>Simon St. Laurent's Essay - <cite>Why XML?</cite>
+    (http://www.simonstl.com/articles/whyxml.htm) .</p>
+
+    <p>A whitepaper by Bob Schloss at the IBM developerWorks site
+    <cite>Ten best bets for XML applications</cite>
+    (http://www.digitalearth.net.cn/GISRelatedITIssues/XML/IBM-Ten%20best%20bets%20for%20XML%20applications.pdf)</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Flyweight</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Flyweight." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c37 {color: #000000; font-size: 80%}
+  span.c36 {font-size: 64%}
+  span.c35 {font-size: 80%}
+  span.c34 {color: #000000; font-size: 64%}
+  div.c33 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c33">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c34"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c35">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c36">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Flyweight
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "FlyweightPrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>If the
+                        same information is included at many
+                        different points in a document the
+                        information can be placed in just one
+                        place, and shared from each place in the
+                        document that needs to refer to it.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>Placing the
+                        same information in many different place
+                        can cause several problems:
+
+                        <ul>
+                          <li>Mistakes can be made in copying the
+                          information</li>
+
+                          <li>If the data changes, all occurrences
+                          of the information must be located and
+                          changed. This makes maintenance of the
+                          document difficult.</li>
+
+                          <li>Documents can become quite large if
+                          the same information is repeated over and
+                          over again.</li>
+                        </ul>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>This is a
+                        very general pattern, almost any document
+                        type can make use of it. This pattern can
+                        be used anywhere where the same information
+                        must be repeated more than once in a
+                        document. The repeated data can occur in
+                        the document declaration, or in the
+                        document instance itself.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>This
+                        pattern can effect the length of the
+                        document, maintainability, and readability
+                        of the document.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>Place the
+                        shared information in just one place, and
+                        make references to it from every place in
+                        the document that needs to include this
+                        information. There are several ways to do
+                        this:
+
+                        <ul>
+                          <li>Use XML Entity Declarations. These
+                          provide a way to do text substitutions
+                          inside of a document. <a href=
+                          "cgi-bin/leave-45400.cgi#sec-entity-decl">
+                          The XML Specification Section 4.2 Entity
+                          Declarations</a></li>
+
+                          <li>Use the XLink attribute
+                          xlink:show="embed". This technique has
+                          the advantage of using a standard, so
+                          some tools may be available to do the
+                          processing. This is defined in <a href=
+                          "cgi-bin/leave-1862.cgi#link-behaviors">The
+                          W3C's XML Linking Language
+                          Specification</a></li>
+
+                          <li>Use ID and IDREF attributes. A
+                          reference can be made to an entity via an
+                          IDREF attribute. Applications processing
+                          this will need to do the processing to do
+                          this type of Flyweight.</li>
+                        </ul>See the Examples section for an
+                        example of each of the above techniques.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>
+
+                        <div class="subsection">
+                          XML Entities
+                        </div>This example shows how XML Entities
+                        can be used to put a piece of information
+                        in just one place, and then have it appear
+                        in multiple places in the document.
+                        <pre>
+                              <span class="sample">
+
+&lt;!DOCTYPE Doc[
+&lt;!ENTITY TITLE "My Document"&gt;
+]&gt;
+&lt;Document&gt;
+&lt;title&gt;&amp;TITLE;&lt;/title&gt;
+&lt;H1&gt;&amp;TITLE;&lt;/H1&gt;
+This is my paragraph.
+&lt;/Document&gt;
+
+                              </span>
+                            
+</pre>
+
+                        <div class="subsection">
+                          XLink
+                        </div>This document shows the use of XLink
+                        attributes to include the contents of a
+                        document in two different places. Since
+                        XLink is a standard it is possible that
+                        existing tools could be used to do the
+                        substitution.
+                        <pre>
+                              <span class="sample">
+
+&lt;Document&gt;
+&lt;title&gt;
+&lt;include xlink:show="embed"
+xlink:href="titledoc.txt"/&gt;
+&lt;/title&gt;
+&lt;h1&gt;
+&lt;include xlink:show="embed"
+xlink:href="titledoc.txt"/&gt;
+&lt;/h1&gt;
+This is my paragraph.
+&lt;/Document&gt;
+
+                              </span>
+                            
+</pre>
+
+                        <div class="subsection">
+                          ID and IDREF
+                        </div>This shows how ID and IDREF
+                        attributes can be used as a Flyweight. Note
+                        thats this would require some extra work on
+                        the part of the processing software to do
+                        the substitution.
+                        <pre>
+                              <span class="sample">
+
+&lt;Document&gt;
+&lt;text id="title"&gt;My Document&lt;/text&gt;
+&lt;title IDREF="title"/&gt;
+&lt;h1 IDREF="title"/&gt;
+&lt;/Document&gt;
+
+                              </span>
+                            
+</pre>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>
+
+                        <p>This pattern can greatly enhance the
+                        maintainability of a document, if the same
+                        data is repeated several times, and that
+                        data changes, every occurrence of that data
+                        must be found and updated. This can be a
+                        tedious and error prone task. Having the
+                        data in only one place allows all
+                        occurrences of it to be changed at
+                        once.</p>
+
+                        <p>The Flyweight pattern should not be used
+                        if the shared information can vary over
+                        time. This would increase the maintenance
+                        burden of the document.</p>
+
+                        <p>Readability of the document can suffer
+                        if the Flyweight pattern is used, readers
+                        are forced to reference a different section
+                        of the document when looking at the
+                        contents.</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>See
+                        <a href=
+                        "DeclareBeforeFirstUseMain.shtml">Declare
+                        Before First Use</a> for suggestions on
+                        where to place the shared information.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>
+
+                        <p>XHTML uses a a common attributes
+                        parameter entity that is a Flyweight.</p>
+
+                        <p><a href="books.shtml#0136142230">The XML
+                        &amp; SGML Cookbook</a> page 1-126 mentions
+                        the Flyweight pattern.</p>
+                      </div><br />
+                      <hr />
+                    </div>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c36"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c37">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/FlyweightMain.shtml"
+                  dc:title="XML Design Pattern - Flyweight"
+                  dc:identifier="http://www.xmlpatterns.com/FlyweightMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

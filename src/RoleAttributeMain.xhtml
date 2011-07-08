@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Role Attribute</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Role Attribute." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c179 {color: #000000; font-size: 80%}
+  span.c178 {font-size: 64%}
+  span.c177 {font-size: 80%}
+  span.c176 {color: #000000; font-size: 64%}
+  div.c175 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c175">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c176"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c177">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c178">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Role Attribute
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "RoleAttributePrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>Sometimes
+                        the designer of a DTD can not foresee all
+                        of the needs that the author of a document
+                        will have. In order to give the author
+                        flexibility an attribute that specifies a
+                        role can be included on some of the
+                        elements.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>Specialization
+                        of the document type sometimes needs to be
+                        made by an author. It is impossible for the
+                        designer of the DTD to foresee all of the
+                        uses that the authors have in mind. The
+                        designer may not even know where in the
+                        document the specialization will need to
+                        take place.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>For any
+                        document type that is intended for use
+                        outside a very limited context, users need
+                        flexibility to include uses which the
+                        designed of the document type has not
+                        foreseen.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>By
+                        definition, document types constrain the
+                        choices that a document author can make.
+                        This constraint can at times be too
+                        limiting. Document users need flexibility
+                        to use the document type in ways not
+                        foreseen by the designer of the document
+                        type.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>An
+                        attribute is created which can further
+                        describe the element. This role attribute
+                        further specializes the use of the Element.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>
+                        <pre>
+                            <span class="sample">
+
+&lt;!ELEMENT Document (Paragraph)*&gt;
+&lt;!ELEMENT Paragraph (#PCDATA)&gt;
+&lt;!ATTLIST Paragraph Role CDATA&gt;
+
+                            </span>
+                          
+</pre>
+
+                        <p>Using the above DTD the author can
+                        create a document like this:</p>
+                        <pre>
+                            <span class="sample">
+
+&lt;Document&gt;
+&lt;Paragraph Role="warning"&gt;
+Do not attempt this at home.
+&lt;/Paragraph&gt;
+&lt;Paragraph&gt;
+The following is a set of
+instructions for creating
+a bungee jumping cord from
+elastic bands ...
+&lt;/Paragraph&gt;
+&lt;/Document&gt;
+
+                            </span>
+                          
+</pre>
+
+                        <p>The author intends for the "Do not
+                        attempt this at home" paragraph to appear
+                        emphasized in some way, for example in bold
+                        or in a different color. The DTD designer
+                        would have had no way of knowing the
+                        special needs of the author of the
+                        document, so a Role Attribute was placed on
+                        the paragraph, to allow for different types
+                        of paragraphs to exist.</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>
+
+                        <p>Including role attributes allows the
+                        author to have a great deal of flexibility.
+                        The flexibility may make the creation of
+                        processing software very difficult.
+                        Processing software will not be able to
+                        know in advance the intention of the
+                        author. However, by allowing customization
+                        of processing software through the use of
+                        scripts or stylesheet, this can be a very
+                        powerful pattern. Much of the power of
+                        <a href="cgi-bin/leave-54815.cgi">XSLT</a>
+                        and <a href=
+                        "cgi-bin/leave-38202.cgi">CSS</a> comes
+                        from being able to add Role Attributes.</p>
+
+                        <p>Role attributes can be used to extend
+                        the document type without changing the
+                        structure of documents. This can help
+                        extend the life of the document type
+                        between revisions, and can be used to
+                        prototype new features of the document
+                        type.</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>Role
+                        attributes are almost always used on
+                        <a href="GenericElementMain.shtml">Generic
+                        Element</a> types. Generic Elements are
+                        created when the designer of a document
+                        type does not know all of the uses of that
+                        element, and the Role Attribute allows the
+                        author of a document to make the element
+                        more specialized to his or her use of the
+                        element.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>
+
+                        <p>XHTML uses several role attributes
+                        including <span class="sample">class</span>
+                        and <span class="sample">meta</span>
+                        element in XHTML.</p>
+
+                        <p>The <a href=
+                        "cgi-bin/leave-37627.cgi#AEN620">XMLspec
+                        DTD role attribute</a> shows a typical
+                        usage of this pattern.</p>
+                      </div><br />
+                      <hr />
+                    </div>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c178"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c179">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/RoleAttributeMain.shtml"
+                  dc:title="XML Design Pattern - Role Attribute"
+                  dc:identifier="http://www.xmlpatterns.com/RoleAttributeMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

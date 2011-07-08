@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Reuse Document Types</title>
+
+		<abstract>
+			<para>If document types already exist for the job at hand, they can be reused completely
+				or parts of them can be reused.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>A new set of data needs to be marked up with XML and a document type is needed.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This applies to almost every project. Before starting to create a new document type,
+			existing ones that can be used should be looked for.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+
+		<para>Reusing existing data cuts down on development costs and times.</para>
+		<para>Using industry standard document types increases chances that existing tools can be
+			used out of the box, and allows for future interoperability.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Reuse an existing document type. If an industry standard document type already exists,
+			it should be reused.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+		<para>…</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Before anybody creates a new document type, existing document types should be
+			investigated.</para>
+
+		<variablelist>
+			<varlistentry>
+				<term>Complete Reuse</term>
+				<listitem>
+					<para>Ideally a document type will exist that precisely matches the needs of the
+						project. This can be beneficial in many areas:</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Decrease development time and cost</term>
+				<listitem>
+					<para>Reuse of Experience. Often developers of existing documents are groups of
+						experienced experts who have put significant time into the development of
+						the document type, and will produce high quality document types.</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Interoperability.</term>
+				<listitem>
+					<para>Use of industry standard document types will increase the chance that the
+						system will interoperate with other systems.</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Partial Reuse</term>
+				<listitem>
+					<para>If existing document types do not exactly match the needs of the project,
+						they can be partially reused. Modification can be made to document types to
+						allow this partial reuse. The easiest way to do this is simply to edit the
+						existing document type. Some document types may allow for customization
+						through techniques such as <link xl:href="/patterns/flexibility/extensible.xml">Extensible Content Model</link> . Partially reusing
+						document types still has the benefits of decreasing development time and
+						cost, and reusing experience, but will not allow for interoperabilty. If
+						interoperabilty is a desired goal of the system, modification of existing
+						document types must be looked at very carefully.</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>The Composition Pattern is a subset of this pattern.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>Many of the document types found in the references section are being reused in
+			multiple projects.</para>
+	</section>
+
+	<section>
+		<title>References</title>
+		<para>There are several sources of existing schemas on the web: XML.org&apos;s Catalog
+			Schema.net</para>
+	</section>
+</section>

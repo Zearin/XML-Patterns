@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Collection Element</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Collection Element." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Collection Element</h1>
+
+    <h2>Abstract</h2>Create a new element whose content model
+    allows only instances of a single element type.
+
+    <h2>Problem</h2>There is an element that needs to be repeated
+    several times at the same level of a documents.
+
+    <h2>Context</h2>Multiple elements of the same element type need
+    to appear in the document as siblings of each other. Often
+    metadata about the container needs to be expressed as well. The
+    Collection Element is a logical place to put this metadata.
+    Sometimes, the elements need to be grouped into different
+    categories. Multiple Collection Elements can appear in the
+    document, with each container having elements from one of the
+    sub categories.
+
+    <h2>Forces</h2>Groups of identical repeated elements often need
+    some context established so that metadata can be associated
+    with the entire group, or to distinguish between different
+    groups of similar elements.
+
+    <h2>Solution</h2>Create a new element type that contains the
+    multiple elements of the same type. The Collection Element is
+    often named by putting a descriptive ending on the contained
+    element name. For example, a Collection Element of authors
+    might be called <tt>AuthorList</tt> or <tt>AuthorGroup</tt>.
+    Another way of naming the Collection Element is to pluralize
+    the contained element name. For example, a collection of
+    <tt>Stock</tt> elements would be named <tt>Stocks</tt>.
+
+    <h2>Examples</h2>
+
+    <div>
+      <h3>Simple Collection Element</h3>
+      <pre>
+          <tt>
+
+&lt;Portfolio&gt;
+&lt;StockList&gt;
+&lt;Stock&gt;
+&lt;Name&gt;IBM&lt;/Name&gt;
+&lt;Price&gt;110.25&lt;/Price&gt;
+&lt;/Stock&gt;
+&lt;Stock&gt;
+&lt;Name&gt;MSFT&lt;/Name&gt;
+&lt;Price&gt;89.50&lt;/Price&gt;
+&lt;/Stock&gt;
+&lt;/StockList&gt;
+&lt;Bonds&gt;
+...
+&lt;/Bonds&gt;
+&lt;/Portfolio&gt;
+
+          </tt>
+        
+</pre>
+    </div>
+
+    <div>
+      <h3>Container Element With Metadata</h3>
+      <pre>
+          <tt>
+
+&lt;KitchenInventory&gt;
+&lt;GlassList location="cupboard3"&gt;
+&lt;Glass type="shot" number="5"/&gt;
+&lt;Glass type="highball" number="8"/&gt;
+&lt;/GlassList&gt;
+&lt;MugList&gt;
+...
+&lt;/MugList&gt;
+&lt;/KitchenInventory&gt;
+
+          </tt>
+        
+</pre>
+    </div>
+
+    <div>
+      <h3>Multiple Categories of Same Collection</h3>
+      <pre>
+          <tt>
+
+&lt;Portfolio&gt;
+&lt;StockList Exchange="NYSE"&gt;
+&lt;Stock&gt;
+&lt;Name&gt;IBM&lt;/Name&gt;
+&lt;Price&gt;110.25&lt;/Price&gt;
+&lt;/Stock&gt;
+&lt;/StockList&gt;
+&lt;StockList Exchange="NASDAQ"&gt;
+&lt;Stock&gt;
+&lt;Name&gt;MSFT&lt;/Name&gt;
+&lt;Price&gt;89.50&lt;/Price&gt;
+&lt;/Stock&gt;
+&lt;Stock&gt;
+&lt;Name&gt;AMZN&lt;/Name&gt;
+&lt;Price&gt;80.75&lt;/Price&gt;
+&lt;/Stock&gt;
+&lt;/StockList&gt;
+&lt;/Portfolio&gt;
+
+          </tt>
+        
+</pre>In this example the Collection Element was needed to
+establish a context for the exchange data. Without a collection
+element, this information would have to be duplicated in every <tt>
+      Stock</tt> element.
+    </div>
+
+    <h2>Discussion</h2>The resulting structure is often easier to
+    read and process. It does however result in documents that take
+    up more space.
+
+    <p>Providing a parent element for a list of elements of the
+    same type allows for the collection to have a context, making
+    it easier to add metadata if needed. This may also make
+    processing and reading the document easier.</p>
+
+    <p>If there is a significant metadata for the container, in
+    terms of amount of structure or volume, a
+    <cite>Head-Body</cite> would be appropriate to include inside
+    of the Collection Element.</p>
+
+    <h2>Related Patterns</h2>This is a specialization of the
+    <cite>Container Element</cite> pattern.
+
+    <h2>Known Uses</h2>The <cite>DocBook</cite>
+    (http://docbook.org/xml/index.html) DTD has a OrderedList
+    Element, whose only sub-children can be one or more ListItem
+    elements.
+  </div>
+</body>
+</html>

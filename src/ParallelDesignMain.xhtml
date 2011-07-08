@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Parallel Design</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Parallel Design." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c281 {color: #000000; font-size: 80%}
+  span.c280 {font-size: 64%}
+  span.c279 {font-size: 80%}
+  span.c278 {color: #000000; font-size: 64%}
+  div.c277 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c277">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c278"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c279">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c280">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Parallel Design
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "ParallelDesignPrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>Creating
+                        structures that for different elements that
+                        are very similar to one another makes DTD
+                        easier to use and understand.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>Authoring a
+                        document with complex structure can be
+                        difficult if there are many elements, and
+                        each of these elements has their own
+                        particular content models.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>Any
+                        document that is large enough to be
+                        potentially difficult to learn.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>Having
+                        consistency in the structure of document
+                        types makes document instances easier to
+                        learn and process.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>For
+                        elements that are similar in function use
+                        structures that are as close to identical
+                        as possible.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>
+                        <pre>
+                            <span class="sample">
+
+&lt;!ELEMENT Figure (Title, FigureBody, Number?)&gt;
+&lt;!ATTLIST Figure height CDATA
+width  CDATA
+id     ID  #REQUIRED&gt;
+
+&lt;!ELEMENT Table (Title, TableBody, Number?)&gt;
+&lt;!ATTLIST Table height CDATA
+width  CDATA
+id     ID  #REQUIRED&gt;
+
+                            </span>
+                          
+</pre>These two elements "Figure" and "Table" have very similar
+content and identical attribute lists. This makes it very easy for
+authors of the document. Once they have learned the structure of
+one of the elements, the other one will be easy to use. The more
+variation there is between the two, the easier it is to confuse the
+two structures.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>The more
+                        consistent the structure of various
+                        elements is the easier it is to learn to
+                        use a document type. Subtle differences in
+                        structure can be particularly difficult to
+                        learn. If, for example, in the above
+                        example, one of the "id" attributes was
+                        IMPLIED and the other one was REQUIRED,
+                        this would be a difficult distinction to
+                        remember. Users would constantly need to
+                        refer to the documentation to remind them
+                        which element's id was required and which
+                        one wasn't.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>Often
+                        the parts of the structure that are the
+                        same between two elements can be
+                        represented as <a href=
+                        "FlyweightMain.shtml">Flyweight</a>s. This
+                        will help ensure that the two structures
+                        remain similar even through revisions of
+                        the document type.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>The <a href=
+                        "cgi-bin/leave-24825.cgi">DocBook</a> DTD
+                        defines these four entities:
+                        <pre>
+                            <span class="sample">
+
+&lt;!ENTITY % div.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+&lt;!ENTITY % bookcomponent.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+&lt;!ENTITY % sect.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+&lt;!ENTITY % refsect.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+                            </span>
+                          
+</pre>All four of the elements have identical content model. This
+helps enormously in learning the specifics of this DTD.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">eferences:</span></p>See <a href=
+                        "books.shtml#0136422993">Structuring XML
+                        Documents</a>, Section 3.2.2.
+                      </div><br />
+                      <hr />
+                    </div>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c280"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c281">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/ParallelDesignMain.shtml"
+                  dc:title="XML Design Pattern - Parallel Design"
+                  dc:identifier="http://www.xmlpatterns.com/ParallelDesignMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

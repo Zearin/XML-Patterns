@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Good XML Structural Design</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Introductory material." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction, learn, intro" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c149 {color: #000000; font-size: 80%}
+  span.c148 {font-size: 64%}
+  span.c147 {font-size: 80%}
+  span.c146 {color: #000000; font-size: 64%}
+  div.c145 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c145">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c146"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title="What is a Pattern?"
+            href="intro1.shtml">Pattern</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "History of Software Patterns" href=
+            "intro2.shtml">History</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title="Pattern Forms" href=
+            "intro3.shtml">Forms</a></td>
+          </tr>
+
+          <tr>
+            <td><span class="subNavCurrent">Good Design</span></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "XML Design Patterns Journey" href=
+            "intro5.shtml">Journey</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c147">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c148">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Good XML Structural Design
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div class="text">
+                      <div class="heading"></div>
+
+                      <p>The purpose of XML Structural Patterns are
+                      to help create document types that are
+                      designed well. The goal of a design can be
+                      thought of a balancing of forces. There are
+                      many competing forces that the designer of a
+                      document type must deal with simultaneously.
+                      In non-trivial problems, it is impossible for
+                      all of the forces to be eliminated
+                      completely, so compromises must be made.</p>
+
+                      <div class="heading"></div>
+
+                      <p>These are some of the forces that the XML
+                      document designer must deal with:</p>
+
+                      <div class="heading">
+                        Document Size
+                      </div>
+
+                      <p>It is usually better to have short
+                      documents. Longer documents take up more disk
+                      space, take longer to process by machines and
+                      humans, and take longer to transmit across
+                      the network.</p>
+
+                      <div class="heading">
+                        Ease of Authoring
+                      </div>
+
+                      <p>Documents which are authored by people
+                      must be understandable to them. Extremely
+                      complex documents will cause authors to make
+                      mistakes, waste time, and get frustrated.</p>
+
+                      <div class="heading">
+                        Ease of Processing
+                      </div>
+
+                      <p>XML documents are ultimately processed by
+                      software at some point, and the document
+                      structure effects how difficult the
+                      processing software will be to write.</p>
+
+                      <div class="heading">
+                        Flexibility
+                      </div>
+
+                      <p>This is an indication of how the document
+                      instances written for a particular document
+                      type can differ. Some document types, such as
+                      HTML were meant to provide for a huge variety
+                      of documents to be written using them. For
+                      other systems, for examples, a payroll
+                      processing system, very strict rules about
+                      how the data is to be presented is
+                      needed.</p>
+
+                      <div class="heading">
+                        Consistency
+                      </div>
+
+                      <p>Consistency is important for documents to
+                      be usable. Inconsistencies lead to errors and
+                      misunderstandings.</p>
+
+                      <div class="heading">
+                        Amount of Abstraction
+                      </div>
+
+                      <p>The granularity and types of abstraction
+                      used in a document type will vary depending
+                      on the context. A date could be marked up
+                      as</p>
+
+                      <p>&lt;Date&gt;12-10-2000&lt;/Date&gt;</p>or
+
+                      <p>&lt;Date&gt;
+                      &lt;Month&gt;Dec&lt;/Month&gt;
+                      &lt;Day&gt;10&lt;/Day&gt;
+                      &lt;Year&gt;2000&lt;/Year&gt;
+                      &lt;/Date&gt;.</p>Which one is more
+                      appropriate depends on the situation where it
+                      is used.
+                    </div>
+                    <hr width="100%" />
+
+                    <div class="text">
+                      Page 4 of 5
+                    </div><a href="intro3.shtml" class=
+                    "navlink">&lt;&lt;Pattern Forms</a>| <a href=
+                    "intro.shtml" class="navlink">Contents</a> |
+                    <a href="intro5.shtml" class="navlink">XML
+                    Design Patterns Journey&gt;&gt;</a>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c148"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c149">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</body>
+</html>

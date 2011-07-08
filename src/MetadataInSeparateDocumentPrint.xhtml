@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Metadata in Separate
+  Document</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Metadata in Separate Document." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Metadata in Separate Document</h1>
+
+    <h2>Abstract</h2>When there is a large amount of metadata for a
+    document it can make sense to separate this into a different
+    document altogether, with its own document type.
+
+    <h2>Problem</h2>There may a large amount of metadata for a
+    document. If much of this data is required, it could make the
+    document difficult to author and read.
+
+    <h2>Context</h2>There is a large amount of metadata to be
+    associated with the documents. If the metadata for several
+    documents is the same.
+
+    <h2>Forces</h2>Metadata can add complexity to a document,
+    making it more difficult to author a document. When processing
+    documents, the metadata may not be needed by some programs.
+    Having the metadata in the document can increase processing
+    time.
+
+    <h2>Solution</h2>
+
+    <p>Place the metadata in the separate document. This document
+    should have its own document type. There is a link placed in
+    the document that refers to the metadata document.</p>
+
+    <p>If the metadata for several documents is the same, this can
+    be a very good pattern to use. If, for example, a document
+    requires extensive biographical information about its authors,
+    and several of the documents are by the same author, the single
+    metadata document can be used to minimize replication and ease
+    maintenance.</p>
+
+    <p>External parsed entities parsed entities can be used in a
+    similar way, but the document type of the original document
+    does not get simplified.</p>
+
+    <h2>Examples</h2>Here is an example that references author
+    information from an external file.
+
+    <p>File: author-info.xml</p>
+    <pre>
+        <tt>
+
+&lt;Author&gt;
+&lt;Name&gt;Robert Smith&lt;/Name&gt;
+&lt;BirthDate&gt;21-04-1960&lt;/BirthDate&gt;
+&lt;Address&gt;123 Maple Street&lt;/Address&gt;
+&lt;/Author&gt;
+
+        </tt>
+      
+</pre>File: document.xml
+    <pre>
+        <tt>
+
+&lt;!DOCTYPE DOCUMENT[
+&lt;!ENTITY author-info SYSTEM "author-info.xml"&gt;
+]&gt;
+&lt;Document&gt;
+&lt;Head&gt;
+&amp;author-info;
+&lt;/Head&gt;
+&lt;Body&gt;
+This is the document.
+&lt;/Body&gt;
+&lt;/Document&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>
+
+    <p>This pattern makes the separation between the data and the
+    metadata very clear, very little confusion can be made between
+    the data and metadata.</p>
+
+    <p>The metadata and data can be defined at different times in
+    the development cycle, allowing for iterative development, or
+    for different authors to work on the data and metadata at the
+    same time.</p>
+
+    <p>By having the metadata in a separate document, many
+    documents can include the metadata from the same source. In the
+    Example above, if the address of the author had changed, all of
+    the documents which included this document would be
+    automatically changed as well.</p>
+
+    <h2>Related Patterns</h2>This is a specialization of both the
+    the <cite>Separate Metadata and Data</cite> and patterns.
+
+    <h2>Known Uses</h2>
+
+    <h2>References</h2>See: <cite>The XML &amp; SGML
+    Cookbook</cite> page 2-23.
+  </div>
+</body>
+</html>

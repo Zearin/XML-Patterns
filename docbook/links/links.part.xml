@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<?xml-stylesheet type="text/css" href="../../../../../mylib/oxygen/frameworks/docbook5/index.css" title="Custom DocBook CSS" alternate="no"?>
+<part 
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0">
+
+	<title>Links</title>
+	
+	<article>
+		<title>Links</title>
+		
+		<para>This page lists recommended web sites listed by category.</para>
+		
+		<section>
+			<title>XML Design Patterns</title>
+			<para>Links to pages dealing specifically with XML Design Patterns.</para>
+			<variablelist>
+				<varlistentry>
+					<term>Design Patterns in XML Music Representation</term>
+					<listitem>
+						<para>An excellent paper discussing how XML Design Patterns (many taken from this site) can be useful in creating an XML DTD.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Design Patterns in XML Applications: Part 1</term>
+					<listitem>
+						<para>Fabio Arciniegas' article on using object oriented design patterns in processing XML documents. Discusses four patterns: Command, Flyweight, Wrapper, and Iterator.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Design Patterns in XML Applications: Part 2</term>
+					<listitem>
+						<para>Fabio Arciniegas' article on XML structural patterns. Includes six patterns.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Introduction to XML Design patterns</term>
+					<listitem>
+						<para>Ian Graham and Liam Quin's site which contains 4 patterns, Running Text, Generated Text, Footnote, and Text Blocks.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Architectural Design Patterns for XML Documents</term>
+					<listitem>
+						<para>Kyle Downey's article attempts to document a few whole-document design patterns.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>XML Acceptor Design Pattern</term>
+					<listitem>
+						<para>A XML processing design pattern.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>XML Design Patterns Article (PDF)</term>
+					<listitem>
+						<para>A paper describing four XML processing design pattern.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Structural Patterns in XML</term>
+					<listitem>
+						<para>An article on XML.com describing three structural patterns for XML Schema: Composite, Abstract Model, and Peer Specialization.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+		<section>
+			<title>Other Patterns</title>
+			<para>Links to pages about patterns in area other than XML.</para>
+			<variablelist>
+				<varlistentry>
+					<term>TheServerSide.com's Pattern Collection</term>
+					<listitem>
+						<para>A pattern repository focusing on patterns that can be used with Java middleware technologies. They are inviting site visitors to contribute patterns.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Hypermedia Design Patterns Repository</term>
+					<listitem>
+						<para>A pattern repository for patterns to be used in hypermedia design. The patterns are categorized into Interface/Layout, Structure/Navigation and Content Oriented Patterns.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Patterns and Software: Essential Concepts and Terminology</term>
+					<listitem>
+						<para>Brad Appleton's excellent page about patterns in the field of object-oriented software.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+		<section>
+			<title>XML Design</title>
+			<para>Links to pages about XML structural design issues.</para>
+			<variablelist>
+				<varlistentry>
+					<term>Serializing Graphs of Data in XML</term>
+					<listitem>
+						<para>A discussion of representing graph structure such as RDBMS tables in XML.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Elements vs. Attributes</term>
+					<listitem>
+						<para>Robin Cover's page covering the element vs. attributes debate. When should you use an element? When should you use an attribute? Check this page for some good references.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+		<section>
+			<title>Schema Repositories</title>
+			<para>Links to pages that contain repositories of XML Schemas. Great place to look for schemas to reuse, or to get ideas from.</para>
+			<variablelist>
+				<varlistentry>
+					<term>The XML Catalog</term>
+					<listitem>
+						<para>Oasis' catalog of XML specifications.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Robin Cover's Listing of XML Applications</term>
+					<listitem>
+						<para>A comprehensive listing of XML applications and announced industry initiatives.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Schema.net</term>
+					<listitem>
+						<para>A catalog of many different schemas from a variety of categories.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+	</article>
+	
+	<article>
+		<title>Other XML Links</title>
+
+		<para>This page lists recommended web sites listed by category.</para>
+
+		<section>
+			<title>General XML</title>
+			<para>Links to pages about general XML information.</para>
+
+			<variablelist>
+				<varlistentry>
+					<term>The XML Recommendation</term>
+					<listitem>
+						<para>The official XML 1.0 Recommendation from the W3C site.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>XML.com</term>
+					<listitem>
+						<para>A good general XML site with article and lots of reference pages.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>XML Hack</term>
+					<listitem>
+						<para>A site that provide daily news stories about all aspects of XML.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>The XML Cover Pages</term>
+					<listitem>
+						<para>Robin Cover provides extensive references that cover the entire SGML/XML world, updated continually.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+		<section>
+			<title>XSLT</title>
+			<para>Links to pages about XSLT, the Extensible Stylesheet Language: Transformations.</para>
+
+			<variablelist>
+				<varlistentry>
+					<term>The XSLT Recommendation</term>
+					<listitem>
+						<para>The official XSLT 1.0 Recommendation from the W3C site.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>XSLT.com</term>
+					<listitem>
+						<para>A good site with lots of general information about XSLT.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>XSL-List FAQ</term>
+					<listitem>
+						<para>Contains frequently asked questions from the XSL-List mailing list. Maintained by Dave Pawson.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+	</article>
+
+</part>

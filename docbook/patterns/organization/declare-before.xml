@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Declare Before First Use</title>
+
+		<abstract>
+			<para>Elements which are referenced by another part of a document should be found earlier in
+				the document than the first place they are referenced.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>Often an element will refer to another one; this is what the ID and IDREF attributes
+			in XML are used for. A common example is a footnote element. When processing software
+			encounters an reference to an element that has not yet been processed, it often has to
+			do more processing.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This pattern applies to a wide variety of document types. It is common to have
+			elements reference one another.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Ease of processing is effected by element order. Having elements in the correct order
+			can make processing easier.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Ensure that the elements are ordered so that elements are encountered before they are
+			referred to. This gives the processing software a better chance of doing a single pass
+			traversal of the document.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<literallayout language="xml dtd">
+&lt;!DOCTYPE Doc [
+
+&lt;!ELEMENT Person (Adress*, BillToAddress, ShipToAddress)&gt;
+
+&lt;!ELEMENT Address (#PCDATA)&gt;
+&lt;!ATTLIST Address id IDREF #REQUIRED &gt;
+
+&lt;!ELEMENT BillToAddress EMPTY&gt;
+&lt;!ATTLIST BillToAddress address IDREF #REQUIRED&gt;
+
+&lt;!ELEMENT ShipToAddress EMPTY&gt;
+&lt;!ATTLIST ShipToAddress address IDREF #REQUIRED&gt;
+
+]&gt;
+
+&lt;Doc&gt;
+&lt;Person&gt;
+&lt;Address id=&quot;1&quot;&gt;
+123 Main St, New York NY
+&lt;/Address&gt;
+&lt;Address id=&quot;2&quot;&gt;
+2001 5th Ave, New York NY
+&lt;/Address&gt;
+&lt;BillToAddress address=&quot;1&quot;/&gt;
+&lt;ShipToAddress address=&quot;2&quot;/&gt;
+&lt;/Person&gt;
+&lt;/Doc&gt;
+</literallayout>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+		<para>Stream based processors are popular, particularly when documents are very large, and
+			may take up large amounts of memory, or when speed of processing is essential. It is
+			often difficult to use stream based processing if elements that are needed to process a
+			section of the document do not appear until after the place they are needed. This
+			requires a forward-looking mechanism that goes against the principle of stream based
+			processing.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>Consider this pattern when applying the <link xl:href="/patterns/organization/referenced-note.xml">Referenced Note</link>. The <link xl:href="/patterns/metadata/metadata-first.xml">Metadata First</link> is very
+			similar to this patterns, except it deals with metadata instead of general elements as
+			this pattern does.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>…</para>
+	</section>
+</section>

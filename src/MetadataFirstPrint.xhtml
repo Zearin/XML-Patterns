@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Metadata First</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Metadata First." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Metadata First</h1>
+
+    <h2>Abstract</h2>Metadata should appear in a document before
+    the data which it is about.
+
+    <h2>Problem</h2>Many processors (for example SAX based parsers)
+    are stream based. That is, the document is processed as it is
+    read in, the whole document is never held in memory at the same
+    time. If a piece of metadata appears after the data it refers
+    to, the application software will need to store the data, then
+    read the metadata in order to know what to do with the data.
+
+    <h2>Context</h2>Anywhere in the document that metadata appears.
+
+    <h2>Forces</h2>The ease and speed of processing a document can
+    be effected by the order in which the structures of the
+    document appear.
+
+    <h2>Solution</h2>
+
+    <div>
+      Always make sure that metadata appears in a document before
+      the data it refers to. This can be done whether the metadata
+      is attribute data or element data.
+    </div>
+
+    <div>
+      For example, with the following code,
+      <pre>
+          <tt>
+
+&lt;Heading&gt;
+This is a new section&lt;Font size="3"/&gt;
+&lt;/Heading&gt;
+
+          </tt>
+        
+</pre>If the processing software were trying to send this
+information to a printer, it would need to save the text of the
+heading, read in the font size, send the font size command to the
+printer, and then send the text to the printer. If the font element
+appeared before the text, there would be no need to save the text.
+    </div>
+
+    <h2>Examples</h2>This example shows a table element with the
+    height and width elements appearing before the actual data of
+    the table. This allows the processing software to start
+    rendering the table as the data is read in. If the height and
+    width of the table came after the table data, the processing
+    software would need to read in and save all the data before
+    starting to display it.
+    <pre>
+        <tt>
+
+&lt;Table&gt;
+&lt;height unit="pixels"&gt;100&lt;/height&gt;
+&lt;width unit="pixels"&gt;100&lt;/width&gt;
+&lt;Row&gt;&lt;Col&gt;2&lt;/Col&gt;&lt;Col&gt;3&lt;/Col&gt;&lt;/Row&gt;
+&lt;Row&gt;&lt;Col&gt;8&lt;/Col&gt;&lt;Col&gt;7&lt;/Col&gt;&lt;/Row&gt;
+&lt;/Table&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>Placing the metadata before the data that it
+    is about will often simplify processing software. This is also
+    often a natural way for people to think about the data, making
+    documents easier to read and author.
+
+    <h2>Related Patterns</h2>The ordering of the head and body
+    element in the <cite>Head-Body</cite> pattern is an application
+    of this pattern.
+
+    <h2>Known Uses</h2>In XHTML The <tt>head</tt>, which contains
+    metadata, and <tt>body</tt> which contains the content are
+    always in that order. The <tt>table</tt> elements contain size
+    and spacing data in the attributes of the <tt>table</tt>
+    element, which places it before the data, and the caption and
+    column width and spacing data appears before the table data
+    itself.
+  </div>
+</body>
+</html>

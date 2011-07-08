@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Role Attribute</title>
+
+		<abstract>
+			<para>Sometimes the designer of a DTD can not foresee all of the needs that the author
+				of a document will have. In order to give the author flexibility an attribute that
+				specifies a role can be included on some of the elements.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>Specialization of the document type sometimes needs to be made by an author. It is
+			impossible for the designer of the DTD to foresee all of the uses that the authors have
+			in mind. The designer may not even know where in the document the specialization will
+			need to take place.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>For any document type that is intended for use outside a very limited context, users
+			need flexibility to include uses which the designed of the document type has not
+			foreseen.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>By definition, document types constrain the choices that a document author can make.
+			This constraint can at times be too limiting. Document users need flexibility to use the
+			document type in ways not foreseen by the designer of the document type.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>An attribute is created which can further describe the element. This Role Attribute
+			further specializes the use of the Element.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<literallayout language="dtd">
+&lt;!ELEMENT Document (Paragraph)*&gt;
+&lt;!ELEMENT Paragraph (#PCDATA)&gt;
+&lt;!ATTLIST Paragraph Role CDATA&gt;
+</literallayout>
+
+		<para>Using the above DTD the author can create a document like this:</para>
+
+		<literallayout language="xml">
+&lt;Document&gt;
+&lt;Paragraph Role=&quot;warning&quot;&gt;
+Do not attempt this at home.
+&lt;/Paragraph&gt;
+&lt;Paragraph&gt;
+The following is a set of
+instructions for creating
+a bungee jumping cord from
+elastic bands ...
+&lt;/Paragraph&gt;
+&lt;/Document&gt;
+</literallayout>
+
+		<para>The author intends for the &quot;Do not attempt this at home&quot; paragraph to appear
+			emphasized in some way, for example in bold or in a different color. The DTD designer
+			would have had no way of knowing the special needs of the author of the document, so a
+			Role Attribute was placed on the paragraph, to allow for different types of paragraphs
+			to exist.</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Including Role Attributes allows the author to have a great deal of flexibility. The
+			flexibility may make the creation of processing software very difficult. Processing
+			software will not be able to know in advance the intention of the author. However, by
+			allowing customization of processing software through the use of scripts or stylesheet,
+			this can be a very powerful pattern. Much of the power of XSLT and CSS comes from being
+			able to add Role Attributes.</para>
+		<para>Role Attributes can be used to extend the document type without changing the structure
+			of documents. This can help extend the life of the document type between revisions, and
+			can be used to prototype new features of the document type.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>Role Attributes are almost always used on <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link> types. <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link>s are
+			created when the designer of a document type does not know all of the uses of that
+			element, and the Role Attribute allows the author of a document to make the element more
+			specialized to his or her use of the element.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>XHTML uses several Role Attributes including class and meta element in XHTML.</para>
+		<para>The XMLspec DTD Role Attribute shows a typical usage of this pattern.</para>
+	</section>
+</section>

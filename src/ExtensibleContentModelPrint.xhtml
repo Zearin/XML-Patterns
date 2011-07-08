@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Extensible Content Model</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Extensible Content Model ." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Extensible Content Model</h1>
+
+    <h2>Abstract</h2>Provide a mechanism which allows additional
+    elements to be added into existing content models.
+
+    <h2>Problem</h2>At the time of designing the document type, the
+    designer may not be able to foresee all of the uses and
+    situations where document instances will be used. To provide
+    for flexibility, the contents of elements can be made to be
+    redefinable by the document instance.
+
+    <h2>Context</h2>This is a very general mechanism that can be
+    used anytime additional flexibility is needed.
+
+    <h2>Forces</h2>Flexibility is often required for a document
+    type to be able to be used effectively. Flexibility, however
+    often makes processing of the documents more difficult.
+    Customization of software is often needed to deal with the
+    flexibility.
+
+    <h2>Solution</h2>The designer of the document can add a
+    mechanism to allow the author of a document instance to extend
+    an element definition from the document type.
+
+    <h2>Examples</h2>
+
+    <div>
+      <h3>Using DTDs</h3>
+
+      <p>This example uses a DTD that allows the document instance
+      to extend an <tt>Address</tt> element. This is done through
+      use a parameter entity which is defined in the DTD, but the
+      creator of the document instance can overwrite.</p>
+
+      <p>First a DTD is created that defines a simple
+      <tt>Address</tt> type, consisting only of the <tt>Name</tt>,
+      <tt>Street</tt> and <tt>City</tt>. Realizing that this may
+      not be enough for all users of this document type, the
+      designer defines a parameter entity called
+      <tt>local.address</tt> that is blank ("") but can be extended
+      in the document instance.</p>
+
+      <p>purchase_order.dtd</p>
+      <pre>
+            <tt>
+
+&lt;!ENTITY % local.address ""&gt;
+&lt;!ENTITY % address "Name, Street, City %local.address;"&gt;
+&lt;!ELEMENT PurchaseOrder ( Item, ShipTo, BillTo )&gt;
+&lt;!ELEMENT Item   (#PCDATA)&gt;
+&lt;!ELEMENT ShipTo (%address;)&gt;;
+&lt;!ELEMENT BillTo (%address;)&gt;;
+&lt;!ELEMENT Name   (#PCDATA)&gt;
+&lt;!ELEMENT Street (#PCDATA)&gt;
+&lt;!ELEMENT City   (#PCDATA)&gt;
+
+            </tt>
+          
+</pre>
+
+      <p>The creator of a document decides that the address defined
+      in the DTD is inadequate for the document being create, so he
+      extends the definition of an Address to include State and
+      Zip. To do this he creates his own definition of the
+      local.address Parameter Entity. This allows him to add these
+      elements to his own address structure.</p>
+
+      <p>mydoc.xml</p>
+      <pre>
+            <tt>
+
+&lt;!DOCTYPE PURCHASE_ORDER SYSTEM "purchase_order.dtd" [
+&lt;!ENTITY % local.address ", State, Zip" &gt;
+&lt;!ELEMENT State (#PCDATA)&gt;
+&lt;!ELEMENT Zip (#PCDATA)&gt;
+]&gt;
+&lt;PurchaseOrder&gt;
+&lt;Item&gt;X123&lt;/Item&gt;
+&lt;ShipTo&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/ShipTo&gt;
+&lt;BillTo&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/BillTo&gt;
+&lt;/PurchaseOrder&gt;
+
+            </tt>
+          
+</pre>
+    </div>
+
+    <div>
+      <h3>Using XML Schemas</h3>This next example uses XML Schemas
+      to do the same thing. We use the XML Schema mechanism of
+      deriving types by extension to do this. This example is based
+      on a working draft of the XML Schema proposal, so this
+      example may not be compatible with future versions of the XML
+      Schema. A schema is created to include the simple Address
+      type with a Name, Street, and City.
+
+      <p>PurchaseOrder.xsd</p>
+      <pre>
+            <tt>
+
+&lt;xsd:schema
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"&gt;
+
+&lt;xsd:element
+name="purchaseOrder"
+type="PurchaseOrderType"/&gt;
+&lt;xsd:complexType name="PurchaseOrderType"&gt;
+&lt;xsd:element name="Item"   type="xsd:string"/&gt;
+&lt;xsd:element name="ShipTo" type="Address"/&gt;
+&lt;xsd:element name="BillTo" type="Address"/&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:complexType name="Address"&gt;
+&lt;xsd:element name="Name"   type="xsd:string"/&gt;
+&lt;xsd:element name="Street" type="xsd:string"/&gt;
+&lt;xsd:element name="City"   type="xsd:string"/&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;/xsd:schema&gt;
+
+            </tt>
+          
+</pre>
+
+      <p>The author of a document realizes that this simple address
+      definition will not be adequate, so a new address type is
+      created. The new type is extended from the old type, and adds
+      the State and Zip elements.</p>
+
+      <p>US-Address.xsd</p>
+      <pre>
+            <tt>
+
+&lt;xsd:schema
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+xmlns:po="http:www.xmlpatterns.com/PurchaseOrder"&gt;
+
+&lt;xsd:complexType name="US-Address"
+base="po:Address"
+derivedBy="extension"&gt;
+&lt;xsd:element name="State"  type="xsd:string"/&gt;
+&lt;xsd:element name="Zip"    type="xsd:decimal"/&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;/xsd:schema&gt;
+
+            </tt>
+          
+</pre>
+
+      <p>To use the new address type in a document instance, both
+      of the schema files are used.</p>
+
+      <p>mydoc.xml</p>
+      <pre>
+            <tt>
+
+&lt;PurchaseOrder
+xmlns="http:www.xmlpatterns.com/PurchaseOrder"
+xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance"
+xmlns:us="http://www.xmlpatterns.com/US-Address"
+xsi:schemaLocation=
+"http://www.xmlpatterns.com/purchaseOrder.xsd
+http://www.xmlpatterns.com/US-Address.xsd"&gt;
+
+&lt;Item&gt;X123&lt;/Item&gt;
+&lt;ShipTo xsi:type="us:US-Address"&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/ShipTo&gt;
+&lt;BillTo xsi:type="us:US-Address"&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/BillTo&gt;
+&lt;/PurchaseOrder&gt;
+
+            </tt>
+          
+</pre>
+    </div>
+
+    <h2>Discussion</h2>
+
+    <p>This provides a powerful extension mechanism to the authors
+    of documents. Like with all added flexibility, the power comes
+    with a price. Extensible Content Models create new element
+    types that standard processing tools for a document type would
+    not be able to process correctly. Often customization of
+    software is needed to handle the extensions correctly.</p>
+
+    <p>This technique has the advantage of not needlessly over
+    complicating the structure of the document type if the
+    flexibility is not needed. Authors can use the document type
+    without even being aware that the extension mechanism exists.
+    The existence of these Extensible Content Models can be made
+    known only to "power users", if desired.</p>
+
+    <h2>Related Patterns</h2>This mechanism is powerful, but also
+    requires knowledge of DTD syntax to apply. Often the
+    <cite>Generic Element</cite> pattern combined with <cite>Role
+    Attribute</cite>s may be a more appropriate choice if the
+    authors of the document are not experienced with XML.
+
+    <h2>Known Uses</h2>
+
+    <p>The <cite>Information and Content Exchange (ICE) Protocol
+    Appendix A</cite>
+    (http://www.icestandard.org/servlet/RetrievePage?site=ice&amp;page=current_specs)
+    demonstrates applications of this pattern.</p>
+
+    <p>The <cite>XMLspec DTD</cite>
+    (http://www.w3.org/XML/1998/06/xmlspec-report-v21.htm#AEN258)
+    uses parameter entities to allow for customization of many
+    elements.</p>
+
+    <p>The DocBook DTD allows for the types of
+    <cite>customizations</cite>
+    (http://www.oasis-open.org/docbook/intro.html) .</p>
+
+    <h2>References</h2>See <cite>Structuring XML Documents</cite>,
+    Section 8.1.2: Adding Elements Types to a DTD.
+  </div>
+</body>
+</html>

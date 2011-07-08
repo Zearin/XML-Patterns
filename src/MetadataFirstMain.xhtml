@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Metadata First</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Metadata First." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c10 {color: #000000; font-size: 80%}
+  span.c9 {font-size: 64%}
+  span.c8 {font-size: 80%}
+  span.c7 {color: #000000; font-size: 64%}
+  div.c6 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c6">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c7"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XML Design Patterns Blog" href=
+            "blog/index.html" class="navLink">Blog</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c8">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c9">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Metadata First
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "MetadataFirstPrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>Metadata
+                        should appear in a document before the data
+                        which it is about.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>Many
+                        processors (for example SAX based parsers)
+                        are stream based. That is, the document is
+                        processed as it is read in, the whole
+                        document is never held in memory at the
+                        same time. If a piece of metadata appears
+                        after the data it refers to, the
+                        application software will need to store the
+                        data, then read the metadata in order to
+                        know what to do with the data.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>Anywhere in
+                        the document that metadata appears.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>The
+                        ease and speed of processing a document can
+                        be effected by the order in which the
+                        structures of the document appear.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>
+
+                        <p>Always make sure that metadata appears
+                        in a document before the data it refers to.
+                        This can be done whether the metadata is
+                        attribute data or element data.</p>
+
+                        <p>For example, with the following
+                        code,</p>
+                        <pre>
+                              <span class="sample">
+
+&lt;Heading&gt;
+This is a new section&lt;Font size="3"/&gt;
+&lt;/Heading&gt;
+
+                              </span>
+                            
+</pre>If the processing software were trying to send this
+information to a printer, it would need to save the text of the
+heading, read in the font size, send the font size command to the
+printer, and then send the text to the printer. If the font element
+appeared before the text, there would be no need to save the text.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>This
+                        example shows a table element with the
+                        height and width elements appearing before
+                        the actual data of the table. This allows
+                        the processing software to start rendering
+                        the table as the data is read in. If the
+                        height and width of the table came after
+                        the table data, the processing software
+                        would need to read in and save all the data
+                        before starting to display it.
+                        <pre>
+                            <span class="sample">
+
+&lt;Table&gt;
+&lt;height unit="pixels"&gt;100&lt;/height&gt;
+&lt;width unit="pixels"&gt;100&lt;/width&gt;
+&lt;Row&gt;&lt;Col&gt;2&lt;/Col&gt;&lt;Col&gt;3&lt;/Col&gt;&lt;/Row&gt;
+&lt;Row&gt;&lt;Col&gt;8&lt;/Col&gt;&lt;Col&gt;7&lt;/Col&gt;&lt;/Row&gt;
+&lt;/Table&gt;
+
+                            </span>
+                          
+</pre>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>Placing the
+                        metadata before the data that it is about
+                        will often simplify processing software.
+                        This is also often a natural way for people
+                        to think about the data, making documents
+                        easier to read and author.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>The
+                        ordering of the head and body element in
+                        the <a href=
+                        "HeadBodyMain.shtml">Head-Body</a> pattern
+                        is an application of this pattern.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>In XHTML The
+                        <span class="sample">head</span>, which
+                        contains metadata, and <span class=
+                        "sample">body</span> which contains the
+                        content are always in that order. The
+                        <span class="sample">table</span> elements
+                        contain size and spacing data in the
+                        attributes of the <span class=
+                        "sample">table</span> element, which places
+                        it before the data, and the caption and
+                        column width and spacing data appears
+                        before the table data itself.
+                      </div><br />
+                      <hr />
+                    </div>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c9"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c10">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/MetadataFirstMain.shtml"
+                  dc:title="XML Design Pattern - Metadata First"
+                  dc:identifier="http://www.xmlpatterns.com/MetadataFirstMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

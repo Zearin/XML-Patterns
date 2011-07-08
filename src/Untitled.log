@@ -1,0 +1,233 @@
+Nov 19, 2009 12:30:53 PM
+
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://c2.com/doc/oopsla87.html",
+	referenced from "http://www.xmlpatterns.com/intro2.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0136422993/xmlpatterns?creative=125581&camp=2321&link_code=as1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0136142230/qid%253D1077840733/sr%253D11-1/ref%253Dsr%255F11%255F1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0133098818/qid%253D1077840911/sr%253D11-1/ref%253Dsr%255F11%255F1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/redirect?tag=xmlpatterns&path=tg/detail/-/0764543814/qid=1077843957/sr=1-1",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0195024028/qid%253D1077841139/sr%253D11-1/ref%253Dsr%255F11%255F1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0195019199/qid%253D1077841279/sr%253D11-1/ref%253Dsr%255F11%255F1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0201633612/qid%253D1077841399/sr%253D11-1/ref%253Dsr%255F11%255F1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.amazon.com/exec/obidos/ASIN/0201432935/qid%253D1077841515/sr%253D11-1/ref%253Dsr%255F11%255F1/xmlpatterns",
+	referenced from "http://www.xmlpatterns.com/books.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://ismir2003.ismir.net/papers/Roland.PDF",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/2000/01/19/feature/index.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/02/16/feature/index.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.utoronto.ca/ian/books/xmlbook/patterns.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2003/03/26/patterns.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.iam.unibe.ch/~ponisio/files/PLoP2001_mlponisio0_3.pdf",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://xmleverywhere.com/WhitePapers/xml-acceptor.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2002/09/04/strucpatterns.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://theserverside.com/patterns/index.jsp",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.designpattern.lu.unisi.ch/HypermediaHomePage.htm",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.cmcrossroads.com/bradapp/docs/patterns-intro.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.infoloom.com/gcaconfs/WEB/granada99/bos.HTM",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.oasis-open.org/cover/elementsAndAttrs.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.org/xml/registry.jsp",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.schema.net/",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.oasis-open.org/cover/xml.html",
+	referenced from "http://www.xmlpatterns.com/links.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/blog/",
+	referenced from "http://www.xmlpatterns.com/alphaAllPatterns.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xmlpitstop.com/Default.asp?DataType=PATTERNS",
+	referenced from "http://www.xmlpatterns.com/about.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www-106.ibm.com/developerworks/xml/library/x-secrtdb.html",
+	referenced from "http://www.xmlpatterns.com/about.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://weblogs.asp.net/jtobler/archive/2004/04/22/118438.aspx",
+	referenced from "http://www.xmlpatterns.com/about.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/xmlschema-0/",
+	referenced from "http://www.xmlpatterns.com/CatchAllElementMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://xml.coverpages.org/MLS-rsdesign.html",
+	referenced from "http://www.xmlpatterns.com/CatchAllElementMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://docbook.org/xml/index.html",
+	referenced from "http://www.xmlpatterns.com/CollectionElementMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/xhtml1/",
+	referenced from "http://www.xmlpatterns.com/ContentTypeLabelMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.altheim.com/specs/xhtml/NOTE-xhtml-modular.html",
+	referenced from "http://www.xmlpatterns.com/ContentTypeLabelMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/XML/1998/06/xmlspec-report-v21.htm",
+	referenced from "http://www.xmlpatterns.com/CommonAttributesMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/SOAP/",
+	referenced from "http://www.xmlpatterns.com/EnvelopeMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.icestandard.org/servlet/RetrievePage?site=ice&page=current_specs",
+	referenced from "http://www.xmlpatterns.com/ExtensibleContentModelMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.oasis-open.org/docbook/intro.html",
+	referenced from "http://www.xmlpatterns.com/ExtensibleContentModelMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.isogen.com/papers/oosgml.html",
+	referenced from "http://www.xmlpatterns.com/ContainerElementMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/REC-xml",
+	referenced from "http://www.xmlpatterns.com/FlyweightMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/xlink/",
+	referenced from "http://www.xmlpatterns.com/FlyweightMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.infoloom.com/gcaconfs/WEB/TOC/t0302_.HTM",
+	referenced from "http://www.xmlpatterns.com/MarketplaceMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.icestandard.org/",
+	referenced from "http://www.xmlpatterns.com/DomainElementMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.oasis-open.org/docbook/",
+	referenced from "http://www.xmlpatterns.com/MultiRootDTDMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.utoronto.ca/ian/books/xmlbook/Footnote.html",
+	referenced from "http://www.xmlpatterns.com/ReferencedNoteMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/REC-xml-names/",
+	referenced from "http://www.xmlpatterns.com/SeparateMetadataAndDataMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/Style/",
+	referenced from "http://www.xmlpatterns.com/RoleAttributeMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.icestandard.org",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://w.moreover.com/",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2002/12/18/dive-into-xml.html",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://java.sun.com/xml/ns/j2ee/",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://xmltestsuite.sourceforge.net/",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.cs.rpi.edu/~puninj/LOGML/",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.rpbourret.com/xml/ProdsCMS.htm",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.openmobilealliance.org/",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.simonstl.com/articles/whyxml.htm",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.digitalearth.net.cn/GISRelatedITIssues/XML/IBM-Ten%20best%20bets%20for%20XML%20applications.pdf",
+	referenced from "http://www.xmlpatterns.com/UseXMLMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/",
+	referenced from "http://www.xmlpatterns.com/xmlLinks.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xmlhack.com/",
+	referenced from "http://www.xmlpatterns.com/xmlLinks.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.oasis-open.org/cover/",
+	referenced from "http://www.xmlpatterns.com/xmlLinks.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xslt.com/",
+	referenced from "http://www.xmlpatterns.com/xmlLinks.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3c.org/TR/xslt",
+	referenced from "http://www.xmlpatterns.com/xmlLinks.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.dpawson.co.uk/xsl/xslfaq.html",
+	referenced from "http://www.xmlpatterns.com/xmlLinks.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/01/19/feature/index.html?page=2",
+	referenced from "http://www.xmlpatterns.com/Command-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/01/19/feature/index.html?page=3",
+	referenced from "http://www.xmlpatterns.com/Flyweight-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/01/19/feature/index.html?page=5",
+	referenced from "http://www.xmlpatterns.com/Iterator-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/02/16/feature/index.html?page=4",
+	referenced from "http://www.xmlpatterns.com/Marker-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.utoronto.ca/ian/books/xmlbook/GeneratedText.html",
+	referenced from "http://www.xmlpatterns.com/GeneratedText-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2003/03/26/patterns.html?page=2",
+	referenced from "http://www.xmlpatterns.com/SelfDocumentingFiles-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.utoronto.ca/ian/books/xmlbook/TextBlocks.html",
+	referenced from "http://www.xmlpatterns.com/TextBlocks-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.utoronto.ca/ian/books/xmlbook/RunningText.html",
+	referenced from "http://www.xmlpatterns.com/RunningText-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/01/19/feature/index.html?page=4",
+	referenced from "http://www.xmlpatterns.com/Wrapper-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.xml.com/pub/a/2000/02/16/feature/index.html?page=2",
+	referenced from "http://www.xmlpatterns.com/XMLable-Offsite.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://www.xmlpatterns.com/cgi-bin/leave.cgi?http://www.w3.org/TR/xslt",
+	referenced from "http://www.xmlpatterns.com/RoleAttributeMain.shtml",
+	failed with error code 404 (file not found)
+ERROR: Download of "http://blog.docuverse.com/EntryViewPage.aspx?guid=831",
+	referenced from "http://www.xmlpatterns.com/HeadBodyMain.shtml",
+	failed with error code 404 (file not found)
+STATUS: Level = 4, Files Downloaded = 98, Errors = 75
+
+Nov 19, 2009 12:31:08 PM
+
+---------------------
+

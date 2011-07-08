@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Domain Element</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Domain Element." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Domain Element</h1>
+
+    <h2>Abstract</h2>A concept from domain analysis is made into an
+    element.
+
+    <h2>Problem</h2>A concept in the domain needs to be recognized
+    as a distinct unit of information when processing it.
+
+    <h2>Context</h2>Every document has a domain, and every domain
+    has unique concepts.
+
+    <h2>Forces</h2>Data needs to be structured in order to be
+    processed.
+
+    <h2>Solution</h2>Concepts from the domain become elements in
+    the document.
+
+    <h2>Examples</h2>In a payroll processing system, Employees,
+    Hourly Wage, and Hours Worked are all concepts from the domain.
+    These can all be made into elements in a document type used for
+    dealing with the payroll.
+    <pre>
+        <tt>
+
+&lt;Employee id="62537"&gt;
+&lt;HourlyWage&gt;25.00&lt;/HourlyWage&gt;
+&lt;HoursWorked&gt;40&lt;/HoursWorked&gt;
+&lt;/Employee&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>
+
+    <div>
+      Object Oriented Analysis and Entity-Relational DataBase
+      modeling techniques are useful for finding domain concepts.
+    </div>
+
+    <div>
+      Granularity of object needs to be thought about. Too granular
+      results in more markup and more processing, if elements are
+      not granular enough, extra parsing needs to be done by the
+      application.
+    </div>
+
+    <h2>Related Patterns</h2>
+
+    <h2>Known Uses</h2>
+
+    <div>
+      All document types are full of Domain Elements.
+    </div>
+
+    <div>
+      XHTML is used for markup of documents to be displayed so it
+      contains elements for things such as titles, headings, and
+      paragraphs.
+    </div>
+
+    <div>
+      <cite>The Information and Content Exchange (ICE)
+      Protocol</cite> (http://www.icestandard.org/) is used for
+      distributing web content, so it contains elements such as
+      sender, receiver, request and response.
+    </div>
+  </div>
+</body>
+</html>

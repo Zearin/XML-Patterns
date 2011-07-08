@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Multiple Document Types</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Multiple Document Types." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Multiple Document Types</h1>
+
+    <h2>Abstract</h2>When a system needs to represent a range of
+    different document types, each document type can be represented
+    by a completely separate declarations.
+
+    <h2>Problem</h2>A system needs to represent different types of
+    information. This information may be used at different times,
+    or may be used by different parts of the system.
+
+    <h2>Context</h2>Systems which need to represent a variety of
+    information at different times or places.
+
+    <h2>Forces</h2>Processing and authoring of documents can be
+    simplified if different document types are used to represent
+    different sets of data.
+
+    <h2>Solution</h2>Use different document types to represent
+    different sets of data within the system.
+
+    <h2>Examples</h2>
+
+    <div>
+      In a payroll system, data about the Employees, and data about
+      the hours they work can be represented by separate documents.
+    </div>Employees.dtd:
+    <pre>
+        <tt>
+
+&lt;!ELEMENT Employee (Name, HourlyRate)&gt;
+&lt;!ATTLIST Employee id ID #REQUIRED&gt;
+
+&lt;!ELEMENT Name (#PCDATA)&gt;
+
+&lt;!ELEMENT HourlyRate (#PCDATA)&gt;
+
+        </tt>
+      
+</pre>HoursWorked.dtd:
+    <pre>
+        <tt>
+
+&lt;!ELEMENT PayPeriod (Employee+)&gt;
+&lt;!ATTLIST PayPeriod
+StartDate #CDATA
+EndDate   #CDATA&gt;
+
+&lt;!ELEMENT Employee (HoursWorked)&gt;
+&lt;!ATTLIST Employee id NMTOKEN&gt;
+
+&lt;!ELEMENT HoursWorked (#PCDATA)&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>
+
+    <div>
+      If different people will authoring the different types of
+      documents it is a good idea to have completely separate
+      document types, because authors will not need to be exposed
+      to parts of the document types that are not needed.
+    </div>
+
+    <div>
+      Having separate document types allows the different DTDs to
+      be versioned independently.
+    </div>
+
+    <h2>Related Patterns</h2><cite>Universal Root</cite> allows
+    multiple types of data under one document root. <cite>Multi
+    Root Document Types</cite> allows for multiple types of
+    documents to be declared in a single declaration.
+
+    <h2>Known Uses</h2>
+  </div>
+</body>
+</html>

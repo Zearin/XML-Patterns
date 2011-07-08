@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-patterns>
+	<category title="Document Roots">
+		<pattern title="Multi Root Document Types" />
+		<pattern title="Multiple Document Types" />
+		<pattern title="Universal Root" />
+	</category>
+	<category title="Metadata">
+		<pattern title="Head-Body" />
+		<pattern title="Metadata First" />
+		<pattern title="Metadata in Separate Document" />
+		<pattern title="Separate Metadata and Data" />
+	</category>
+	<category title="Abstraction">
+		<pattern title="Choice Reducing Container" />
+		<pattern title="Collection Element" />
+		<pattern title="Container Element" />
+		<pattern title="Domain Element" />
+		<pattern title="Optional Container Element" />
+	</category>
+	<category title="Organization">
+		<pattern title="Declare Before First Use" />
+		<pattern title="Envelope" />
+		<pattern title="Flyweight" />
+		<pattern title="Marketplace" />
+		<pattern title="Referenced Note" />
+	</category>
+	<category title="Flexibility">
+		<pattern title="Catch-All Element" />
+		<pattern title="Extensible Content Model" />
+		<pattern title="Generic Element" />
+		<pattern title="Role Attribute" />
+	</category>
+	<category title="Consistency">
+		<pattern title="Common Attributes" />
+		<pattern title="Consistent Element Set" />
+		<pattern title="Parallel Design" />
+	</category>
+	<category title="Miscellaneous">
+		<pattern title="Content Type Label" />
+		<pattern title="Reuse Document Types" />
+		<pattern title="Short Understandable Names" />
+		<pattern title="Use XML" />
+	</category>
+</xml-patterns>

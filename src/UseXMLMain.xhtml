@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Use XML</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Use XML." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c98 {color: #000000; font-size: 80%}
+  div.c97 {margin-left: 2em}
+  span.c96 {font-size: 64%}
+  span.c95 {font-size: 80%}
+  span.c94 {color: #000000; font-size: 64%}
+  div.c93 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c93">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c94"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c95">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c96">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Use XML
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "UseXMLPrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>XML
+                        technology can be used to represent
+                        structured information. This pattern helps
+                        determine when XML is an appropriate
+                        solution.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>When data
+                        in a system needs to be imported or
+                        exported, it needs some type of
+                        representation. There are many possible
+                        representations for example: Comma
+                        Separated Values, Java Object
+                        Serialization, Proprietary Binary Formats,
+                        HTML, CORBA IIOP Streams, RDBMS tables, and
+                        of course XML. Choosing the proper
+                        representation for the data can be
+                        difficult.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>XML can be
+                        an appropriate choice when one or more of
+                        the following is needed:
+
+                        <ul>
+                          <li>Content needs to be separate from its
+                          formatting.</li>
+
+                          <li>Data is shared between computers,
+                          applications or organizations.</li>
+
+                          <li>Human readable representation is
+                          needed.</li>
+
+                          <li>Readily available tools and
+                          resources.</li>
+                        </ul>There are some situations where XML
+                        may not be a good choice, among them is
+                        systems where:
+
+                        <ul>
+                          <li>Terseness is important.</li>
+
+                          <li>In a homogeneous environment.</li>
+                        </ul>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>There
+                        are many forces to take into account when
+                        considering a data representation. Among
+                        the ones that XML can provide are
+                        simplicity, openness, extensibility,
+                        interoperability, and a technology with
+                        proven use.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>Use XML
+                        for data representations.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>It is
+                        impossible to have a complete discussion of
+                        the factors involved in make the decision
+                        of a data representation in the space of a
+                        single pattern, but it can try to provide
+                        some pointers.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>All
+                        other patterns in this language depend on
+                        first using this pattern, because they
+                        assume that XML is being used.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>There are
+                        many places where XML is being used
+                        successfully. Here is a small sampling of
+                        them.
+
+                        <ul>
+                          <li>Data syndication. XML has been
+                          popular in this area, and several XML
+                          languages have been developed for this
+                          purpose.
+
+                            <ul>
+                              <li><a href=
+                              "cgi-bin/leave-47770.cgi">The
+                              Information and Content Exchange
+                              (ICE) Protocol</a></li>
+
+                              <li><a href=
+                              "cgi-bin/leave-5464.cgi">moreover.com</a>
+                              provides news feeds in several
+                              different XML flavors.</li>
+
+                              <li>News can be syndicated to
+                              browsers via <a href=
+                              "cgi-bin/leave-25521.cgi">Rich Site
+                              Summary</a></li>
+                            </ul>
+                          </li>
+
+                          <li>Data exchange protocols for transport
+                          of messages from one system to another
+                          across a network.
+
+                            <ul>
+                              <li><a href=
+                              "cgi-bin/leave-59411.cgi">SOAP
+                              (Simple Object Access
+                              Protocol)</a></li>
+                            </ul>
+                          </li>
+
+                          <li>Configuration files
+
+                            <div class="c97">
+                              J2EE uses <a href=
+                              "cgi-bin/leave-7801.cgi">Deployment
+                              Descriptors</a> to configure various
+                              components
+                            </div>
+                          </li>
+
+                          <li>Test Scripting
+
+                            <div class="c97">
+                              The <a href=
+                              "cgi-bin/leave-10604.cgi">XML Test
+                              Suite</a>
+                            </div>
+                          </li>
+
+                          <li>Log files
+
+                            <div class="c97">
+                              The <a href=
+                              "cgi-bin/leave-32815.cgi">LOGML</a>
+                              specification is designed to describe
+                              log reports of web servers
+                            </div>
+                          </li>
+
+                          <li>Web content management
+
+                            <ul>
+                              <li>See <a href=
+                              "cgi-bin/leave-59992.cgi">Ronald
+                              Bourret's Content Management Systems
+                              page</a></li>
+                            </ul>
+                          </li>
+
+                          <li><a href=
+                          "cgi-bin/leave-60159.cgi">Wireless
+                          Application Data (WAP)</a></li>
+                        </ul>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">eferences:</span></p>
+
+                        <p>For more information:</p>
+
+                        <p>Simon St. Laurent's Essay - <a href=
+                        "cgi-bin/leave-13488.cgi">Why XML?</a>
+                        .</p>
+
+                        <p>A whitepaper by Bob Schloss <a href=
+                        "cgi-bin/leave-40817.cgi">Ten best bets for
+                        XML applications</a></p>
+                      </div><br />
+                      <hr />
+                    </div>
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c96"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c98">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/UseXMLMain.shtml"
+                  dc:title="XML Design Pattern - Use XML"
+                  dc:identifier="http://www.xmlpatterns.com/UseXMLMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Separate Metadata and Data</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Separate Metadata and Data." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Separate Metadata and Data</h1>
+
+    <h2>Abstract</h2>When documents contain content and data about
+    the content, the two types of data should be clearly separated.
+
+    <h2>Problem</h2>A document contains two distinct types of data,
+    the content of the document, and data about the content. The
+    data about the content is referred to as metadata. Since a
+    document contains these two different types of data, it is not
+    always to distinguish between the two types of data. For
+    example:
+    <pre>
+        <tt>
+
+&lt;ArticleSummaries&gt;
+&lt;Author&gt;Phred Smith&lt;/Author&gt;
+&lt;Name&gt;Patterns of Stereo Design&lt;/Name&gt;
+&lt;Author&gt;J.R. Dolby&lt;/Author&gt;
+&lt;Summary&gt;
+Use of patterns to arrange stereo components.
+&lt;/Summary&gt;
+&lt;/ArticleSummary&gt;
+
+        </tt>
+      
+</pre>Here there are two instances of the Author element, and at
+first glance it might not be possible to tell what the first
+instance of Author represents. Is it the author of the article
+being summarized? Is it the author of the article itself? It can be
+difficult to distinguish metadata from data.
+
+    <h2>Context</h2>Data about the data needs to be included in a
+    document. This could be things like the author's name, the
+    creation date, security levels of the data, namespace
+    information, schema information, or identification attributes
+    for use with cross references.
+
+    <h2>Forces</h2>A clear separation is needed between what is
+    metadata and what is data that forms the body of the document.
+    This affects ease of authoring and processing of the document
+    because the context of the data is clear.
+
+    <h2>Solution</h2>The context of the data and the metadata
+    should be made clear. The metadata should usually appear before
+    the data that it describes. This makes it clearer what the
+    metadata is about, and allows processing software to know about
+    the data before it actually gets the data. For example the size
+    of a table might be considered metadata. If the processing
+    software gets the size of the table before the actual data, it
+    can layout the table and then insert t he data in the proper
+    place as it encounters it.
+
+    <h2>Examples</h2>See the <cite>Metadata in Separate
+    Document</cite>, <cite>Head-Body</cite> patterns for examples.
+
+    <h2>Discussion</h2>The resulting context provides structures
+    that clearly identify the metadata as metadata. Often this
+    pattern introduces new constructs to the document, so the
+    overall length of the document may be increased. Authors and
+    processing software need to clearly distinguish between
+    metadata and content. This is not always possible to tell from
+    the element names or positions. It is better to provide a
+    context that will disambiguate the types of data. Obviously the
+    first step in using this pattern is to be able to identify the
+    difference between metadata and data. This is not always an
+    easy task.
+
+    <h2>Related Patterns</h2><cite>Metadata in Separate
+    Document</cite>, <cite>Head-Body</cite> are specializations of
+    this pattern.
+
+    <h2>Known Uses</h2>
+
+    <div>
+      The <cite>W3C Namespace Recommendation</cite>
+      (http://www.w3.org/TR/REC-xml-names/) includes namespace
+      information in attributes that make it clearer that this is
+      data about the documents, and not really part of the document
+      itself.
+    </div>
+
+    <div>
+      The XHTML DTD uses Head and Body elements to distinguish the
+      metadata from the data.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Role Attribute</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Role Attribute." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Role Attribute</h1>
+
+    <h2>Abstract</h2>Sometimes the designer of a DTD can not
+    foresee all of the needs that the author of a document will
+    have. In order to give the author flexibility an attribute that
+    specifies a role can be included on some of the elements.
+
+    <h2>Problem</h2>Specialization of the document type sometimes
+    needs to be made by an author. It is impossible for the
+    designer of the DTD to foresee all of the uses that the authors
+    have in mind. The designer may not even know where in the
+    document the specialization will need to take place.
+
+    <h2>Context</h2>For any document type that is intended for use
+    outside a very limited context, users need flexibility to
+    include uses which the designed of the document type has not
+    foreseen.
+
+    <h2>Forces</h2>By definition, document types constrain the
+    choices that a document author can make. This constraint can at
+    times be too limiting. Document users need flexibility to use
+    the document type in ways not foreseen by the designer of the
+    document type.
+
+    <h2>Solution</h2>An attribute is created which can further
+    describe the element. This role attribute further specializes
+    the use of the Element.
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;!ELEMENT Document (Paragraph)*&gt;
+&lt;!ELEMENT Paragraph (#PCDATA)&gt;
+&lt;!ATTLIST Paragraph Role CDATA&gt;
+
+        </tt>
+      
+</pre>
+
+    <p>Using the above DTD the author can create a document like
+    this:</p>
+    <pre>
+        <tt>
+
+&lt;Document&gt;
+&lt;Paragraph Role="warning"&gt;
+Do not attempt this at home.
+&lt;/Paragraph&gt;
+&lt;Paragraph&gt;
+The following is a set of
+instructions for creating
+a bungee jumping cord from
+elastic bands ...
+&lt;/Paragraph&gt;
+&lt;/Document&gt;
+
+        </tt>
+      
+</pre>
+
+    <p>The author intends for the "Do not attempt this at home"
+    paragraph to appear emphasized in some way, for example in bold
+    or in a different color. The DTD designer would have had no way
+    of knowing the special needs of the author of the document, so
+    a Role Attribute was placed on the paragraph, to allow for
+    different types of paragraphs to exist.</p>
+
+    <h2>Discussion</h2>
+
+    <p>Including role attributes allows the author to have a great
+    deal of flexibility. The flexibility may make the creation of
+    processing software very difficult. Processing software will
+    not be able to know in advance the intention of the author.
+    However, by allowing customization of processing software
+    through the use of scripts or stylesheet, this can be a very
+    powerful pattern. Much of the power of <cite>XSLT</cite>
+    (http://www.w3.org/TR/xslt) and <cite>CSS</cite>
+    (http://www.w3.org/Style/) comes from being able to add Role
+    Attributes.</p>
+
+    <p>Role attributes can be used to extend the document type
+    without changing the structure of documents. This can help
+    extend the life of the document type between revisions, and can
+    be used to prototype new features of the document type.</p>
+
+    <h2>Related Patterns</h2>Role attributes are almost always used
+    on <cite>Generic Element</cite> types. Generic Elements are
+    created when the designer of a document type does not know all
+    of the uses of that element, and the Role Attribute allows the
+    author of a document to make the element more specialized to
+    his or her use of the element.
+
+    <h2>Known Uses</h2>
+
+    <p>XHTML uses several role attributes including <tt>class</tt>
+    and <tt>meta</tt> element in XHTML.</p>
+
+    <p>The <cite>XMLspec DTD role attribute</cite>
+    (http://www.w3.org/XML/1998/06/xmlspec-report-v21.htm#AEN620)
+    shows a typical usage of this pattern.</p>
+  </div>
+</body>
+</html>

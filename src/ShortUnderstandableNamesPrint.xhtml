@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Short Understandable Names</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Short Understandable Names." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Short Understandable Names</h1>
+
+    <h2>Abstract</h2>Names of elements and attributes should short
+    and understandable by authors and developers of processing
+    software.
+
+    <h2>Problem</h2>Names need to be given to each attribute and
+    name.
+
+    <h2>Context</h2>This pattern can be used in any document type.
+    All documents have named elements and attributes.
+
+    <h2>Forces</h2>Shorter names make the authoring of documents
+    easier and reduces the overall length of documents. Names that
+    are too short make the document difficult to understand.
+
+    <h2>Solution</h2>Use names that are long enough to convey the
+    meaning of the document to its intended audience, but are short
+    enough to be typed easily. Similar naming length issues are
+    seen in programming languages.
+
+    <h2>Examples</h2>A element name such as
+    <tt>TelephoneDescription</tt> is fairly long,
+    <tt>PhoneDescription</tt> or <tt>PhoneDesc</tt> might be more
+    appropriate choices.
+
+    <h2>Discussion</h2>
+
+    <div>
+      Use well known terms and abbreviations from the domain that
+      the document deals with. These terms and abbreviations should
+      be used consistently throughout the document. The audience of
+      the document must be kept in mind, too much jargon can
+      intimidate novices very quickly.
+    </div>
+
+    <div>
+      Context can be take into account to shorten names as well. In
+      the following sample:
+      <pre>
+          <tt>
+
+            &lt;Telephone&gt;
+            &lt;TelephoneModelName&gt;X-259&lt;/TelephoneModelName&gt;
+            &lt;/Telephone&gt;
+
+          </tt>
+        
+</pre>The element name <tt>TelephoneModelName</tt> could easily be
+shortened to <tt>ModelName</tt> without loosing any
+understandability of the document.
+    </div>
+
+    <h2>Related Patterns</h2>
+
+    <h2>Known Uses</h2>HTML uses many element names which are
+    shortened beyond understandability, for example the <tt>b</tt>,
+    <tt>i</tt>, <tt>dt</tt>, and <tt>ul</tt> elements are very
+    cryptic to novice users. Element names such as <tt>font</tt>
+    and <tt>img</tt> convey much more meaning, and are not long
+    enough to cause problems.
+  </div>
+</body>
+</html>

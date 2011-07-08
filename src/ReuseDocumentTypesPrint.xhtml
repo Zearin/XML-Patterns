@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Reuse Document Types</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Reuse Document Types." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Reuse Document Types</h1>
+
+    <h2>Abstract</h2>If document types already exist for the job at
+    hand, they can be reused completely or parts of them can be
+    reused.
+
+    <h2>Problem</h2>A new set of data needs to be marked up with
+    XML and a document type is needed.
+
+    <h2>Context</h2>This applies to almost every project. Before
+    starting to create a new document type, existing ones that can
+    be used should be looked for.
+
+    <h2>Forces</h2>
+
+    <div>
+      Reusing existing data cuts down on development costs and
+      times.
+    </div>
+
+    <div>
+      Using industry standard document types increases chances that
+      existing tools can be used out of the box, and allows for
+      future interoperability.
+    </div>
+
+    <h2>Solution</h2>Reuse an existing document type. If an
+    industry standard document type already exists, it should be
+    reused.
+
+    <h2>Examples</h2>
+
+    <h2>Discussion</h2>Before anybody creates a new document type,
+    existing document types should be investigated.
+
+    <div>
+      <h3>Complete Reuse</h3>Ideally a document type will exist
+      that precisely matches the needs of the project. This can be
+      beneficial in many areas:
+
+      <ul>
+        <li>Decrease development time and cost</li>
+
+        <li>Reuse of Experience. Often developers of existing
+        documents are groups of experienced experts who have put
+        significant time into the development of the document type,
+        and will produce high quality document types.</li>
+
+        <li>Interoperability. Use of industry standard document
+        types will increase the chance that the system will
+        interoperate with other systems.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Partial Reuse</h3>If existing document types do not
+      exactly match the needs of the project, they can be partially
+      reused. Modification can be made to document types to allow
+      this partial reuse. The easiest way to do this is simply to
+      edit the existing document type. Some document types may
+      allow for customization through techniques such as
+      <cite>Extensible Content Model</cite> . Partially reusing
+      document types still has the benefits of decreasing
+      development time and cost, and reusing experience, but will
+      not allow for interoperabilty. If interoperabilty is a
+      desired goal of the system, modification of existing document
+      types must be looked at very carefully.
+    </div>
+
+    <h2>Related Patterns</h2>
+
+    <h2>Known Uses</h2>Many of the document types found in the
+    references section are being reused in multiple projects.
+
+    <h2>References</h2>There are several sources of existing
+    schemas on the web: <cite>XML.org's Catalog</cite>
+    (http://www.xml.org/xml/registry.jsp) <cite>Schema.net</cite>
+    (http://www.schema.net/)
+  </div>
+</body>
+</html>

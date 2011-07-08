@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Marketplace</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Marketplace." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Marketplace</h1>
+
+    <h2>Abstract</h2>Instead of organizing objects in a
+    hierarchical fashion, objects are organized in a linear way,
+    with signs on each object to indicate its classifications.
+
+    <h2>Problem</h2>A natural way to use mark up to classify
+    objects is to use a container for each new type in the
+    classification.
+    <pre>
+        <tt>
+
+&lt;Employees&gt;
+&lt;Managers&gt;
+&lt;Person type="salaried"&gt;
+Riff Raff
+&lt;/Person&gt;
+&lt;Person type="contractor"&gt;
+Frank Furter
+&lt;/Person&gt;
+&lt;/Managers&gt;
+&lt;Workers&gt;
+&lt;Person type="salaried"&gt;
+Brad Majors
+&lt;/Person&gt;
+&lt;Person type="contractor"&gt;
+Janet Weiss
+&lt;/Person&gt;
+&lt;/Workers&gt;
+&lt;/Employees&gt;
+
+        </tt>
+      
+</pre>This can lead to problems, if processing software needs to
+find all of the employees, or just the salaried employees, it needs
+to iterate through two different lists, the managers and the
+workers.
+
+    <h2>Context</h2>Any place where data can be organized by more
+    than one type.
+
+    <h2>Forces</h2>Ease-of-processing can be greatly affected by
+    the way that elements are organized. Ease-of-Authoring can also
+    be a problem, pick one structural organization can lead to
+    awkward groupings of elements, and the choice of structure may
+    seem arbitrary.
+
+    <h2>Solution</h2>The objects to be modeled can all be grouped
+    at the same level, and the categorization can be done with
+    attributes on the element. This allows multiple characteristics
+    of the objects to be modeled without enforcing a possibly
+    artificial hiearchy on the objects.
+
+    <h2>Examples</h2>
+
+    <div>
+      The following model can be contrasted to the sample in the
+      problem section, which uses a tree structure to model
+      employees. Each employee can have two different types,
+      whether they are Salaried or Contractors and whether they are
+      Workers or Managers. In the tree structure, one of the types,
+      the Worker/Manager distinction is given more importance than
+      the Salaried/Contractor. Extra effort would be required to
+      extract just the Salaried employees.
+    </div>
+
+    <div>
+      The sample below uses the Marketplace pattern to organize the
+      same data into a flatter structure. In this organization both
+      types are given equal precedence, and both types are equally
+      easy to process.
+    </div>
+    <pre>
+        <tt>
+
+&lt;Employees&gt;
+&lt;Person type="salaried" level="manager"&gt;
+Riff Raff
+&lt;/Person&gt;
+&lt;Person type="contractor" level="manager"&gt;
+Frank Furter
+&lt;/Person&gt;
+&lt;Person type="salaried" level="worker"&gt;
+Brad
+&lt;/Person&gt;
+&lt;Person type="contractor" level="worker"&gt;
+Janet
+&lt;/Person&gt;
+&lt;/Employees&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>This pattern results in a organization that
+    can make mapping to database tables easier. The elements in the
+    marketplace are equivalent to rows in a table, while the
+    attributes are the columns. A more hierarchical structure can
+    be harder to map to databases.
+
+    <h2>Related Patterns</h2>The Marketplace is often contained in
+    a <cite>Collection Element</cite>.
+
+    <h2>Known Uses</h2>
+
+    <h2>References</h2>See:The Microsoft whitepaper
+    <cite>Serializing Graphs of Data in XML</cite>
+    (http://www.infoloom.com/gcaconfs/WEB/TOC/t0302_.HTM) for a
+    discussion of representing graph structure such as RDBMS tables
+    in XML.
+  </div>
+</body>
+</html>

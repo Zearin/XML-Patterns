@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Declare Before First Use</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Declare Before First Use." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Declare Before First Use</h1>
+
+    <h2>Abstract</h2>Elements which are referenced by another part
+    of a document should be found earlier in the document than the
+    first place they are referenced.
+
+    <h2>Problem</h2>Often an element will refer to another one;
+    this is what the ID and IDREF attributes in XML are used for. A
+    common example is a footnote element. When processing software
+    encounters an reference to an element that has not yet been
+    processed, it often has to do more processing.
+
+    <h2>Context</h2>This pattern applies to a wide variety of
+    document types. It is common to have elements reference one
+    another.
+
+    <h2>Forces</h2>Ease of processing is effected by element order.
+    Having elements in the correct order can make processing
+    easier.
+
+    <h2>Solution</h2>Ensure that the elements are ordered so that
+    elements are encountered before they are referred to. This
+    gives the processing software a better chance of doing a single
+    pass traversal of the document.
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;!DOCTYPE Doc [
+
+&lt;!ELEMENT Person (Adress*, BillToAddress, ShipToAddress)&gt;
+
+&lt;!ELEMENT Address (#PCDATA)&gt;
+&lt;!ATTLIST Address id IDREF #REQUIRED &gt;
+
+&lt;!ELEMENT BillToAddress EMPTY&gt;
+&lt;!ATTLIST BillToAddress address IDREF #REQUIRED&gt;
+
+&lt;!ELEMENT ShipToAddress EMPTY&gt;
+&lt;!ATTLIST ShipToAddress address IDREF #REQUIRED&gt;
+
+]&gt;
+
+&lt;Doc&gt;
+&lt;Person&gt;
+&lt;Address id="1"&gt;
+123 Main St, New York NY
+&lt;/Address&gt;
+&lt;Address id="2"&gt;
+2001 5th Ave, New York NY
+&lt;/Address&gt;
+&lt;BillToAddress address="1"/&gt;
+&lt;ShipToAddress address="2"/&gt;
+&lt;/Person&gt;
+&lt;/Doc&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>Stream based processors are popular,
+    particularly when documents are very large, and may take up
+    large amounts of memory, or when speed of processing is
+    essential. It is often difficult to use stream based processing
+    if elements that are needed to process a section of the
+    document do not appear until after the place they are needed.
+    This requires a forward-looking mechanism that goes against the
+    principle of stream based processing.
+
+    <h2>Related Patterns</h2>Consider this pattern when applying
+    the <cite>Referenced Note</cite>. The <cite>Metadata
+    First</cite> is very similar to this patterns, except it deals
+    with metadata instead of general elements as this pattern does.
+
+    <h2>Known Uses</h2>
+  </div>
+</body>
+</html>

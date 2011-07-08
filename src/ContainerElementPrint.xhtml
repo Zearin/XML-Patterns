@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Container Element</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Container Element." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Container Element</h1>
+
+    <h2>Abstract</h2>A container has multiple elements as child
+    elements. A new element type is created to group related
+    elements. This is a very general pattern and many other
+    patterns specialize this one.
+
+    <h2>Problem</h2>There are multiple elements that occur at the
+    same level within a document. These elements can be separated
+    into distinct groups.
+
+    <h2>Context</h2>There are multiple elements that can occur as
+    child elements of a single, higher level element, and some of
+    these elements are related.
+
+    <h2>Forces</h2>Documents need structure, and this is the
+    easiest way to add structure to a document.
+
+    <h2>Solution</h2>Create a new element that contains some of the
+    multiple child elements.
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;ComputerConfiguration&gt;
+&lt;RAM&gt;128 MB&lt;/RAM&gt;
+&lt;WordProcessor&gt;WordPerfect&lt;/WordProcessor&gt;
+&lt;HardDriveSize&gt;8GB&lt;/HardDriveSize&gt;
+&lt;XMLParser&gt;Xerces&lt;/XMLParser&gt;
+&lt;/ComputerConfiguration&gt;
+
+        </tt>
+      
+</pre>The above document describes a computer's configuration. If
+however processing software was only interested in the hardware
+aspects of the configuration it would need to check all of the
+elements and extract the RAM and HardDriveSize elements. Compare
+this to the following:
+    <pre>
+        <tt>
+
+&lt;ComputerConfiguration&gt;
+&lt;Software&gt;
+&lt;Wordprocessor&gt;Wordperfect&lt;/Wordprocessor&gt;
+&lt;XMLParser&gt;Xerces&lt;/XMLParser&gt;
+&lt;/Software&gt;
+&lt;Hardware&gt;
+&lt;RAM&gt;128 MB&lt;RAM&gt;
+&lt;HardDriveSize&gt;8 GB&lt;/HardDriveSize&gt;
+&lt;/Hardware&gt;
+&lt;/ComputerConfiguration&gt;
+
+        </tt>
+      
+</pre>In this example the software and hardware aspects of the
+configuration are separated. Processing software that need to
+extract individual aspects can do so easily.
+
+    <h2>Discussion</h2>
+
+    <div>
+      This pattern adds a level of abstraction to the structure of
+      a document. This abstraction can be used to simply provide
+      grouping of elements as in the Examples section. This
+      grouping provides additional semantic information about the
+      data.
+    </div>
+
+    <div>
+      This extra element can also be a useful place to provide
+      metadata about the individual group of data.
+    </div>
+
+    <h2>Related Patterns</h2>
+
+    <div>
+      The <cite>Marketplace</cite> pattern can be used if there is
+      more than one category that can apply to each type.
+    </div>
+
+    <div>
+      The <cite>Head-Body</cite> pattern uses two specific types of
+      Container Elements, one for metadata and one for content.
+    </div>
+
+    <div>
+      The <cite>Collection Element</cite> is a container for single
+      type of element.
+    </div>
+
+    <h2>Known Uses</h2>The Isogen whitepaper Object-Oriented SGML
+    <cite>Deconstructing SGML for Storage Section</cite>
+    (http://www.isogen.com/papers/oosgml.html#storage) contains an
+    an excellent example of where a container was used to help in
+    the storage and retrieval of data.
+
+    <h2>References</h2>See <cite>Structuring XML Documents</cite>,
+    Section 5.2.1: Containers.
+  </div>
+</body>
+</html>

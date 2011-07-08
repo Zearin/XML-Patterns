@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Referenced Note</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Referenced Note." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Referenced Note</h1>
+
+    <h2>Abstract</h2>When an area in text needs to refer to a note
+    that will be placed in a different part of the document, a
+    reference is made to a separate entity using an IDREF.
+
+    <h2>Problem</h2>Some text needs to make a reference to another
+    piece of text that is located elsewhere with the original text.
+    This could be a footnote, an annotation, or an endnote. The
+    position of the note in the final document will not be known
+    until the document is rendered.
+
+    <h2>Context</h2>Notes occur when a comment needs to be made
+    about a piece of text, but the author does not want the main
+    text flow to be interrupted. This is a very publication
+    oriented pattern, it is not as relevant in data interchange
+    documents.
+
+    <h2>Forces</h2>Ease of Use and Ease of Processing is effected
+    by how a note is organized.
+
+    <h2>Solution</h2>The note is put in a element which is not
+    contained within the flow of the text where the note is
+    referenced from. An attribute of type ID is put on the note
+    element, and an element is inserted into the flow of the text
+    with an IDREF that refers to the note's ID. A different
+    solution would be to simply use an inline element to include
+    the note as such:
+    <pre>
+        <tt>
+
+&lt;Paragraph&gt;This paragraph refers to a note.
+&lt;Note&gt;This is the note.&lt;/Note&gt;
+&lt;/Paragraph&gt;
+
+        </tt>
+      
+</pre>This solution has a couple of potential disadvantages:
+
+    <ul>
+      <li>The note cannot be referred to from more than one
+      place.</li>
+
+      <li>The note is not physically removed from the text in the
+      marked up document. It may more difficult for the author of
+      the document to realize how the note will be used in the
+      published form of the document.</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;Paragraph&gt;
+This paragraph refers to a note.
+&lt;NoteReference ref="1"/&gt;
+&lt;/Paragraph&gt;
+&lt;Note id="1"&gt;This is the note.&lt;/Note&gt;
+
+        </tt>
+      
+</pre>When rendered the document could be made to look like this:
+    <pre>
+        <tt>
+
+This paragraph refers to a note.
+<sup>1</sup>
+... rest of page ...
+
+1: This is a note.
+...end of page
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>
+
+    <p>Using this pattern can lead to easier to use documents.
+    Since authors expect notes to be separated from the flow of
+    text, this pattern can lead to more natural mark up.</p>
+
+    <p>Rendering software can be simplified if the notes are
+    declared before they will be used. For example if the note is
+    to go on the bottom of a page, the rendering software can
+    calculate page breaks on the fly if the size of the note is
+    already known when the reference to it is encountered.</p>
+
+    <h2>Related Patterns</h2>
+
+    <p>This is an example of a <cite>Domain Element</cite> from the
+    publishing world.</p>
+
+    <p>Also consider using <cite>Declare Before First Use</cite>
+    with this pattern.</p>
+
+    <h2>Known Uses</h2>
+
+    <h2>References</h2>This is a generalization of: <cite>Footnote
+    Pattern</cite>
+    (http://www.utoronto.ca/ian/books/xmlbook/Footnote.html) on the
+    The XML Specification Guide web site.
+  </div>
+</body>
+</html>

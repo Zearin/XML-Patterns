@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Parallel Design</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Parallel Design." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Parallel Design</h1>
+
+    <h2>Abstract</h2>Creating structures that for different
+    elements that are very similar to one another makes DTD easier
+    to use and understand.
+
+    <h2>Problem</h2>Authoring a document with complex structure can
+    be difficult if there are many elements, and each of these
+    elements has their own particular content models.
+
+    <h2>Context</h2>Any document that is large enough to be
+    potentially difficult to learn.
+
+    <h2>Forces</h2>Having consistency in the structure of document
+    types makes document instances easier to learn and process.
+
+    <h2>Solution</h2>For elements that are similar in function use
+    structures that are as close to identical as possible.
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;!ELEMENT Figure (Title, FigureBody, Number?)&gt;
+&lt;!ATTLIST Figure height CDATA
+width  CDATA
+id     ID  #REQUIRED&gt;
+
+&lt;!ELEMENT Table (Title, TableBody, Number?)&gt;
+&lt;!ATTLIST Table height CDATA
+width  CDATA
+id     ID  #REQUIRED&gt;
+
+        </tt>
+      
+</pre>These two elements "Figure" and "Table" have very similar
+content and identical attribute lists. This makes it very easy for
+authors of the document. Once they have learned the structure of
+one of the elements, the other one will be easy to use. The more
+variation there is between the two, the easier it is to confuse the
+two structures.
+
+    <h2>Discussion</h2>The more consistent the structure of various
+    elements is the easier it is to learn to use a document type.
+    Subtle differences in structure can be particularly difficult
+    to learn. If, for example, in the above example, one of the
+    "id" attributes was IMPLIED and the other one was REQUIRED,
+    this would be a difficult distinction to remember. Users would
+    constantly need to refer to the documentation to remind them
+    which element's id was required and which one wasn't.
+
+    <h2>Related Patterns</h2>Often the parts of the structure that
+    are the same between two elements can be represented as
+    <cite>Flyweight</cite>s. This will help ensure that the two
+    structures remain similar even through revisions of the
+    document type.
+
+    <h2>Known Uses</h2>The <cite>DocBook</cite>
+    (http://www.oasis-open.org/docbook/intro.html) DTD defines
+    these four entities:
+    <pre>
+        <tt>
+
+&lt;!ENTITY % div.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+&lt;!ENTITY % bookcomponent.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+&lt;!ENTITY % sect.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+&lt;!ENTITY % refsect.title.content
+"title, subtitle?, titleabbrev?"&gt;
+
+        </tt>
+      
+</pre>All four of the elements have identical content model. This
+helps enormously in learning the specifics of this DTD.
+
+    <h2>References</h2>See <cite>Structuring XML Documents</cite>,
+    Section 3.2.2.
+  </div>
+</body>
+</html>

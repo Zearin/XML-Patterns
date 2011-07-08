@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	
+	<info>
+		<title>Use XML</title>
+		
+		<abstract>
+			<para>XML technology can be used to represent structured information. This pattern helps
+				determine when XML is an appropriate solution.</para>
+		</abstract>	
+	</info>
+
+	
+
+	<section>
+		<title>Problem</title>
+		<para>When data in a system needs to be imported or exported, it needs some type of
+			representation. There are many possible representations for example: Comma Separated
+			Values, Java Object Serialization, Proprietary Binary Formats, HTML, CORBA IIOP Streams,
+			RDBMS tables, and of course XML. Choosing the proper representation for the data can be
+			difficult.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+
+		<para>XML can be an appropriate choice when one or more of the following is needed:</para>
+		<itemizedlist>
+			<listitem>
+				<para>Content needs to be separate from its formatting.</para>
+			</listitem>
+			<listitem>
+				<para>Data is shared between computers, applications or organizations.</para>
+			</listitem>
+			<listitem>
+				<para>Human readable representation is needed.</para>
+			</listitem>
+			<listitem>
+				<para>Readily available tools and resources.</para>
+			</listitem>
+		</itemizedlist>
+		<para>There are some situations where XML may not be a good choice. Among them are systems where:</para>
+		<itemizedlist>
+			<listitem>
+				<para>Terseness is important.</para>
+			</listitem>
+			<listitem>
+				<para>In a homogeneous environment.</para>
+			</listitem>
+		</itemizedlist>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>There are many forces to take into account when considering a data representation.
+			Among the ones that XML can provide are simplicity, openness, extensibility,
+			interoperability, and a technology with proven use.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Use XML for data representations.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+		<para>…</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+		<para>It is impossible to have a complete discussion of the factors involved in make the
+			decision of a data representation in the space of a single pattern, but it can try to
+			provide some pointers.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>All other patterns in this language depend on first using this pattern, because they
+			assume that XML is being used.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>There are many places where XML is being used successfully. Here is a small sampling
+			of them.</para>
+
+		<itemizedlist>
+			<listitem>
+				<para>Data syndication. XML has been popular in this area, and several XML languages
+					have been developed for this purpose.</para>
+			</listitem>
+			<listitem>
+				<para>The Information and Content Exchange (ICE) Protocol</para>
+			</listitem>
+			<listitem>
+				<para>moreover.com provides news feeds in several different XML flavors.</para>
+			</listitem>
+			<listitem>
+				<para>News can be syndicated to browsers via Rich Site Summary</para>
+			</listitem>
+			<listitem>
+				<para>Data exchange protocols for transport of messages from one system to another
+					across a network.</para>
+			</listitem>
+			<listitem>
+				<para>SOAP (Simple Object Access Protocol)</para>
+			</listitem>
+			<listitem>
+				<para>Configuration files</para>
+			</listitem>
+			<listitem>
+				<para>J2EE uses Deployment Descriptors to configure various components</para>
+			</listitem>
+			<listitem>
+				<para>Test Scripting</para>
+			</listitem>
+			<listitem>
+				<para>The XML Test Suite</para>
+			</listitem>
+			<listitem>
+				<para>Log files</para>
+			</listitem>
+			<listitem>
+				<para>The LOGML specification is designed to describe log reports of web
+					servers</para>
+			</listitem>
+			<listitem>
+				<para>Web content management</para>
+			</listitem>
+			<listitem>
+				<para>See Ronald Bourret&apos;s Content Management Systems page</para>
+			</listitem>
+			<listitem>
+				<para>Wireless Application Data (WAP)</para>
+			</listitem>
+		</itemizedlist>
+	</section>
+
+	<section>
+		<title>References</title>
+
+		<para>For more information:</para>
+
+		<itemizedlist>
+			<listitem>
+				<para>Simon St. Laurent&apos;s Essay - Why XML?</para>
+			</listitem>
+			<listitem>
+				<para>A whitepaper by Bob Schloss Ten best bets for XML applications</para>
+			</listitem>
+		</itemizedlist>
+	</section>
+</section>

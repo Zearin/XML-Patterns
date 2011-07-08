@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Consistent Element Set</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Consistent Element Set." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Consistent Element Set</h1>
+
+    <h2>Abstract</h2>Provide a set of elements which is
+    consistently grouped together as the content models of a number
+    of other elements.
+
+    <h2>Problem</h2>Providing a flexible DTD structure could
+    require authors to learn which element types can be used in
+    content models of a variety of other element types. Having
+    different content models for every element makes it difficult
+    to authors to learn a DTD, and could make processing software
+    more complex.
+
+    <h2>Context</h2>Anywhere where a large number of elements can
+    be sub elements of many different parent element types.
+
+    <h2>Forces</h2>Large number of elements are difficult to use
+    effectively. They can be difficult to learn and process.
+
+    <h2>Solution</h2>Where sub elements appear, consistently
+    provide the same set of elements in many different places. This
+    reduces the learning requirements of authors. Usually the
+    element set is defined with an entity parameter, and the entity
+    parameter is referred to from each place the set needs to
+    appear.
+
+    <h2>Examples</h2>A DTD with inconsistent sets of elements in
+    content model of various elements are difficult to learn how to
+    use. For example:
+    <pre>
+        <tt>
+
+&lt;!ELEMENT Foo (A|B|C|E)*&gt;
+&lt;!ELEMENT Bar (A|B|C|D)*&gt;
+&lt;!ELEMENT Baz (A|C|D|E)*&gt;
+
+        </tt>
+      
+</pre>The next DTD is much easier to learn how to use, but some
+compromises must be made. It is often better to introduce
+consistency for the sake of ease-of-use.
+    <pre>
+        <tt>
+
+&lt;!ENTITY % content "A|B|C|D|E"&gt;
+&lt;!ELEMENT Foo (%content;)*&gt;
+&lt;!ELEMENT Bar (%content;)*&gt;
+&lt;!ELEMENT Baz (%content;)*&gt;
+
+        </tt>
+      
+</pre>Here the author has more flexibility, but there is more
+consistency. This can make it easier for processing software as
+well.
+
+    <h2>Discussion</h2>The resulting structure provides easier to
+    learn, consistent sets of elements. Providing consistent sets
+    of elements is far easier for authors to learn. Some
+    compromises might need to be made in the details of the
+    structure to provide this consistency, but this is usually
+    worth the price.
+
+    <h2>Related Patterns</h2>
+
+    <h2>Known Uses</h2>In XHTML, there are element sets for block
+    content, and inline content. The block content element set is
+    used for all content that can be used at the paragraph level.
+    Inline content is used consistently within paragraphs.
+  </div>
+</body>
+</html>

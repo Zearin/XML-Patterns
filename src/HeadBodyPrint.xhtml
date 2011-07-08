@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Head-Body</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Head-Body." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Head-Body</h1>
+
+    <h2>Abstract</h2>When a large amount of metadata needs to be
+    included in an element the designer may create two children for
+    the element, one for the metadata and one for the body of the
+    document.
+
+    <h2>Problem</h2>Sometimes, an element has a large amount of
+    metadata, and this metadata may need to be structured. In
+    common XML usage, attributes are used for metadata. But with a
+    large amount of metadata it is difficult for authors to include
+    this information within attributes, which have limited
+    structure. Including metadata as sibling elements of content
+    elements leads to the potential to confuse the metadata and the
+    data meant to be in the body of the element.
+
+    <h2>Context</h2>There is a large amount of metadata about some
+    piece of content. For example information about the title,
+    creation date, and authors of a document should be included
+    with the document, but this is not really information that
+    belong in the body of the document.
+
+    <h2>Forces</h2>A clear separation is needed between what is
+    metadata and what is data that forms the body of the document.
+    This affects ease of authoring and processing of the document
+    because the context of the data is implied. The metadata needed
+    for an element needs to structured in such a way that
+    attributes are difficult to use.
+
+    <h2>Solution</h2>Create head and body elements. The element
+    that contains the head and body elements can be referred to as
+    the skeleton element. The metadata for the document goes into
+    the head element, and the data for the document itself goes
+    into the body element. The XML takes the following form:
+    <pre>
+        <tt>
+
+&lt;Skeleton&gt;
+&lt;Head&gt;
+... meta information ...
+&lt;/Head&gt;
+&lt;Body&gt;
+... body of document ...
+&lt;/Body&gt;
+&lt;/Skeletion&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;Document&gt;
+&lt;Head&gt;
+&lt;Author&gt;John Doe&lt;/Author&gt;
+&lt;Author&gt;Frank Black&lt;/Author&gt;
+&lt;CreationDate&gt;June 16, 1999&lt;/CreationDate&gt;
+&lt;/Head&gt;
+&lt;Body&gt;
+This is a document.
+&lt;/Body&gt;
+&lt;/Document&gt;
+
+        </tt>
+      
+</pre>In this case, the skeleton element is the document root, and
+the metadata is structured information about the authors of the
+document and the creation date of the document. The Head-Body
+pattern is often used at the document level, but it can also be
+used at levels deeper within a document. For example the pattern
+could be used inside of a Table element like this:
+    <pre>
+        <tt>
+
+&lt;Document&gt;
+&lt;Table&gt;
+&lt;TableHead&gt;
+&lt;Title&gt;
+A &lt;Italic&gt;Sample&lt;Italic&gt; Table
+&lt;/Title&gt;
+&lt;/TableHead&gt;
+&lt;TableBody&gt;
+&lt;Row&gt;Row 1&lt;/Row&gt;
+&lt;Row&gt;Row 2&lt;/Row&gt;
+&lt;/TableBody&gt;
+&lt;/Table&gt;
+&lt;/Document&gt;
+
+        </tt>
+      
+</pre>In this case the skeleton element is a table, which needs
+structure for its Title data.
+
+    <h2>Discussion</h2>
+
+    <p>Two new elements are introduced which distinguish the
+    metadata from the body of the document. This gives processing
+    software context to distinguish these two types of data.</p>
+
+    <p>Because this introduced two additional elements, the
+    resulting documents are larger than they would be without the
+    application of this pattern</p>
+
+    <p>The resulting documents are often easier to understand
+    because of the clear separation of metadata and the document
+    body itself. The metadata is in the Head element and the
+    document itself goes in the Body element. Authors and
+    processing software can clearly distinguish the context of the
+    data they are using.</p>
+
+    <p>Documents are also often easier to process because they
+    allow metadata to be structured, unlike if attributes were use
+    for the metadata of the document.</p>
+
+    <p>For an interesting alternative, see Don Park's "Neck"
+    pattern
+    (http://www.docuverse.com/blog/donpark/EntryViewPage.aspx?guid=831)</p>
+
+    <h2>Related Patterns</h2>The Head-Body Pattern consists of two
+    new <cite>Container Element</cite>s added to the structure of
+    the document, one for the Head element, and one for the Body.
+    This is a specialization of the <cite>Separate Metadata and
+    Data</cite>.
+
+    <h2>Known Uses</h2>
+
+    <p>HEAD and BODY elements in XHTML.</p>
+
+    <p><cite>SOAP (Simple Object Access Protocol)</cite>
+    (http://www.w3.org/TR/SOAP/) uses Header and Body Elements
+    inside an Envelope element.</p>
+
+    <h2>References</h2>Rick Jelliffe discusses this in a chapter
+    entitled "The Document Shell" in: <cite>The XML &amp; SGML
+    Cookbook: Recipes for Structured Information</cite>
+  </div>
+</body>
+</html>

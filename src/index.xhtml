@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c218 {color: #000000; font-size: 80%}
+  span.c217 {font-size: 64%}
+  span.c216 {font-size: 80%}
+  span.c215 {color: #000000; font-size: 64%}
+  div.c214 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c214">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c215"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <span class="navCurrent">Home</span></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c216">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c217">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table><span class="c216"><br /></span>
+
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegashotelpools.com/">Vegas
+                  Pools</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegashotelpools.com/"><span class=
+                  "c216">Information on Las Vegas hotel
+                  pools</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegashotelpools.com/"><span class=
+                  "c217">www.vegashotelpools.com</span></a></td>
+                </tr>
+              </table><span class="c216"><br /></span>
+
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegashotelspecial.com/">Vegas Hotel
+                  Deals</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegashotelspecial.com/"><span class=
+                  "c216">Specials and deal for Las Vegas
+                  Hotels</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegashotelspecial.com/"><span class=
+                  "c217">www.vegashotelspecial.com</span></a></td>
+                </tr>
+              </table><span class="c216"><br /></span>
+
+              <table>
+                <tr>
+                  <td><a href=
+                  "http://sunshine-slots.com/new-video-slots.html"><span class="c216">
+                  New Video Slots</span></a></td>
+                </tr>
+              </table><span class="c216"><br /></span>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td><span class="title">Develop
+            effective XML documents using structural design
+            patterns.</span></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"    
+              cellpadding="10">
+                <tr>
+                  <td>
+                    <div class="text">
+                      <p>Welcome to XMLPatterns.com, the site about
+                      designing good XML structure with
+                      patterns.</p>
+
+                      <p>There are 28 <a href="patterns.shtml">XML
+                      Design Patterns</a> . If you are new to
+                      software design patterns, a good place to
+                      start is the <a href=
+                      "intro.shtml">Introductory Material</a> .</p>
+
+                      <p>In the years since XMLPatterns.com was
+                      launched, XML has moved from being a
+                      relatively obscure technology to being a part
+                      of the everyday technologies that software
+                      developers use. Since XML design patterns are
+                      an excellent way to pass knowledge on from
+                      the experts to XML newcomers, they have
+                      become more important then ever. Designing
+                      good XML structure using DTDs, W3C XML Schema
+                      or RelaxNG does not always come easily, and
+                      hopefully the patterns on this site will be
+                      able to help out.</p>
+
+                      <p>Please feel free to <a href=
+                      "mailto:info@xmlpatterns.com">email</a>
+                      feedback about this site.</p>
+
+                      <p>Thanks for visiting!</p>
+
+                      <table>
+                        <tr>
+                          <td></td>
+                        </tr>
+                      </table><br />
+                      <hr />
+                    </div><br />
+                    <br />
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c217"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c218">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td><a href=
+      'http://www.onedollarglobeinsurance.com'><span class=
+      "c218">Life Insurance Policies</span></a></td>
+
+      <td><a href='http://www.prink.co.uk'><span class="c218">ink
+      cartridges</span></a></td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/"
+                  dc:title="XML Design Patterns"
+                  dc:identifier="http://www.xmlpatterns.com/" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

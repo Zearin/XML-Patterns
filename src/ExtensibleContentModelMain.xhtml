@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Extensible Content Model</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Extensible Content Model ." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  <link rel="stylesheet" type="text/css" href="indexPage.css" />
+  <style type="text/css">
+/*<![CDATA[*/
+  :link { color: #556677 }
+  :visited { color: #668099 }
+  :active { color: #778899 }
+  span.c259 {color: #000000; font-size: 80%}
+  span.c258 {font-size: 64%}
+  span.c257 {font-size: 80%}
+  span.c256 {color: #000000; font-size: 64%}
+  div.c255 {text-align: center}
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <table       width="100%">
+    <tr>
+      <td colspan="11">
+        <div class="c255">
+          <script type="text/javascript">
+//<![CDATA[
+          <!--
+          google_ad_client = "pub-2722110793302013";
+          google_alternate_color = "000000";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          google_ad_format = "728x15_0ads_al_s";
+          google_ad_channel ="4690258935";
+          google_color_border = "FFFFFF";
+          google_color_bg = "FFFFFF";
+          google_color_link = "000000";
+          google_color_url = "336699";
+          google_color_text = "333333";
+          //-->
+          //]]>
+          </script> <script type="text/javascript" src=
+          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="1"></td>
+
+      <td width="120">
+        <table cellpadding="1">
+          <tr>
+            <td><a href="index.html"><span class=
+            "c256"><b>XMLPatterns.com</b></span></a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="XMLPatterns.com Home Page" href="index.html"
+            class="navLink">Home</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Backround material for understanding XML Design Patterns"
+            href="intro.shtml" class=
+            "navLink">Introduction</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="The patterns themselves" href=
+            "patterns.shtml" class="navLink">Patterns</a></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns organized by Category" href=
+            "categoryAllPatterns.shtml">Categorized</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Patterns Alphabetically" href=
+            "alphaAllPatterns.shtml">Alphabetical</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><a class="subNavLink" title=
+            "Latest Patterns listed first" href=
+            "chronoAllPatterns.shtml">Chronological</a><br /></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Books about patterns and XML" href=
+            "books.shtml" class="navLink">Books</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title="Links to other web sites." href="links.shtml"
+            class="navLink">Links</a></td>
+          </tr>
+
+          <tr>
+            <td><br />
+            <a title=
+            "Information about contacts, privacy and copyright"
+            href="about.shtml" class="navLink">About</a></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><b><a href=
+                  "http://www.vegasfreebie.com/">Vegas
+                  Freebie!</a></b></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c257">Free Things to do In Las
+                  Vegas</span></a></td>
+                </tr>
+
+                <tr>
+                  <td><a href=
+                  "http://www.vegasfreebie.com/"><span class=
+                  "c258">www.vegasfreebie.com</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <table       width=
+        "100%">
+          <tr>
+            <td>
+              <div class="title">
+                Extensible Content Model
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td align="right"><a href=
+                  "ExtensibleContentModelPrint.shtml"><span class=
+                  "smallLink">Printable Version</span></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%"   cellspacing="10"
+               >
+                <tr>
+                  <td>
+                    <div>
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Abstract" id=
+                        "Abstract"><span class=
+                        "bigheading">A</span><span class=
+                        "heading">bstract:</span></a></p>Provide a
+                        mechanism which allows additional elements
+                        to be added into existing content models.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Problem" id=
+                        "Problem"><span class=
+                        "bigheading">P</span><span class=
+                        "heading">roblem:</span></a></p>At the time
+                        of designing the document type, the
+                        designer may not be able to foresee all of
+                        the uses and situations where document
+                        instances will be used. To provide for
+                        flexibility, the contents of elements can
+                        be made to be redefinable by the document
+                        instance.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Context" id=
+                        "Context"><span class=
+                        "bigheading">C</span><span class=
+                        "heading">ontext:</span></a></p>This is a
+                        very general mechanism that can be used
+                        anytime additional flexibility is needed.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Forces" id=
+                        "Forces"><span class="bigheading">F</span><span class="heading">orces:</span></a></p>Flexibility
+                        is often required for a document type to be
+                        able to be used effectively. Flexibility,
+                        however often makes processing of the
+                        documents more difficult. Customization of
+                        software is often needed to deal with the
+                        flexibility.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Solution" id=
+                        "Solution"><span class=
+                        "bigheading">S</span><span class=
+                        "heading">olution:</span></a></p>The
+                        designer of the document can add a
+                        mechanism to allow the author of a document
+                        instance to extend an element definition
+                        from the document type.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><a name="Examples" id=
+                        "Examples"><span class=
+                        "bigheading">E</span><span class=
+                        "heading">xamples:</span></a></p>
+
+                        <div class="subsection">
+                          Using DTDs
+                        </div>
+
+                        <p>This example uses a DTD that allows the
+                        document instance to extend an <span class=
+                        "sample">Address</span> element. This is
+                        done through use a parameter entity which
+                        is defined in the DTD, but the creator of
+                        the document instance can overwrite.</p>
+
+                        <p>First a DTD is created that defines a
+                        simple <span class="sample">Address</span>
+                        type, consisting only of the <span class=
+                        "sample">Name</span>, <span class=
+                        "sample">Street</span> and <span class=
+                        "sample">City</span>. Realizing that this
+                        may not be enough for all users of this
+                        document type, the designer defines a
+                        parameter entity called <span class=
+                        "sample">local.address</span> that is blank
+                        ("") but can be extended in the document
+                        instance.</p>
+
+                        <p>purchase_order.dtd</p>
+                        <pre>
+                                <span class="sample">
+
+&lt;!ENTITY % local.address ""&gt;
+&lt;!ENTITY % address "Name, Street, City %local.address;"&gt;
+&lt;!ELEMENT PurchaseOrder ( Item, ShipTo, BillTo )&gt;
+&lt;!ELEMENT Item   (#PCDATA)&gt;
+&lt;!ELEMENT ShipTo (%address;)&gt;;
+&lt;!ELEMENT BillTo (%address;)&gt;;
+&lt;!ELEMENT Name   (#PCDATA)&gt;
+&lt;!ELEMENT Street (#PCDATA)&gt;
+&lt;!ELEMENT City   (#PCDATA)&gt;
+
+                                </span>
+                              
+</pre>
+
+                        <p>The creator of a document decides that
+                        the address defined in the DTD is
+                        inadequate for the document being create,
+                        so he extends the definition of an Address
+                        to include State and Zip. To do this he
+                        creates his own definition of the
+                        local.address Parameter Entity. This allows
+                        him to add these elements to his own
+                        address structure.</p>
+
+                        <p>mydoc.xml</p>
+                        <pre>
+                                <span class="sample">
+
+&lt;!DOCTYPE PURCHASE_ORDER SYSTEM "purchase_order.dtd" [
+&lt;!ENTITY % local.address ", State, Zip" &gt;
+&lt;!ELEMENT State (#PCDATA)&gt;
+&lt;!ELEMENT Zip (#PCDATA)&gt;
+]&gt;
+&lt;PurchaseOrder&gt;
+&lt;Item&gt;X123&lt;/Item&gt;
+&lt;ShipTo&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/ShipTo&gt;
+&lt;BillTo&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/BillTo&gt;
+&lt;/PurchaseOrder&gt;
+
+                                </span>
+                              
+</pre>
+
+                        <div class="subsection">
+                          Using XML Schemas
+                        </div>This next example uses XML Schemas to
+                        do the same thing. We use the XML Schema
+                        mechanism of deriving types by extension to
+                        do this. This example is based on a working
+                        draft of the XML Schema proposal, so this
+                        example may not be compatible with future
+                        versions of the XML Schema. A schema is
+                        created to include the simple Address type
+                        with a Name, Street, and City.
+
+                        <p>PurchaseOrder.xsd</p>
+                        <pre>
+                                <span class="sample">
+
+&lt;xsd:schema
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"&gt;
+
+&lt;xsd:element
+name="purchaseOrder"
+type="PurchaseOrderType"/&gt;
+&lt;xsd:complexType name="PurchaseOrderType"&gt;
+&lt;xsd:element name="Item"   type="xsd:string"/&gt;
+&lt;xsd:element name="ShipTo" type="Address"/&gt;
+&lt;xsd:element name="BillTo" type="Address"/&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:complexType name="Address"&gt;
+&lt;xsd:element name="Name"   type="xsd:string"/&gt;
+&lt;xsd:element name="Street" type="xsd:string"/&gt;
+&lt;xsd:element name="City"   type="xsd:string"/&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;/xsd:schema&gt;
+
+                                </span>
+                              
+</pre>
+
+                        <p>The author of a document realizes that
+                        this simple address definition will not be
+                        adequate, so a new address type is created.
+                        The new type is extended from the old type,
+                        and adds the State and Zip elements.</p>
+
+                        <p>US-Address.xsd</p>
+                        <pre>
+                                <span class="sample">
+
+&lt;xsd:schema
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+xmlns:po="http:www.xmlpatterns.com/PurchaseOrder"&gt;
+
+&lt;xsd:complexType name="US-Address"
+base="po:Address"
+derivedBy="extension"&gt;
+&lt;xsd:element name="State"  type="xsd:string"/&gt;
+&lt;xsd:element name="Zip"    type="xsd:decimal"/&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;/xsd:schema&gt;
+
+                                </span>
+                              
+</pre>
+
+                        <p>To use the new address type in a
+                        document instance, both of the schema files
+                        are used.</p>
+
+                        <p>mydoc.xml</p>
+                        <pre>
+                                <span class="sample">
+
+&lt;PurchaseOrder
+xmlns="http:www.xmlpatterns.com/PurchaseOrder"
+xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance"
+xmlns:us="http://www.xmlpatterns.com/US-Address"
+xsi:schemaLocation=
+"http://www.xmlpatterns.com/purchaseOrder.xsd
+http://www.xmlpatterns.com/US-Address.xsd"&gt;
+
+&lt;Item&gt;X123&lt;/Item&gt;
+&lt;ShipTo xsi:type="us:US-Address"&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/ShipTo&gt;
+&lt;BillTo xsi:type="us:US-Address"&gt;
+&lt;Name&gt;Bob Smith&lt;/Name&gt;
+&lt;Street&gt;123 Maple Dr.&lt;/Street&gt;
+&lt;City&gt;Anytown&lt;/City&gt;
+&lt;State&gt;CA&lt;/State&gt;
+&lt;Zip&gt;12345&lt;/Zip&gt;
+&lt;/BillTo&gt;
+&lt;/PurchaseOrder&gt;
+
+                                </span>
+                              
+</pre>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">D</span><span class=
+                        "heading">iscussion:</span></p>
+
+                        <p>This provides a powerful extension
+                        mechanism to the authors of documents. Like
+                        with all added flexibility, the power comes
+                        with a price. Extensible Content Models
+                        create new element types that standard
+                        processing tools for a document type would
+                        not be able to process correctly. Often
+                        customization of software is needed to
+                        handle the extensions correctly.</p>
+
+                        <p>This technique has the advantage of not
+                        needlessly over complicating the structure
+                        of the document type if the flexibility is
+                        not needed. Authors can use the document
+                        type without even being aware that the
+                        extension mechanism exists. The existence
+                        of these Extensible Content Models can be
+                        made known only to "power users", if
+                        desired.</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">elated Patterns:</span></p>This
+                        mechanism is powerful, but also requires
+                        knowledge of DTD syntax to apply. Often the
+                        <a href="GenericElementMain.shtml">Generic
+                        Element</a> pattern combined with <a href=
+                        "RoleAttributeMain.shtml">Role
+                        Attribute</a>s may be a more appropriate
+                        choice if the authors of the document are
+                        not experienced with XML.
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">K</span><span class=
+                        "heading">nown Uses:</span></p>
+
+                        <p>The <a href=
+                        "cgi-bin/leave-14797.cgi">Information and
+                        Content Exchange (ICE) Protocol Appendix
+                        A</a> demonstrates applications of this
+                        pattern.</p>
+
+                        <p>The <a href=
+                        "cgi-bin/leave-37627.cgi#AEN258">XMLspec
+                        DTD</a> uses parameter entities to allow
+                        for customization of many elements.</p>
+
+                        <p>The DocBook DTD allows for the types of
+                        <a href=
+                        "cgi-bin/leave-24825.cgi">customizations</a>
+                        .</p>
+                      </div><br />
+                      <br />
+
+                      <div class="text">
+                        <p><span class=
+                        "bigheading">R</span><span class=
+                        "heading">eferences:</span></p>See <a href=
+                        "books.shtml#0136422993">Structuring XML
+                        Documents</a>, Section 8.1.2: Adding
+                        Elements Types to a DTD.
+                      </div><br />
+                    </div>
+                    <hr />
+                  </td>
+
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <script type="text/javascript">
+//<![CDATA[
+                          <!--
+                          google_ad_client = "pub-2722110793302013";
+                          google_alternate_ad_url = "http://www.alternateurl.com/show?memid=56&size=160x600";
+                          google_ad_width = 160;
+                          google_ad_height = 600;
+                          google_ad_format = "160x600_as";
+                          google_ad_type = "text_image";
+                          google_ad_channel ="9928488069";
+                          google_color_border = "CCCC99";
+                          google_color_bg = "CCCC99";
+                          google_color_link = "000099";
+                          google_color_url = "000000";
+                          google_color_text = "000000";
+                          //-->
+                          //]]>
+                          </script> <script type="text/javascript"
+                          src=
+                          "../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="11"></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td>Visit our sponsors: <span class="c258"><a href=
+      "mailto:info@xmlpatterns.com">(Interested in advertising on
+      XMLPatterns.com?</a>)</span></td>
+    </tr>
+  </table>
+
+  <table width="100%"    >
+    <tr>
+      <td colspan='6'><span class="c259">XML? Playing online
+      <a href='http://www.allslots.com/slot-machines.php'>slot
+      machines</a> is even more fun than creating XML
+      designs.</span></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table><!--
+              <rdf:Description
+                  rdf:about="http://www.xmlpatterns.com/ExtensibleContentModelMain.shtml"
+                  dc:title="XML Design Pattern - Extensible Content Model"
+                  dc:identifier="http://www.xmlpatterns.com/ExtensibleContentModelMain.shtml" />
+              </rdf:RDF>
+              -->
+</body>
+</html>

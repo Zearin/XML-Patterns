@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Universal Root</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Universal Root." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Universal Root</h1>
+
+    <h2>Abstract</h2>Provide a single root element that contains an
+    option of multiple elements. Often used for different
+    transaction types within a single document type.
+
+    <h2>Problem</h2>There are several different types of document
+    that need to be processed. Providing a single root element
+    allows for all of the different types of document to be defined
+    by a single DTD. When a processor receives this document, it
+    will know which type of document to expect by inspecting the
+    child element of the root element.
+
+    <h2>Context</h2>Universal Root is useful when a system has
+    several different, but related, document types to be processed.
+    A transactional processor would be an example of such a system.
+
+    <h2>Forces</h2>Having multiple, distinct document types can
+    increase the maintenance burden of a system. Document types
+    that may be related, but are declared in separate files can
+    start to stray from commonalities that can be taken advantage
+    of.
+
+    <h2>Solution</h2>Create a document type that has a single root
+    element.
+
+    <h2>Examples</h2>
+    <pre>
+        <tt>
+
+&lt;!ELEMENT Transaction
+(AddAddress | RemoveAddress | UpdateAddress)&gt;
+
+&lt;!ELEMENT AddAddress
+(AddressBookEntry)&gt;
+
+&lt;!ELEMENT RemoveAddress
+(AddressID)&gt;
+
+&lt;!ELEMENT UpdateAddress
+(AddressID, AddressBookEntry)&gt;
+
+
+&lt;Transaction&gt;
+&lt;AddAddress&gt;
+&lt;AddressBookEntry&gt; ... &lt;/AddressBookEntry&gt;
+&lt;/AddAddress&gt;
+&lt;/Transaction&gt;
+
+        </tt>
+      
+</pre>In this example an online address book application is being
+developed. There are several transactions that can take place, lick
+adding new entries, deleting entries, updating entries.
+
+    <h2>Discussion</h2>
+
+    <p>This allows a way for several related types of documents to
+    be grouped into a single document type structure. A processing
+    system will always know which DTD to expect, but can still
+    handle the documents differently based on the first nested
+    element type. This makes sharing common definitions between the
+    different document easy.</p>
+
+    <p>This is also a way that multiple XML document can be
+    gathered into a single larger document. For example a log file
+    might consist of several fragments, for example:</p>
+    <pre>
+        <tt>
+
+&lt;Log&gt;
+&lt;Time&gt;Jan 15, 1999 10:58AM&lt;/Time&gt;
+&lt;Event&gt;Startup&lt;/Event&gt;
+&lt;/Log&gt;
+&lt;Log&gt;
+&lt;Time&gt;Jan 15, 1999 11:02AM&lt;/Time&gt;
+&lt;Event&gt;Message Received from Bob&lt;/Event&gt;
+&lt;/Log&gt;
+...
+
+        </tt>
+      
+</pre>Since there is no root element in the file it cannot be
+processed "as is". To process this, one can prepend a start tag,
+for example "&lt;LogFile&gt;", in front of the file, and append the
+end tag "&lt;/LogFile&gt;" to the end of the file to be able to
+process it as a single XML document.
+
+    <h2>Related Patterns</h2><cite>Multi Root Document Types</cite>
+    and <cite>Multiple Document Types</cite> are alternatives to
+    this pattern.
+
+    <h2>Known Uses</h2>
+  </div>
+</body>
+</html>

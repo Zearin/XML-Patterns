@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org" />
+
+  <title>XML Design Patterns - Multi Root Document Types</title>
+  <meta name="DESCRIPTION" content=
+  "XMLPatterns.com - Designing Good XML Structure with Patterns. Multi Root Document Types." />
+  <meta name="KEYWORDS" content=
+  "XML, patterns, structure, DTD, XMLSchema, schema, design, designing, structuring, structural, document, documents, pattern, book, markup, language, mark up, effective, software, introduction" />
+  </head>
+
+<body>
+  <b>XMLPatterns.com</b>
+
+  <div>
+    <h1>Multi Root Document Types</h1>
+
+    <h2>Abstract</h2>A single document type with multiple root
+    elements is used to handle varying documents that may exist
+    within a system.
+
+    <h2>Problem</h2>A system needs to handle varying types of
+    documents. These are somehow related, yet each type of document
+    needs a unique identity provided by a document root.
+
+    <h2>Context</h2>Systems where varying types of documents need
+    to be processed, but the different documents are closely
+    related.
+
+    <h2>Forces</h2>Maintainability of the system is effected by how
+    the document types are organized.
+
+    <h2>Solution</h2>Create a single declaration with multiple root
+    elements for the different document types.
+
+    <h2>Examples</h2>The two documents below show two different
+    bank transactions, a deposit and a withdrawal. The document
+    have different root elements, but many other common elements.
+    Both of these documents use the same DTD, but declare different
+    roots.
+    <pre>
+        <tt>
+
+&lt;!DOCTYPE "Deposit" SYSTEM "bank.dtd"&gt;
+&lt;Deposit&gt;
+&lt;Account id="123"/&gt;
+&lt;Amount currency="USD"&gt;100.00&lt;/Amount&gt;
+&lt;Date&gt;05-10-2000&lt;/Date&gt;
+&lt;/Deposit&gt;
+
+        </tt>
+      
+</pre>
+    <pre>
+        <tt>
+
+&lt;!DOCTYPE "Withdrawal" SYSTEM "bank.dtd"&gt;
+&lt;Withdrawal&gt;
+&lt;Account id="123"/&gt;
+&lt;Amount currency="USD"&gt;100.00&lt;/Amount&gt;
+&lt;Date&gt;05-10-2000&lt;/Date&gt;
+&lt;/Withdrawal&gt;
+
+        </tt>
+      
+</pre>
+
+    <h2>Discussion</h2>Allows the different document types to
+    easily share structure. Having all of the related document
+    types declared in a single file can increase maintainability.
+    However, if revisions need to be made to the different document
+    types separately, it might be better having separate
+    declarations.
+
+    <h2>Related Patterns</h2><cite>Universal Root</cite> and
+    <cite>Multiple Document Types</cite> are alternatives.
+
+    <h2>Known Uses</h2>In <cite>DocBook</cite>
+    (http://www.oasis-open.org/docbook/) the root element can be a
+    <tt>set</tt> or a <tt>book</tt> element.
+  </div>
+</body>
+</html>

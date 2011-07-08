@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Common Attributes</title>
+
+		<abstract>
+			<para>Provide a set of attributes that can be placed on all, or most, elements in the
+				document type.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>There are properties that belong to every element in the document. These properties
+			need to be presented to the document author in an understandable way.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This is a widely applicable pattern and can be used anywhere that a large number of
+			elements need the same attributes applied. It is a common technique for attributes such
+			as IDs, security, and roles.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>The usability of the document type depends a lot on consistency, and this pattern can
+			be used to add consistency.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Create a common set of attributes that will be used by all or most of the elements in
+			the document type.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<example>
+			<title>Common Attributes in DTDs</title>
+			<para>This examples shows a DTD that has two <link xl:href="/patterns/consistency/common-attributes.xml">Common Attributes</link>, id and role, on its all
+				of its elements. The common attribute definition is placed in a parameter entity
+				which is referenced by all of the ATTLIST definitions.</para>
+
+
+
+			<literallayout language="dtd">
+                    &lt;!ENTITY % common.att
+                    &apos;id   ID      #IMPLIED
+                    role NMTOKEN #IMPLIED&apos;&gt;
+                    
+                    &lt;!ELEMENT Person (FirstName, LastName)&gt;
+                    &lt;!ATTLIST Person %common.att;&gt;
+                    
+                    &lt;!ELEMENT FirstName (#PCDATA)&gt;
+                    &lt;!ATTLIST FirstName %common.att;&gt;
+                    
+                    &lt;!ELEMENT LastName (#PCDATA)&gt;
+                    &lt;!ATTLIST LastName %common.att;&gt;
+                </literallayout>
+		</example>
+
+		<example>
+			<title>Common Attributes in XML Schemas</title>
+			<para>This example shows how to implement the same document structure as the above
+				examples using the XSL Schema language Attributes Groups .</para>
+
+			<literallayout language="xml">
+                    &lt;?xml version=&quot;1.0&quot;?&gt;
+                    &lt;schema xmlns=&quot;http://www.w3.org/1999/XMLSchema&quot;
+                    targetNamespace=&quot;http://www.xmlpatterns.com/XMLSchema-fragment&quot;
+                    xmlns:xsf=&quot;http://www.xmlpatterns.com/XMLSchema-fragment&quot;&gt;
+                    
+                    &lt;attributeGroup name=&quot;CommonAtts&quot;&gt;
+                    &lt;attribute name=&quot;id&quot; type=&quot;ID&quot;/&gt;
+                    &lt;attribute name=&quot;role&quot; type=&quot;NMTOKEN&quot;/&gt;
+                    &lt;/attributeGroup&gt;
+                    
+                    &lt;complexType name=&quot;NameType&quot;&gt;
+                    &lt;attributeGroup ref=&quot;CommonAtts&quot;/&gt;
+                    &lt;/complexType&gt;
+                    
+                    &lt;complexType name=&quot;PersonType&quot; content=&quot;elementOnly&quot;&gt;
+                    &lt;element name=&quot;FirstName&quot; type=&quot;xsf:NameType&quot;/&gt;
+                    &lt;element name=&quot;LastName&quot; type=&quot;xsf:NameType&quot;/&gt;
+                    &lt;attributeGroup ref=&quot;CommonAtts&quot;/&gt;
+                    &lt;/complexType&gt;
+                    
+                    &lt;element name=&quot;Person&quot; type=&quot;xsf:PersonType&quot;/&gt;
+                    
+                    &lt;/schema&gt;
+                </literallayout>
+		</example>
+	</section>
+
+
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Global attributes often add many choices at any point in the document. Users have more
+			selections available to them, and this could complicate authoring, however, some of the
+			complexity that adding attributes to every element brings is lessened if these
+			attributes are applied consistently. If users can expect the same common attribute on
+			every element, it does not take a lot of extra effort to process the information. It
+			will be easier to author or process a document that has a consistently applied set of
+			Common Attributes on all elements compared to one that has inconsistently applied
+			attributes on most of the elements.</para>
+		<para>An ID attribute is a typical use for a common attribute. It is useful to be able to
+			reference any element in the document using this.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>The Common Attributes are usually declared in a <link xl:href="/patterns/organization/flyweight.xml">Flyweight</link> to help
+			maintainability.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>The XMLspec DTD Common Attributes Chapter explains the use of Common Attributes in the
+			DTD.</para>
+		<para>XHTML defines a set of core attributes. These attributes are applied to almost every
+			element in the XHTML document type. The core attributes are defined like this:</para>
+
+		<literallayout language="xml">
+&lt;!ENTITY % coreattrs
+&quot;id     ID           #IMPLIED
+class  CDATA        #IMPLIED
+style  %StyleSheet; #IMPLIED
+title  %Text;       #IMPLIED&quot;
+&gt;
+            </literallayout>
+
+
+		<para>Even the simple line break element has these attributes added to it:</para>
+
+		<literallayout language="dtd">
+&lt;!ELEMENT br EMPTY&gt;  &lt;!-- forced line break --&gt;
+&lt;!ATTLIST br
+%coreattrs;
+&gt;
+            </literallayout>
+	</section>
+
+
+
+
+	<section>
+		<title>References</title>
+		<para>See Structuring XML Documents, Section 3.2.4: Global Attributes.</para>
+	</section>
+
+	<section>
+		<title>Contributions</title>
+		<para>Thanks to Hans C. Arents for supplying the correct XSL Schema definition used in the
+			pattern.</para>
+	</section>
+</section>
