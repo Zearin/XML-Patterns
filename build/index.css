@@ -1,0 +1,92 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+div.book {
+  padding: 1em;
+  padding-left: 33%;
+  line-height: 1.5;
+  font-family: Helvetica, Arial, sans-serif;
+}
+div.book dl {
+  margin: auto 1em;
+  font-size: 90%;
+}
+div.book dl dt {
+  font-weight: bold;
+}
+div.book nav {
+  background-color: #e4ebf7;
+  font-family: "Lucida Grande", Optima, Arial, sans-serif;
+  font-size: x-small;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+div.book nav > dl.toc > dt {
+  position: relative;
+  margin: 0 2em -0.75em;
+  top: -0.75em;
+  font-size: small;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+}
+div.book nav > dl.toc ol {
+  font-weight: bold;
+}
+div.book nav > dl.toc ol ol {
+  font-weight: normal;
+}
+div.book > nav:first-of-type {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  height: 100%;
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+div.book > nav:first-of-type > dl.toc dt {
+  position: static;
+  margin: auto;
+  top: 0;
+}
+div.book > nav:first-of-type > dl.toc dd {
+  margin: 0;
+  padding: 1ex;
+}
+div.book > nav:first-of-type > dl.toc dd ol.book {
+  margin: 1em;
+  padding: 1em;
+  list-style-type: upper-roman;
+}
+div.book > nav:first-of-type > dl.toc dd ol.book > li.part {
+  text-transform: uppercase;
+}
+div.book > nav:first-of-type > dl.toc dd ol.book > li,
+div.book > nav:first-of-type > dl.toc dd ol.book > li > ol > li {
+  font-weight: bold;
+  text-transform: none;
+}
+div.book > nav:first-of-type > dl.toc dd ol.book > li ol ol li,
+div.book > nav:first-of-type > dl.toc dd ol.book > li > ol > li ol ol li {
+  font-weight: normal;
+}
+div.book nav.list-of-examples ol {
+  list-style: none;
+  padding: 0 2ex;
+}

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Optional Container Element</title>
+
+		<abstract>
+			<para>When creating large DTDs with many logical units authors might be required to learn a
+				large number of these logical units to know how to use the DTD. By hiding the details of
+				optional parts of the DTD beneath optional elements, some of this complexity can be
+				reduced.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>In a DTD with many logical units, an author of a document can be overwhelmed with the
+			number of choices that have to be made.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>In large, general-purpose DTDs where many logical units are presented, and more than
+			one of the units is optional. The document will be authored by humans.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>In order to make DTDs applicable in many situations, large numbers of logical units
+			need to appear in the DTD. However, presenting large numbers of logical units makes the
+			DTD more difficult to learn by authors of documents.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Hide related parts of a document that may never be needed by an author of a document
+			beneath an element type. Any details of the structure of a document that are optional in
+			a document can be grouped together as attributes and children elements of a single
+			element. If an author never uses this branch of the document, none of the logical units
+			within that branch need to be known to the other.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<para>Lets create a DTD that allows an author to create notes that can be a note to oneself,
+			or an email. The DTD might look like this:</para>
+
+		<programlisting language="dtd"><![CDATA[
+<!ELEMENT Note (NoteToSelf | Email )>
+<!ELEMENT NoteToSelf (Body)>
+<!ELEMENT Body (#PCDATA)>
+<!ELEMENT Email (Recipient+, CC*, BCC*, Body)>
+<!ELEMENT Recipient (#PCDATA)>
+<!ELEMENT CC (#PCDATA)>
+<!ELEMENT BCC (#PCDATA)>
+		]]></programlisting>
+
+		<para>If the author of these documents only had to be create notes to himself, he would
+			never need to be aware of the elements that are required in the Email branch of the DTD.
+			He would create his document like this:</para>
+
+		<programlisting language="xml"><![CDATA[
+<Note>
+	<NoteToSelf>
+		<Body>This is my note</Body>
+	</NoteToSelf>
+<Note>
+		]]></programlisting>
+
+		<para>Although the DTD contains 7 elements, the author would only have to use three
+			elements: Note, NoteToSelf and Email. The author would never be required to use the
+			Email element and would not even have to be aware of the existence of the remaining
+			three elements.</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Once the Optional Group Pattern is applied, the learning requirements placed on the
+			author of documents is reduced. Application of this pattern can however lead to an
+			increase in the overall number of logical units in the DTD. The above note DTD could
+			have been written as follows:</para>
+
+		<programlisting language="dtd"><![CDATA[
+<!ELEMENT Note (Recipient?, CC?, BCC?, Body)>
+<!ELEMENT Body (#PCDATA)>
+<!ELEMENT Recipient (#PCDATA)>
+<!ELEMENT CC (#PCDATA)>
+<!ELEMENT BCC (#PCDATA)>
+		]]></programlisting>
+
+
+		<para>This actually reduces the number of logical units in the DTD from 7 to 5, but makes
+			things more complicated for users who just want to write notes to themselves, because
+			they now have to be aware of the Recipient, CC, and BCC elements. The Optional Group
+			hides complexity from the authors of documents by introducing optional elements that
+			hide the details of a piece of the document that the author might not care about. By
+			introducing a single higher level element, the details of many logical units may be
+			hidden from the author, thereby reducing the learning requirements of the author.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>This Optional Group is similar to the Choice Reducing Container in that they both hide
+			logical units of a document from the author by introducing new element types. Existing
+			elements are group together beneath the new element. The major difference between the
+			two is the context they are used in. The Choice Group relates elements that are all
+			choices in a content group while the Optional Group relates optional elements from the
+			content group.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>This DTD fragment was taken from XBEL:</para>
+
+		<programlisting language="dtd"><![CDATA[
+<!ELEMENT xbel (title?, info?, desc?, (%nodes.mix;)*)>
+<!ELEMENT info (metadata+)>
+<!ELEMENT metadata EMPTY>
+<!ATTLIST metadata owner CDATA #REQUIRED>
+		]]></programlisting>
+
+		<para>When generating an XBEL document, the info element is not required. This means that if
+			the author was never interested in creating an info element, he would not need to know
+			about the info element, the metadata element, or the owner attribute, thus eliminating 3
+			logical units from what the author needs to learn.</para>
+	</section>
+
+	<section>
+		<title>Contributions</title>
+		<para>Thanks to Pankaj Kamthan from Concordia University for fixing up a bit of XML in the
+			pattern.</para>
+	</section>
+</section>

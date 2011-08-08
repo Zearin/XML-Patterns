@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+
+	role="pattern">
+	
+	<info>
+		<title>Separate Metadata and Data</title>
+
+		<abstract>
+			<para>When documents contain content and data about the content, the two types of data
+				should be clearly separated.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+
+		<para>A document contains two distinct types of data, the content of the document, and data
+			about the content. The data about the content is referred to as metadata. Since a
+			document contains these two different types of data, it is not always to distinguish
+			between the two types of data. For example:</para>
+
+		<programlisting language="xml"><![CDATA[
+<ArticleSummaries>
+	<Author>Phred Smith</Author>
+	<Name>Patterns of Stereo Design</Name>
+	<Author>J.R. Dolby</Author>
+	<Summary>
+		Use of patterns to arrange stereo components.
+	</Summary>
+</ArticleSummary>
+		]]></programlisting>
+
+		<para>Here there are two instances of the Author element, and at first glance it might not
+			be possible to tell what the first instance of Author represents. Is it the author of
+			the article being summarized? Is it the author of the article itself? It can be
+			difficult to distinguish metadata from data.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>Data about the data needs to be included in a document. This could be things like the
+			author’s name, the creation date, security levels of the data, namespace
+			information, schema information, or identification attributes for use with cross
+			references.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>A clear separation is needed between what is metadata and what is data that forms the
+			body of the document. This affects ease of authoring and processing of the document
+			because the context of the data is clear.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>The context of the data and the metadata should be made clear. The metadata should
+			usually appear before the data that it describes. This makes it clearer what the
+			metadata is about, and allows processing software to know about the data before it
+			actually gets the data. For example the size of a table might be considered metadata. If
+			the processing software gets the size of the table before the actual data, it can layout
+			the table and then insert the data in the proper place as it encounters it.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+		<para>See the <link xl:href="/patterns/metadata/metadata-doc.xml">Metadata in Separate Document</link>, <link xl:href="/patterns/metadata/head-body.xml">Head-Body pattern</link>s for examples.</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+		<para>The resulting context provides structures that clearly identify the metadata as
+			metadata. Often this pattern introduces new constructs to the document, so the overall
+			length of the document may be increased. Authors and processing software need to clearly
+			distinguish between metadata and content. This is not always possible to tell from the
+			element names or positions. It is better to provide a context that will disambiguate the
+			types of data. Obviously the first step in using this pattern is to be able to identify
+			the difference between metadata and data. This is not always an easy task.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para><link xl:href="/patterns/metadata/metadata-doc.xml">Metadata in Separate Document</link> and <link xl:href="head-body.xml">Head-Body</link> are specializations of this pattern.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>The W3C Namespace Recommendation includes namespace information in attributes that
+			make it clearer that this is data about the documents, and not really part of the
+			document itself.</para>
+		<para>The XHTML DTD uses Head and Body elements to distinguish the metadata from the
+			data.</para>
+	</section>
+</section>

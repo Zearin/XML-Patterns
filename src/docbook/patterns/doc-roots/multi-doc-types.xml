@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Multiple Document Types</title>
+
+		<abstract>
+			<para>When a system needs to represent a range of different document types, each document
+				type can be represented by a completely separate declarations.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>A system needs to represent different types of information. This information may be
+			used at different times, or may be used by different parts of the system.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>Systems which need to represent a variety of information at different times or
+			places.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Processing and authoring of documents can be simplified if different document types
+			are used to represent different sets of data.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Use different document types to represent different sets of data within the
+			system.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+		<para>In a payroll system, data about the Employees, and data about the hours they work can
+			be represented by separate documents.</para>
+
+		<example>
+			<title>Employees.dtd:</title>
+
+			<programlisting language="dtd"><![CDATA[
+<!ELEMENT Employee (Name, HourlyRate)>
+<!ATTLIST Employee id ID #REQUIRED>
+
+<!ELEMENT Name (#PCDATA)>
+
+<!ELEMENT HourlyRate (#PCDATA)>
+			]]></programlisting>
+		</example>
+
+
+		<example>
+			<title>HoursWorked.dtd:</title>
+
+			<programlisting language="xml"><![CDATA[
+<!ELEMENT PayPeriod (Employee+)>
+<!ATTLIST PayPeriod
+StartDate #CDATA
+EndDate   #CDATA>
+
+<!ELEMENT Employee (HoursWorked)>
+<!ATTLIST Employee id NMTOKEN>
+
+<!ELEMENT HoursWorked (#PCDATA)>
+			]]></programlisting>
+		</example>
+	</section>
+
+
+	<section>
+		<title>Discussion</title>
+
+		<para>If different people will authoring the different types of documents it is a good idea
+			to have completely separate document types, because authors will not need to be exposed
+			to parts of the document types that are not needed.</para>
+		<para>Having separate document types allows the different DTDs to be versioned
+			independently.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para><link xl:href="/patterns/doc-roots/universal-root.xml">Universal Root</link> allows multiple types of data under one document root. Multi Root
+			Document Types allows for multiple types of documents to be declared in a single
+			declaration.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>…</para>
+	</section>
+</section>

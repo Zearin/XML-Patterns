@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Extensible Content Model</title>
+
+		<abstract>
+			<para>Provide a mechanism which allows additional elements to be added into existing
+				content models.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>At the time of designing the document type, the designer may not be able to foresee
+			all of the uses and situations where document instances will be used. To provide for
+			flexibility, the contents of elements can be made to be redefinable by the document
+			instance.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This is a very general mechanism that can be used anytime additional flexibility is
+			needed.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Flexibility is often required for a document type to be able to be used effectively.
+			Flexibility, however often makes processing of the documents more difficult.
+			Customization of software is often needed to deal with the flexibility.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>The designer of the document can add a mechanism to allow the author of a document
+			instance to extend an element definition from the document type.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<example>
+			<title>Using DTDs</title>
+
+			<para>This example uses a DTD that allows the document instance to extend an Address
+				element. This is done through use a parameter entity which is defined in the DTD,
+				but the creator of the document instance can overwrite.</para>
+			<para>First a DTD is created that defines a simple Address type, consisting only of the
+				Name, Street and City. Realizing that this may not be enough for all users of this
+				document type, the designer defines a parameter entity called local.address that is
+				blank (&quot;&quot;) but can be extended in the document instance.</para>
+			<example>
+				<title>purchase_order.dtd</title>
+
+				<screen>
+    
+    </screen>
+
+				<programlisting language="dtd"><![CDATA[
+<!ENTITY % local.address "">
+<!ENTITY % address "Name, Street, City %local.address;">
+<!ELEMENT PurchaseOrder ( Item, ShipTo, BillTo )>
+<!ELEMENT Item   (#PCDATA)>
+<!ELEMENT ShipTo (%address;)>;
+<!ELEMENT BillTo (%address;)>;
+<!ELEMENT Name   (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT City   (#PCDATA)>
+]]></programlisting>
+			</example>
+
+			<para>The creator of a document decides that the address defined in the DTD is
+				inadequate for the document being create, so he extends the definition of an Address
+				to include State and Zip. To do this he creates his own definition of the
+				local.address Parameter Entity. This allows him to add these elements to his own
+				address structure.</para>
+
+			<example>
+				<title>mydoc.xml</title>
+
+
+				<programlisting language="xml"><![CDATA[
+<!DOCTYPE PURCHASE_ORDER SYSTEM "purchase_order.dtd" [
+	<!ENTITY % local.address ", State, Zip" >
+	<!ELEMENT State (#PCDATA)>
+	<!ELEMENT Zip (#PCDATA)>
+]>
+<PurchaseOrder>
+	<Item>X123</Item>
+	
+	<ShipTo>
+		<Name>Bob Smith</Name>
+		<Street>123 Maple Dr.</Street>
+		<City>Anytown</City>
+		<State>CA</State>
+		<Zip>12345</Zip>
+	</ShipTo>
+	
+	<BillTo>
+		<Name>Bob Smith</Name>
+		<Street>123 Maple Dr.</Street>
+		<City>Anytown</City>
+		<State>CA</State>
+		<Zip>12345</Zip>
+	</BillTo>
+</PurchaseOrder>
+]]></programlisting>
+			</example>
+		</example>
+
+		<example>
+			<title>Using XML Schemas</title>
+
+			<para>This next example uses XML Schemas to do the same thing. We use the XML Schema
+				mechanism of deriving types by extension to do this. This example is based on a
+				working draft of the XML Schema proposal, so this example may not be compatible with
+				future versions of the XML Schema. A schema is created to include the simple Address
+				type with a Name, Street, and City.</para>
+
+			<example>
+				<title>PurchaseOrder.xsd</title>
+
+				<programlisting language="xml"><![CDATA[
+<xsd:schema
+xmlns:xsd="http://www.w3.org/1999/XMLSchema">
+
+	<xsd:element
+		name="purchaseOrder"
+		type="PurchaseOrderType"
+	/>
+
+	<xsd:complexType name="PurchaseOrderType">
+		<xsd:element name="Item"   type="xsd:string"/>
+		<xsd:element name="ShipTo" type="Address"/>
+		<xsd:element name="BillTo" type="Address"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Address">
+		<xsd:element name="Name"   type="xsd:string"/>
+		<xsd:element name="Street" type="xsd:string"/>
+		<xsd:element name="City"   type="xsd:string"/>
+	</xsd:complexType>
+
+</xsd:schema>
+]]></programlisting>
+			</example>
+
+			<para>The author of a document realizes that this simple address definition will not be
+				adequate, so a new address type is created. The new type is extended from the old
+				type, and adds the State and Zip elements.</para>
+
+			<example>
+				<title>US-Address.xsd</title>
+
+
+				<programlisting language="xml"><![CDATA[
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+	xmlns:po="http:www.xmlpatterns.com/PurchaseOrder">
+
+	<xsd:complexType 
+		name="US-Address"
+		base="po:Address"
+		derivedBy="extension">
+		<xsd:element name="State"  type="xsd:string"/>
+		<xsd:element name="Zip"    type="xsd:decimal"/>
+	</xsd:complexType>
+
+</xsd:schema>
+]]></programlisting>
+			</example>
+			<para>To use the new address type in a document instance, both of the schema files are
+				used.</para>
+
+			<example>
+				<title>mydoc.xml</title>
+
+
+				<programlisting language="xml"><![CDATA[
+<PurchaseOrder
+	xmlns="http:www.xmlpatterns.com/PurchaseOrder"
+	xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance"
+	xmlns:us="http://www.xmlpatterns.com/US-Address"
+	xsi:schemaLocation="
+		http://www.xmlpatterns.com/purchaseOrder.xsd
+		http://www.xmlpatterns.com/US-Address.xsd
+	">
+
+	<Item>X123</Item>
+	
+	<ShipTo xsi:type="us:US-Address">
+		<Name>Bob Smith</Name>
+		<Street>123 Maple Dr.</Street>
+		<City>Anytown</City>
+		<State>CA</State>
+		<Zip>12345</Zip>
+	</ShipTo>
+	
+	<BillTo xsi:type="us:US-Address">
+		<Name>Bob Smith</Name>
+		<Street>123 Maple Dr.</Street>
+		<City>Anytown</City>
+		<State>CA</State>
+		<Zip>12345</Zip>
+	</BillTo>
+</PurchaseOrder>
+]]></programlisting>
+			</example>
+		</example>
+	</section>
+
+
+	<section>
+		<title>Discussion</title>
+
+		<para>This provides a powerful extension mechanism to the authors of documents. Like with
+			all added flexibility, the power comes with a price. Extensible Content Models create
+			new element types that standard processing tools for a document type would not be able
+			to process correctly. Often customization of software is needed to handle the extensions
+			correctly.</para>
+		<para>This technique has the advantage of not needlessly over complicating the structure of
+			the document type if the flexibility is not needed. Authors can use the document type
+			without even being aware that the extension mechanism exists. The existence of these
+			Extensible Content Models can be made known only to &quot;power users&quot;, if
+			desired.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>This mechanism is powerful, but also requires knowledge of DTD syntax to apply. Often
+			the <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link> pattern combined with <link xl:href="/patterns/flexibility/role.xml">Role Attribute</link>s may be a more appropriate
+			choice if the authors of the document are not experienced with XML.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>The Information and Content Exchange (ICE) Protocol Appendix A demonstrates
+			applications of this pattern.</para>
+		<para>The XMLspec DTD uses parameter entities to allow for customization of many
+			elements.</para>
+		<para>The DocBook DTD allows for the types of customizations .</para>
+	</section>
+
+	<section>
+		<title>References</title>
+		<para>See Structuring XML Documents, Section 8.1.2: Adding Elements Types to a DTD.</para>
+	</section>
+
+</section>

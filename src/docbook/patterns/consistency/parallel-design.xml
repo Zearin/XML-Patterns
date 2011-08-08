@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Parallel Design</title>
+
+		<abstract>
+			<para>Creating structures that for different elements that are very similar to one
+				another makes DTD easier to use and understand.</para>
+		</abstract>
+	</info>
+	<section>
+		<title>Problem</title>
+
+		<para>Authoring a document with complex structure can be difficult if there are many
+			elements, and each of these elements has their own particular content models.</para>
+	</section>
+	<section>
+		<title>Context</title>
+
+		<para>Any document that is large enough to be potentially difficult to learn.</para>
+	</section>
+	<section>
+		<title>Forces</title>
+
+		<para>Having consistency in the structure of document types makes document instances easier
+			to learn and process.</para>
+	</section>
+	<section>
+		<title>Solution</title>
+
+		<para>For elements that are similar in function use structures that are as close to
+			identical as possible.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+
+		<programlisting language="dtd"><![CDATA[
+<!ELEMENT Figure (Title, FigureBody, Number?)>
+<!ATTLIST Figure height CDATA
+	width  CDATA
+	id     ID  #REQUIRED>
+
+<!ELEMENT Table (Title, TableBody, Number?)>
+<!ATTLIST Table height CDATA
+	width  CDATA
+	id     ID  #REQUIRED>
+]]></programlisting>
+
+
+		<para>These two elements &quot;Figure&quot; and &quot;Table&quot; have very similar content
+			and identical attribute lists. This makes it very easy for authors of the document. Once
+			they have learned the structure of one of the elements, the other one will be easy to
+			use. The more variation there is between the two, the easier it is to confuse the two
+			structures.</para>
+	</section>
+	<section>
+		<title>Discussion</title>
+
+		<para>The more consistent the structure of various elements is the easier it is to learn to
+			use a document type. Subtle differences in structure can be particularly difficult to
+			learn. If, for example, in the above example, one of the &quot;id&quot; attributes was
+			IMPLIED and the other one was REQUIRED, this would be a difficult distinction to
+			remember. Users would constantly need to refer to the documentation to remind them which
+			element&apos;s id was required and which one wasn&apos;t.</para>
+	</section>
+	<section>
+		<title>Related Patterns</title>
+
+		<para>Often the parts of the structure that are the same between two elements can be
+			represented as <link xl:href="/patterns/organization/flyweight.xml">Flyweight</link>s. This will help ensure that the two structures remain similar
+			even through revisions of the document type.</para>
+	</section>
+	<section>
+		<title>Known Uses</title>
+
+		<para>The DocBook DTD defines these four entities:</para>
+
+		<programlisting language="xml">
+&lt;!ENTITY % div.title.content
+&quot;title, subtitle?, titleabbrev?&quot;&gt;
+
+&lt;!ENTITY % bookcomponent.title.content
+&quot;title, subtitle?, titleabbrev?&quot;&gt;
+
+&lt;!ENTITY % sect.title.content
+&quot;title, subtitle?, titleabbrev?&quot;&gt;
+
+&lt;!ENTITY % refsect.title.content
+&quot;title, subtitle?, titleabbrev?&quot;&gt;
+</programlisting>
+
+
+		<para>All four of the elements have identical content model. This helps enormously in
+			learning the specifics of this DTD.</para>
+	</section>
+	<section>
+		<title>References</title>
+
+		<para>See Structuring XML Documents, Section 3.2.2.</para>
+	</section>
+</section>

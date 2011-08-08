@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Common Attributes</title>
+
+		<abstract>
+			<para>Provide a set of attributes that can be placed on all, or most, elements in the
+				document type.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>There are properties that belong to every element in the document. These properties
+			need to be presented to the document author in an understandable way.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This is a widely applicable pattern and can be used anywhere that a large number of
+			elements need the same attributes applied. It is a common technique for attributes such
+			as IDs, security, and roles.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>The usability of the document type depends a lot on consistency, and this pattern can
+			be used to add consistency.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Create a common set of attributes that will be used by all or most of the elements in
+			the document type.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<example>
+			<title>Common Attributes in DTDs</title>
+			<para>This examples shows a DTD that has two <link xl:href="/patterns/consistency/common-attributes.xml">Common Attributes</link>, id and role, on its all
+				of its elements. The common attribute definition is placed in a parameter entity
+				which is referenced by all of the ATTLIST definitions.</para>
+
+
+
+			<programlisting language="dtd"><![CDATA[
+<!ENTITY % common.att
+	'id   ID      #IMPLIED
+	role NMTOKEN #IMPLIED'>
+
+<!ELEMENT Person (FirstName, LastName)>
+<!ATTLIST Person %common.att;>
+
+<!ELEMENT FirstName (#PCDATA)>
+<!ATTLIST FirstName %common.att;>
+
+<!ELEMENT LastName (#PCDATA)>
+<!ATTLIST LastName %common.att;>
+                ]]></programlisting>
+		</example>
+
+		<example>
+			<title>Common Attributes in XML Schemas</title>
+			<para>This example shows how to implement the same document structure as the above
+				examples using the XSL Schema language Attributes Groups .</para>
+
+			<programlisting language="xml"><![CDATA[
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/1999/XMLSchema"
+		targetNamespace="http://www.xmlpatterns.com/XMLSchema-fragment"
+		xmlns:xsf="http://www.xmlpatterns.com/XMLSchema-fragment">
+
+    <attributeGroup name="CommonAtts">
+        <attribute name="id" type="ID"/>
+        <attribute name="role" type="NMTOKEN"/>
+    </attributeGroup>
+    
+    <complexType name="NameType">
+        <attributeGroup ref="CommonAtts"/>
+    </complexType>
+    
+    <complexType name="PersonType" content="elementOnly">
+        <element name="FirstName" type="xsf:NameType"/>
+        <element name="LastName" type="xsf:NameType"/>
+        <attributeGroup ref="CommonAtts"/>
+    </complexType>
+    
+    <element name="Person" type="xsf:PersonType"/>
+
+</schema>
+                ]]></programlisting>
+		</example>
+	</section>
+
+
+
+	<section>
+		<title>Discussion</title>
+
+		<para>Global attributes often add many choices at any point in the document. Users have more
+			selections available to them, and this could complicate authoring, however, some of the
+			complexity that adding attributes to every element brings is lessened if these
+			attributes are applied consistently. If users can expect the same common attribute on
+			every element, it does not take a lot of extra effort to process the information. It
+			will be easier to author or process a document that has a consistently applied set of
+			Common Attributes on all elements compared to one that has inconsistently applied
+			attributes on most of the elements.</para>
+		<para>An ID attribute is a typical use for a common attribute. It is useful to be able to
+			reference any element in the document using this.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>The Common Attributes are usually declared in a <link xl:href="/patterns/organization/flyweight.xml">Flyweight</link> to help
+			maintainability.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+
+		<para>The XMLspec DTD Common Attributes Chapter explains the use of Common Attributes in the
+			DTD.</para>
+		<para>XHTML defines a set of core attributes. These attributes are applied to almost every
+			element in the XHTML document type. The core attributes are defined like this:</para>
+
+		<programlisting language="xml"><![CDATA[
+<!ENTITY % coreattrs
+	"id     ID           #IMPLIED
+	class  CDATA        #IMPLIED
+	style  %StyleSheet; #IMPLIED
+	title  %Text;       #IMPLIED"
+>
+		]]></programlisting>
+
+
+		<para>Even the simple line break element has these attributes added to it:</para>
+
+		<programlisting language="dtd"><![CDATA[
+<!ELEMENT br EMPTY>  <!-- forced line break -->
+<!ATTLIST br
+	%coreattrs;
+>
+         ]]></programlisting>
+	</section>
+
+
+
+
+	<section>
+		<title>References</title>
+		<para>See Structuring XML Documents, Section 3.2.4: Global Attributes.</para>
+	</section>
+
+	<section>
+		<title>Contributions</title>
+		<para>Thanks to Hans C. Arents for supplying the correct XSL Schema definition used in the
+			pattern.</para>
+	</section>
+</section>

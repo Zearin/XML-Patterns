@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Collection Element</title>
+		
+		<abstract>
+			<para>Create a new element whose content model allows only instances of a single element
+				type.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>There is an element that needs to be repeated several times at the same level of a
+			documents.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>Multiple elements of the same element type need to appear in the document as siblings
+			of each other. Often metadata about the container needs to be expressed as well. The
+			Collection Element is a logical place to put this metadata. Sometimes, the elements need
+			to be grouped into different categories. Multiple Collection Elements can appear in the
+			document, with each container having elements from one of the sub categories.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Groups of identical repeated elements often need some context established so that
+			metadata can be associated with the entire group, or to distinguish between different
+			groups of similar elements.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Create a new element type that contains the multiple elements of the same type. The
+			Collection Element is often named by putting a descriptive ending on the contained
+			element name. For example, a Collection Element of authors might be called AuthorList or
+			AuthorGroup. Another way of naming the Collection Element is to pluralize the contained
+			element name. For example, a collection of Stock elements would be named Stocks.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<example>
+			<title>Simple Collection Element</title>
+
+			<programlisting language="xml"><![CDATA[
+<Portfolio>
+	<StockList>
+		<Stock>
+			<Name>IBM</Name>
+			<Price>110.25</Price>
+		</Stock>
+		<Stock>
+			<Name>MSFT</Name>
+			<Price>89.50</Price>
+		</Stock>
+	</StockList>
+	<Bonds>
+	…
+	</Bonds>
+</Portfolio>
+			]]></programlisting>
+		</example>
+
+		<example>
+			<title>Container Element With Metadata</title>
+			<programlisting language="xml"><![CDATA[
+<KitchenInventory>
+	<GlassList location="cupboard3">
+		<Glass type="shot" number="5"/>
+		<Glass type="highball" number="8"/>
+	</GlassList>
+	<MugList>
+		…
+	</MugList>
+</KitchenInventory>
+                ]]></programlisting>
+		</example>
+
+		<example>
+			<title>Multiple Categories of Same Collection</title>
+
+			<programlisting language="xml"><![CDATA[
+<Portfolio>
+	<StockList Exchange="NYSE">
+		<Stock>
+			<Name>IBM</Name>
+			<Price>110.25</Price>
+		</Stock>
+	</StockList>
+	<StockList Exchange="NASDAQ">
+		<Stock>
+			<Name>MSFT</Name>
+			<Price>89.50</Price>
+		</Stock>
+		<Stock>
+			<Name>AMZN</Name>
+			<Price>80.75</Price>
+		</Stock>
+	</StockList>
+</Portfolio>
+               ]]></programlisting>
+		</example>
+
+
+
+		<para>In this example the Collection Element was needed to establish a context for the
+			exchange data. Without a collection element, this information would have to be
+			duplicated in every Stock element.</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+
+		<para>The resulting structure is often easier to read and process. It does however result in
+			documents that take up more space.</para>
+		<para>Providing a parent element for a list of elements of the same type allows for the
+			collection to have a context, making it easier to add metadata if needed. This may also
+			make processing and reading the document easier.</para>
+		<para>If there is a significant metadata for the container, in terms of amount of structure
+			or volume, a Head-Body would be appropriate to include inside of the Collection
+			Element.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>This is a specialization of the Container Element pattern.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>The DocBook DTD has a <tag>OrderedList</tag> Element, whose only sub-children can be
+			one or more ListItem elements.</para>
+	</section>
+</section>

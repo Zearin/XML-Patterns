@@ -1,0 +1,71 @@
+div.book 
+	nav
+		background-color hsl(218, 54%, 93%)
+		font-family "Lucida Grande", Optima, Arial, sans-serif
+		font-size x-small
+		border-radius 2em
+		
+		//	Make “Table of Contents” appear to sit on top of the box
+		& > dl.toc 
+		
+			& > dt
+				position relative
+				margin 0 2em -0.75em
+				top -0.75em
+				
+				font-size small
+				letter-spacing -1px
+				word-spacing 1px
+			
+			ol
+				font-weight  bold
+				
+				ol
+					font-weight normal
+	
+	/*	
+	 *	Main TOC only
+	 */
+	& > nav:first-of-type	
+		fixed top left
+		overflow auto
+		height 100%
+		width 30%
+		margin 0
+		padding 0
+		border-radius 0
+		
+		& > dl.toc 
+			dt
+				position static
+				margin auto
+				top 0
+			dd
+				margin 0
+				padding 1ex
+				
+				ol.book
+					margin 1em
+					padding 1em
+					list-style-type upper-roman
+					
+					& > li.part
+						text-transform uppercase
+					
+					//	Bold-ify the first 2 list levels
+					& > li,
+					& > li > ol > li
+						font-weight bold
+						text-transform none
+						
+						ol ol li
+							font-weight normal
+				
+			
+	
+	/*
+	 *	Appears once at start of book
+	 */
+	nav.list-of-examples ol
+		list-style none
+		padding 0 2ex

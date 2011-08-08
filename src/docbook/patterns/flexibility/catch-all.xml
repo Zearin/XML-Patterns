@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Catch-All Element</title>
+
+		<abstract>
+			<para>A container element for dealing with unknown elements within the document.</para>
+		</abstract>
+	</info>
+
+	<section>
+		<title>Problem</title>
+		<para>Users need to be able to insert marked up text into the document that the document
+			designer cannot foresee. For example, it is often necessary to have some presentation
+			specific markup inside of a document. If this unexpected markup is spread throughout the
+			document, then processors might have a hard time dealing with it.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>When documents are going to need to have the flexibility to include elements from
+			other namespaces.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Allowing elements from other document types allows you to save development costs and
+			time by reusing schemas instead of developing them.</para>
+		<para>Allowing documents to use other schemas allows for great flexibility.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Create a new element which will serve as a container for elements of a new
+			schema.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<example>
+			<title>Example</title>
+			<para>This example shows how a document that describes a car would allow a comment
+				element that includes elements from HTML.</para>
+			<programlisting language="xml"><![CDATA[ 
+	<car>
+		<model>Pinto</model>
+		<year>1979</year>
+		<comment>
+			<xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">
+				This car <xhtml:b>runs great!</xhtml:b>
+			</xhtml:p>
+		</comment>
+	</car>
+                ]]></programlisting>
+		</example>
+
+		<example>
+			<title>Example</title>
+			<para>To allow this type of inclusion using an XML Schema, use the any element as
+				follows:</para>
+			<programlisting language="xml"><![CDATA[
+<element name="car">
+	<complexType>
+		<sequence>
+			<element name="model" type="string"/>
+			<element name="year"   type="string"/>
+			<element name="comment">		
+				<complexType>
+					<sequence>
+						<any namespace="http://www.w3.org/1999/xhtml"
+						minOccurs="1" maxOccurs="unbounded"
+						processContents="skip"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+</element>
+                ]]></programlisting>
+		</example>
+
+		<para>For details on the use of the any element see: The XML Schema Part 0: Primer Section
+			5.5 Any Element, Any Attribute</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+		<para>The element within the Catch-All Element are from a namespace outside of the namespace
+			of the document-type being created.</para>
+		<para>This tag acts as a warning to processors that some markup from another namespace is
+			about to be encountered.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>The <link xl:href="/patterns/organization/envelope.xml">Envelope</link> pattern uses a similar mechanism, but the intent of the <link xl:href="/patterns/organization/envelope.xml">Envelope</link> is to
+			wrap a document without adding any domain data of its own. The intent of the Catch-All
+			Element is to allow authors to mix data from separate document types.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>The Real Estate DTD RELML uses an OTHER as a catch all element.</para>
+	</section>
+</section>

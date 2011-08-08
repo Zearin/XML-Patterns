@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+	
+	role="pattern">
+	
+	<info>
+		<title>Envelope</title>
+
+		<abstract>
+			<title>Abstract</title>
+			<para>Provide a document type which is defined to be a holder for other, arbitrary XML
+				data.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>Different sets of data need to be delivered to a system in a consistent way.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>This pattern applies when different sets of data need to be used in some system. The
+			structure of the data itself varies, or is not known at the time the system is being
+			built.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+
+		<para>This pattern allows for Flexibility by allowing elements from other documents to be
+			embedded into a consistent holder.</para>
+		<para>This pattern allows for a separation of concerns between different document types.
+			Mixing issues such as transport with document data is usually not a good idea.</para>
+	</section>
+
+
+	<section>
+		<title>Solution</title>
+		<para>Create a document type which will act as a holder for the varying set of data.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+		<para>This example shows a very simple <link xl:href="/patterns/organization/envelope.xml">Envelope</link> which consists of sender and a receiver
+			children elements. Note the use of two different namespaces to allow an XML parser to
+			read the document, which contains elements from both the <link xl:href="/patterns/organization/envelope.xml">Envelope</link> (<link xl:href="/patterns/organization/envelope.xml">Envelope</link>.dtd) and the
+			embedded data (my-stuff.dtd)</para>
+
+		<programlisting language="xml"><![CDATA[
+<e:Envelope xmlsns:e="http://xmlpatterns.com/envelope.dtd">
+	<e:sender name="bob"/>
+	<e:receiver name="http://xmlpatterns.com/message-receiver.cgi"/>
+	
+	<myStuff:message xmlsns:e="http://xmlpatterns.com/my-stuff.dtd">
+		This is my message
+	</myStuff:message>
+</e:Envelope>
+		]]></programlisting>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+		<para>The <link xl:href="/patterns/organization/envelope.xml">Envelope</link> is used as a delivery mechanism for XML data. Document types created for
+			holding domain data should not be responsible, for defining transport ways to do deal
+			with things such as transport, security, delivery and packaging. The <link xl:href="/patterns/organization/envelope.xml">Envelope</link> provide
+			for a clear separation between these things and the data itself.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+		<para>This is similar to the <link xl:href="/patterns/flexibility/catch-all.xml">Catch-All Element</link>, except that the the document type of the
+			<link xl:href="/patterns/organization/envelope.xml">Envelope</link> pattern exists solely as an holder for other data and, the <link xl:href="/patterns/flexibility/catch-all.xml">Catch-All Element</link> is
+			for embedding new elements within exsisting data.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>SOAP (Simple Object Access Protocol) is an <link xl:href="/patterns/organization/envelope.xml">Envelope</link> for doing remote transport of
+			messages.</para>
+	</section>
+	<section>
+		<title>References</title>
+		<para>…</para>
+	</section>
+
+</section>

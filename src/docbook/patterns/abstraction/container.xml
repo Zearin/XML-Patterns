@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng" type="xml"?>
+<section
+	xmlns="http://docbook.org/ns/docbook" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xl="http://www.w3.org/1999/xlink" 
+	version="5.0"
+
+	role="pattern">
+	
+	<info>
+		<title>Container Element</title>
+
+		<abstract>
+			<para>A container has multiple elements as child elements. A new element type is created to
+				group related elements. This is a very general pattern and many other patterns
+				specialize this one.</para>
+		</abstract>
+	</info>
+
+
+	<section>
+		<title>Problem</title>
+		<para>There are multiple elements that occur at the same level within a document. These
+			elements can be separated into distinct groups.</para>
+	</section>
+
+	<section>
+		<title>Context</title>
+		<para>There are multiple elements that can occur as child elements of a single, higher level
+			element, and some of these elements are related.</para>
+	</section>
+
+	<section>
+		<title>Forces</title>
+		<para>Documents need structure, and this is the easiest way to add structure to a
+			document.</para>
+	</section>
+
+	<section>
+		<title>Solution</title>
+		<para>Create a new element that contains some of the multiple child elements.</para>
+	</section>
+
+	<section>
+		<title>Examples</title>
+
+
+		<programlisting language="xml"><![CDATA[
+<ComputerConfiguration>
+	<RAM>128 MB</RAM>
+	<WordProcessor>WordPerfect</WordProcessor>
+	<HardDriveSize>8GB</HardDriveSize>
+	<XMLParser>Xerces</XMLParser>
+</ComputerConfiguration>
+]]></programlisting>
+
+
+		<para>The above document describes a computer&apos;s configuration. If however processing
+			software was only interested in the hardware aspects of the configuration it would need
+			to check all of the elements and extract the RAM and HardDriveSize elements. Compare
+			this to the following:</para>
+
+		<programlisting language="xml"><![CDATA[
+<ComputerConfiguration>
+	<Software>
+		<Wordprocessor>Wordperfect</Wordprocessor>
+		<XMLParser>Xerces</XMLParser>
+	</Software>
+	<Hardware>
+		<RAM>128 MB<RAM>
+		<HardDriveSize>8 GB</HardDriveSize>
+	</Hardware>
+</ComputerConfiguration>
+]]></programlisting>
+
+		<para>In this example the software and hardware aspects of the configuration are separated.
+			Processing software that need to extract individual aspects can do so easily.</para>
+	</section>
+
+	<section>
+		<title>Discussion</title>
+
+		<para>This pattern adds a level of abstraction to the structure of a document. This
+			abstraction can be used to simply provide grouping of elements as in the Examples
+			section. This grouping provides additional semantic information about the data.</para>
+		<para>This extra element can also be a useful place to provide metadata about the individual
+			group of data.</para>
+	</section>
+
+	<section>
+		<title>Related Patterns</title>
+
+		<para>The <link xl:href="/patterns/organization/marketplace.xml">Marketplace</link> pattern can be used if there is more than one category that can apply
+			to each type.</para>
+		<para>The <link xl:href="/patterns/metadata/head-body.xml">Head-Body pattern</link> uses two specific types of Container Elements, one for metadata
+			and one for content.</para>
+		<para>The Collection Element is a container for single type of element.</para>
+	</section>
+
+	<section>
+		<title>Known Uses</title>
+		<para>The Isogen whitepaper Object-Oriented SGML Deconstructing SGML for Storage Section
+			contains an an excellent example of where a container was used to help in the storage
+			and retrieval of data.</para>
+	</section>
+	<section>
+		<title>References</title>
+
+		<para>See Structuring XML Documents, Section 5.2.1: Containers.</para>
+	</section>
+
+</section>
