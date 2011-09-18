@@ -8,11 +8,11 @@
  * Known issues:
  *
  * 1. For IE 6/7 when applied to an element that contains only left-floated
- *    children the bottom margin on child elements will be collapsed.
+ *		children the bottom margin on child elements will be collapsed.
  *
  * 2. For Firefox versions prior to 3.5 when applied to the first child element
- *    of body, and the element does not have non-zero padding, extra space will
- *    appear between the body and the first child.
+ *		of body, and the element does not have non-zero padding, extra space will
+ *		appear between the body and the first child.
  *
  * See http://nicolasgallagher.com/micro-clearfix-hack/
  * and http://j.mp/bestclearfix
@@ -20,10 +20,10 @@
  */
 
 clearfix()
-  &:before
-  &:after
-    content: ""
-    display: table
-  &:after
-    clear: both
-  zoom: 1 if support-for-ie
+	&:before
+	&:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+	zoom: 1 if support-for-ie
