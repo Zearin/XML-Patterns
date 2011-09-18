@@ -6,10 +6,11 @@
 	schematypens=	'http://relaxng.org/ns/structure/1.0'
 ?>
 <book 
-	xmlns="http://docbook.org/ns/docbook" 
-	xmlns:xi="http://www.w3.org/2001/XInclude"
-	xmlns:xl="http://www.w3.org/1999/xlink" 
-	version="5.0">
+	xmlns	=	"http://docbook.org/ns/docbook" 
+	xmlns:xi=	"http://www.w3.org/2001/XInclude"
+	xmlns:xl=	"http://www.w3.org/1999/xlink" 
+	version	=	"5.0">
+	
 	
 	<info>
 		<title>XML Design Patterns</title>
@@ -32,9 +33,10 @@
 				<surname>Rogers</surname>
 			</personname>
 			
-			<email>zearin@users.sourceforge.net</email>
+			<email>zearin@gonk.net</email>
 		</editor>
 	</info>
+	
 	
 	<part>
 		<title>Home</title>
