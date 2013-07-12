@@ -36,8 +36,8 @@
 </ArticleSummary>
 		]]></programlisting>
 
-		<para>Here there are two instances of the Author element, and at first glance it might not
-			be possible to tell what the first instance of Author represents. Is it the author of
+		<para>Here there are two instances of the <tag class="element">Author</tag> element, and at first glance it might not
+			be possible to tell what the first instance of <tag class="element">Author</tag> represents. Is it the author of
 			the article being summarized? Is it the author of the article itself? It can be
 			difficult to distinguish metadata from data.</para>
 	</section>
@@ -94,7 +94,7 @@
 		<para>The W3C Namespace Recommendation includes namespace information in attributes that
 			make it clearer that this is data about the documents, and not really part of the
 			document itself.</para>
-		<para>The XHTML DTD uses Head and Body elements to distinguish the metadata from the
+		<para>The XHTML DTD uses <tag class="element">Head</tag> and <tag class="element">Body</tag> elements to distinguish the metadata from the
 			data.</para>
 	</section>
 </section>

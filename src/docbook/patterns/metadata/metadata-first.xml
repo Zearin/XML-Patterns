@@ -18,7 +18,7 @@
 
 	<section>
 		<title>Problem</title>
-		<para>Many processors (for example SAX based parsers) are stream based. That is, the
+		<para>Many processors (for example <acronym>SAX</acronym> based parsers) are stream based. That is, the
 			document is processed as it is read in, the whole document is never held in memory at
 			the same time. If a piece of metadata appears after the data it refers to, the
 			application software will need to store the data, then read the metadata in order to
@@ -51,16 +51,17 @@
 
 		<para>If the processing software were trying to send this information to a printer, it would
 			need to save the text of the heading, read in the font size, send the font size command
-			to the printer, and then send the text to the printer. If the font element appeared
+			to the printer, and then send the text to the printer. If the <tag class="element">font</tag> element appeared
 			before the text, there would be no need to save the text.</para>
 	</section>
 
 	<section>
 		<title>Examples</title>
 
-		<para>This example shows a table element with the height and width elements appearing before
-			the actual data of the table. This allows the processing software to start rendering the
-			table as the data is read in. If the height and width of the table came after the table
+		<para>This example shows a <tag class="element">table</tag> element with the 
+		    <tag class="element">height</tag> and <tag class="element">width</tag> elements appearing 
+		    before the actual data of the table. This allows the processing software to start rendering 
+		    the table as the data is read in. If the height and width of the table came after the table
 			data, the processing software would need to read in and save all the data before
 			starting to display it.</para>
 

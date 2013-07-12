@@ -55,7 +55,7 @@
 		<para>Here is an example that references author information from an external file.</para>
 
 		<example>
-			<title>File: <filename>author-info.xml</filename></title>
+			<title><filename>author-info.xml</filename></title>
 			
 			<programlisting language="xml"><![CDATA[
 <Author>
@@ -68,7 +68,7 @@
 
 
 		<example>
-			<title>File: <filename>document.xml</filename></title>
+			<title><filename>document.xml</filename></title>
 
 			<programlisting language="xml"><![CDATA[
 <!DOCTYPE DOCUMENT[

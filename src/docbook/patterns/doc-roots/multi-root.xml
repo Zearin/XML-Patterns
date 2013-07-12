@@ -83,6 +83,6 @@
 
 	<section>
 		<title>Known Uses</title>
-		<para>In DocBook the root element can be a set or a book element.</para>
+		<para>In DocBook the root element can be a <tag class="element">set</tag> or a <tag class="element">book</tag> element.</para>
 	</section>
 </section>
