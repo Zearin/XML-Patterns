@@ -116,7 +116,7 @@
 
 		<para>In this example the Collection Element was needed to establish a context for the
 			exchange data. Without a collection element, this information would have to be
-			duplicated in every Stock element.</para>
+			duplicated in every <tag class="element">Stock</tag> element.</para>
 	</section>
 
 	<section>

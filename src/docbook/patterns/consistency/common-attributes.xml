@@ -12,8 +12,7 @@
 		<title>Common Attributes</title>
 
 		<abstract>
-			<para>Provide a set of attributes that can be placed on all, or most, elements in the
-				document type.</para>
+			<para>Provide a set of attributes that can be placed on all, or most, elements in the document type.</para>
 		</abstract>
 	</info>
 
@@ -127,10 +126,11 @@
 	<section>
 		<title>Known Uses</title>
 
-		<para>The XMLspec DTD Common Attributes Chapter explains the use of Common Attributes in the
-			DTD.</para>
-		<para>XHTML defines a set of core attributes. These attributes are applied to almost every
-			element in the XHTML document type. The core attributes are defined like this:</para>
+		<para>The XMLspec DTD Common Attributes Chapter explains the use of Common Attributes in the DTD.</para>
+		<para>
+		    XHTML defines a set of core attributes. 
+		    These attributes are applied to almost every element in the XHTML document type. 
+			The core attributes are defined like this:</para>
 
 		<programlisting language="xml"><![CDATA[
 <!ENTITY % coreattrs

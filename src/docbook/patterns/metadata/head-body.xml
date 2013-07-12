@@ -136,7 +136,7 @@
 		<title>Known Uses</title>
 
 		<para><tag class="element">HEAD</tag> and <tag class="element">BODY</tag> elements in XHTML.</para>
-		<para>SOAP (Simple Object Access Protocol) uses Header and Body Elements inside an <link xl:href="/patterns/organization/envelope.xml">Envelope</link>
+		<para>SOAP (Simple Object Access Protocol) uses <tag class="element">Header</tag> and <tag class="element">Body</tag> Elements inside an <link xl:href="/patterns/organization/envelope.xml">Envelope</link>
 			element.</para>
 	</section>
 

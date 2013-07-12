@@ -48,8 +48,7 @@
 
 		<example>
 			<title>Example</title>
-			<para>This example shows how a document that describes a car would allow a comment
-				element that includes elements from HTML.</para>
+			<para>This example shows how a document that describes a car would allow a comment element that includes elements from HTML.</para>
 			<programlisting language="xml"><![CDATA[ 
 	<car>
 		<model>Pinto</model>
@@ -65,8 +64,7 @@
 
 		<example>
 			<title>Example</title>
-			<para>To allow this type of inclusion using an XML Schema, use the any element as
-				follows:</para>
+			<para>To allow this type of inclusion using an XML Schema, use the any element as follows:</para>
 			<programlisting language="xml"><![CDATA[
 <element name="car">
 	<complexType>

@@ -13,23 +13,21 @@
 
 		<abstract>
 			<para>When creating large DTDs with many logical units authors might be required to learn a
-				large number of these logical units to know how to use the DTD. By hiding the details of
-				optional parts of the DTD beneath optional elements, some of this complexity can be
-				reduced.</para>
+				large number of these logical units to know how to use the DTD. 
+				By hiding the details of optional parts of the DTD beneath optional elements, 
+				some of this complexity can be reduced.</para>
 		</abstract>
 	</info>
 
 
 	<section>
 		<title>Problem</title>
-		<para>In a DTD with many logical units, an author of a document can be overwhelmed with the
-			number of choices that have to be made.</para>
+		<para>In a DTD with many logical units, an author of a document can be overwhelmed with the number of choices that have to be made.</para>
 	</section>
 
 	<section>
 		<title>Context</title>
-		<para>In large, general-purpose DTDs where many logical units are presented, and more than
-			one of the units is optional. The document will be authored by humans.</para>
+		<para>In large, general-purpose DTDs where many logical units are presented, and more than one of the units is optional. The document will be authored by humans.</para>
 	</section>
 
 	<section>
@@ -129,9 +127,9 @@
 <!ATTLIST metadata owner CDATA #REQUIRED>
 		]]></programlisting>
 
-		<para>When generating an XBEL document, the info element is not required. This means that if
-			the author was never interested in creating an info element, he would not need to know
-			about the info element, the metadata element, or the owner attribute, thus eliminating 3
+		<para>When generating an <acronym>XBEL</acronym> document, the <tag class="element">info</tag> element is not required. This means that if
+			the author was never interested in creating an <tag class="element">info</tag> element, he would not need to know
+			about the <tag class="element">info</tag> element, the <tag class="element">metadata</tag> element, or the <tag class="attribute">owner</tag> attribute, thus eliminating 3
 			logical units from what the author needs to learn.</para>
 	</section>
 

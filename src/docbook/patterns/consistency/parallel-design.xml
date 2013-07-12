@@ -57,7 +57,7 @@
 ]]></programlisting>
 
 
-		<para>These two elements &quot;Figure&quot; and &quot;Table&quot; have very similar content
+		<para>These two elements <tag class="element">Figure</tag> and <tag class="element">Table</tag> have very similar content
 			and identical attribute lists. This makes it very easy for authors of the document. Once
 			they have learned the structure of one of the elements, the other one will be easy to
 			use. The more variation there is between the two, the easier it is to confuse the two
@@ -68,10 +68,10 @@
 
 		<para>The more consistent the structure of various elements is the easier it is to learn to
 			use a document type. Subtle differences in structure can be particularly difficult to
-			learn. If, for example, in the above example, one of the &quot;id&quot; attributes was
+			learn. If, for example, in the above example, one of the <tag class="attribute">id</tag> attributes was
 			IMPLIED and the other one was REQUIRED, this would be a difficult distinction to
 			remember. Users would constantly need to refer to the documentation to remind them which
-			element’s id was required and which one wasn’t.</para>
+			element’s <tag class="attribute">id</tag> was required and which one wasn’t.</para>
 	</section>
 	<section>
 		<title>Related Patterns</title>
@@ -100,8 +100,8 @@
 </programlisting>
 
 
-		<para>All four of the elements have identical content model. This helps enormously in
-			learning the specifics of this DTD.</para>
+		<para>All four of the elements have identical content model. 
+		    This helps enormously in learning the specifics of this DTD.</para>
 	</section>
 	<section>
 		<title>References</title>
