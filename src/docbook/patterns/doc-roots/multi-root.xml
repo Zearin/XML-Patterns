@@ -79,8 +79,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-	    <para><xref xl:href="../universal-root.xml" /> and <xref xl:href="../multi-doc-types.xml" /> are alternatives.</para>
-		<para><link xl:href="/patterns/doc-roots/universal-root.xml">Universal Root</link> and <link xl:href="/patterns/doc-roots/multi-doc-types.xml">Multiple Document Types</link> are alternatives.</para>
+	    <para><xref xl:href="universal-root.xml" /> and <xref xl:href="multi-doc-types.xml" /> are alternatives.</para>
 	</section>
 
 	<section>

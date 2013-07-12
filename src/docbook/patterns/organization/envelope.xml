@@ -78,14 +78,14 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>This is similar to the <link xl:href="/patterns/flexibility/catch-all.xml">Catch-All Element</link>, except that the the document type of the
-			<link xl:href="/patterns/organization/envelope.xml">Envelope</link> pattern exists solely as an holder for other data and, the <link xl:href="/patterns/flexibility/catch-all.xml">Catch-All Element</link> is
-			for embedding new elements within exsisting data.</para>
+		<para>This is similar to the <xref xl:href="../flexibility/catch-all.xml" />, except that the the document type of the
+			<xref xl:href="envelope.xml" /> pattern exists solely as an holder for other data and, 
+		    the <xref xl:href="../flexibility/catch-all.xml" /> is for embedding new elements within exsisting data.</para>
 	</section>
 
 	<section>
 		<title>Known Uses</title>
-		<para><acronym>SOAP</acronym> (Simple Object Access Protocol) is an <link xl:href="/patterns/organization/envelope.xml">Envelope</link> for doing remote transport of
+		<para><acronym>SOAP</acronym> (Simple Object Access Protocol) is an <xref xl:href="envelope.xml" /> for doing remote transport of
 			messages.</para>
 	</section>
 	<section>

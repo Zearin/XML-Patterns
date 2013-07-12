@@ -117,7 +117,7 @@ This paragraph refers to a note.
 		<title>Related Patterns</title>
 
 		<para>This is an example of a Domain Element from the publishing world.</para>
-		<para>Also consider using <link xl:href="/patterns/metadata/declare-before.xml">Declare Before First Use</link> with this pattern.</para>
+		<para>Also consider using <xref xl:href="../metadata/declare-before.xml" /> with this pattern.</para>
 	</section>
 
 	<section>

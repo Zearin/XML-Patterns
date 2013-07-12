@@ -82,7 +82,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>This is an example of a <link xl:href="/patterns/organization/flyweight.xml">Flyweight</link>.</para>
+		<para>This is an example of a <xref xl:href="../organization/flyweight.xml" />.</para>
 	</section>
 
 	<section>

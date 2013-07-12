@@ -224,7 +224,7 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 	<section>
 		<title>Related Patterns</title>
 		<para>This mechanism is powerful, but also requires knowledge of DTD syntax to apply. Often
-			the <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link> pattern combined with <link xl:href="/patterns/flexibility/role.xml">Role Attribute</link>s may be a more appropriate
+			the <xref xl:href="generic.xml" /> pattern combined with <xref xl:href="role.xml" />s may be a more appropriate
 			choice if the authors of the document are not experienced with XML.</para>
 	</section>
 

@@ -103,8 +103,8 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>This is a specialization of both the the Separate Metadata and Data and
-			patterns.</para>
+		<para>This is a specialization of both the the <xref xl:href="matadata-data.xml" /> and
+			<uri xl:href="#">FIXME</uri> patterns.</para>
 	</section>
 
 	<section>

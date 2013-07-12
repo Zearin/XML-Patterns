@@ -91,7 +91,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>The ordering of the head and body element in the <link xl:href="/patterns/metadata/head-body.xml">Head-Body pattern</link> is an application
+		<para>The ordering of the head and body element in the <xref xl:href="head-body.xml" /> is an application
 			of this pattern.</para>
 	</section>
 

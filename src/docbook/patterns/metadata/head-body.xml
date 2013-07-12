@@ -127,9 +127,10 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>The Head-Body pattern consists of two new Container Elements added to the structure of
-			the document, one for the <tag class="element">Head</tag> element, and one for the <tag class="element">Body</tag>. 
-		    This is a specialization of the Separate Metadata and Data.</para>
+		<para>The Head-Body pattern consists of two new Container Elements added to the structure of the document, 
+		    one for the <tag class="element">Head</tag> element, 
+		    and one for the <tag class="element">Body</tag>. 
+		    This is a specialization of <xref xl:href="metadata-data.xml"/>.</para>
 	</section>
 	<section>
 		<title>Known Uses</title>

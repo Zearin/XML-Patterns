@@ -87,8 +87,8 @@ EndDate   #CDATA>
 
 	<section>
 		<title>Related Patterns</title>
-		<para><link xl:href="/patterns/doc-roots/universal-root.xml">Universal Root</link> allows multiple types of data under one document root. Multi Root
-			Document Types allows for multiple types of documents to be declared in a single
+		<para><xref xl:href="universal-root.xml" /> allows multiple types of data under one document root. 
+		    Multi Root Document Types allows for multiple types of documents to be declared in a single
 			declaration.</para>
 	</section>
 

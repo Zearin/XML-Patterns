@@ -91,10 +91,8 @@
 	<section>
 		<title>Related Patterns</title>
 
-		<para>The <link xl:href="/patterns/organization/marketplace.xml">Marketplace</link> pattern can be used if there is more than one category that can apply
-			to each type.</para>
-		<para>The <link xl:href="/patterns/metadata/head-body.xml">Head-Body pattern</link> uses two specific types of Container Elements, one for metadata
-			and one for content.</para>
+		<para>The <xref xl:href="/patterns/organization/marketplace.xml" /> pattern can be used if there is more than one category that can apply to each type.</para>
+		<para>The <xref xl:href="/patterns/metadata/head-body.xml" /> pattern uses two specific types of Container Elements, one for metadata and one for content.</para>
 		<para>The <tag class="element">Collection</tag> Element is a container for single type of element.</para>
 	</section>
 

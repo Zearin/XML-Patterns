@@ -121,8 +121,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>The Common Attributes are usually declared in a <link xl:href="/patterns/organization/flyweight.xml">Flyweight</link> to help
-			maintainability.</para>
+		<para>The Common Attributes are usually declared in a <xref xl:href="../organization/flyweight.xml" /> to help maintainability.</para>
 	</section>
 
 	<section>

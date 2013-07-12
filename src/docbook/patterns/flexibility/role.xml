@@ -94,8 +94,8 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>Role Attributes are almost always used on <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link> types. 
-		    <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link>s are
+		<para>Role Attributes are almost always used on <xref xl:href="generic.xml" /> types. 
+		    <xref xl:href="generic.xml" />s are
 			created when the designer of a document type does not know all of the uses of that
 			element, and the Role Attribute allows the author of a document to make the element more
 			specialized to his or her use of the element.</para>

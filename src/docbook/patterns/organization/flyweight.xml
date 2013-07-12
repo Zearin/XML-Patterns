@@ -155,7 +155,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>See <link xl:href="/patterns/metadata/declare-before.xml">Declare Before First Use</link> for suggestions on where to place the shared
+		<para>See <xref xl:href="../metadata/declare-before.xml" /> for suggestions on where to place the shared
 			information.</para>
 	</section>
 

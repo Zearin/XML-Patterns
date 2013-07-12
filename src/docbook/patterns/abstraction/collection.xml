@@ -134,7 +134,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>This is a specialization of the Container Element pattern.</para>
+		<para>This is a specialization of the <xref xl:href="container.xml"/> pattern.</para>
 	</section>
 
 	<section>

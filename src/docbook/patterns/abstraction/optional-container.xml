@@ -109,12 +109,12 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>This Optional Group is similar to the Choice Reducing Container in that they both hide
-			logical units of a document from the author by introducing new element types. Existing
-			elements are group together beneath the new element. The major difference between the
-			two is the context they are used in. The Choice Group relates elements that are all
-			choices in a content group while the Optional Group relates optional elements from the
-			content group.</para>
+		<para>This Optional Group is similar to the <xref xl:href="choice-reducing-container.xml" /> 
+		    in that they both hide logical units of a document from the author by introducing 
+		    new element types. Existing elements are group together beneath the new element. 
+		    The major difference between the two is the context they are used in. 
+		    The Choice Group relates elements that are all choices in a content group while the 
+		    Optional Group relates optional elements from the content group.</para>
 	</section>
 
 	<section>

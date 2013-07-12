@@ -77,8 +77,8 @@
 		<title>Related Patterns</title>
 
 		<para>Often the parts of the structure that are the same between two elements can be
-			represented as <link xl:href="/patterns/organization/flyweight.xml">Flyweight</link>s. This will help ensure that the two structures remain similar
-			even through revisions of the document type.</para>
+			represented as <xref xl:href="../organization/flyweight.xml" />s. 
+		    This will help ensure that the two structures remain similar even through revisions of the document type.</para>
 	</section>
 	<section>
 		<title>Known Uses</title>

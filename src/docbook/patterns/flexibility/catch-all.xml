@@ -102,9 +102,10 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>The <link xl:href="/patterns/organization/envelope.xml">Envelope</link> pattern uses a similar mechanism, but the intent of the <link xl:href="/patterns/organization/envelope.xml">Envelope</link> is to
-			wrap a document without adding any domain data of its own. The intent of the Catch-All
-			Element is to allow authors to mix data from separate document types.</para>
+		<para>The <xref xl:href="../organization/envelope.xml" /> pattern uses a similar mechanism, 
+		    but the intent of the <xref xl:href="../organization/envelope.xml" /> is to
+			wrap a document without adding any domain data of its own. 
+			The intent of the Catch-All Element is to allow authors to mix data from separate document types.</para>
 	</section>
 
 	<section>

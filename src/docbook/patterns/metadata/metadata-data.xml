@@ -86,7 +86,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para><link xl:href="/patterns/metadata/metadata-doc.xml">Metadata in Separate Document</link> and <link xl:href="head-body.xml">Head-Body</link> are specializations of this pattern.</para>
+		<para><xref xl:href="metadata-doc.xml" /> and <xref xl:href="head-body.xml" /> are specializations of this pattern.</para>
 	</section>
 
 	<section>

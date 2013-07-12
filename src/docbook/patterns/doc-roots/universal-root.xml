@@ -105,7 +105,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para><link xl:href="/patterns/doc-roots/multi-root.xml">Multi Root Document Types</link> and <link xl:href="/patterns/doc-roots/multi-doc-types.xml">Multiple Document Types</link> are alternatives to this
+		<para><xref xl:href="multi-root.xml" /> and <xref xl:href="multi-doc-types.xml" /> are alternatives to this
 			pattern.</para>
 	</section>
 

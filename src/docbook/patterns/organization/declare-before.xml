@@ -91,7 +91,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>Consider this pattern when applying the <link xl:href="/patterns/organization/referenced-note.xml">Referenced Note</link>. The <link xl:href="/patterns/metadata/metadata-first.xml">Metadata First</link> is very
+		<para>Consider this pattern when applying the <xref xl:href="referenced-note.xml" />. The <xref xl:href="../metadata/metadata-first.xml" /> is very
 			similar to this patterns, except it deals with metadata instead of general elements as
 			this pattern does.</para>
 	</section>

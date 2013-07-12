@@ -65,7 +65,7 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>A <link xl:href="/patterns/flexibility/role.xml">Role Attribute</link> is often used in conjunction with Generic Elements.</para>
+		<para>A <xref xl:href="role.xml" /> is often used in conjunction with Generic Elements.</para>
 	</section>
 
 	<section>

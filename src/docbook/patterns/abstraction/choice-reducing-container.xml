@@ -108,15 +108,14 @@
 	<section>
 		<title>Related Patterns</title>
 
-		<para>This Choice Reducing Container is similar to the Optional Container Element in that
+		<para>This Choice Reducing Container is similar to the <xref xl:href="optional-container.xml"/> in that
 			they both try to make the DTD easier to use by the author by introducing new element
 			types. Existing elements are grouped together as children of the new element. One
 			difference between the two is the context they are used in. The Choice Reducing
-			Container relates elements that are all choices in a content group while the Optional
-			Container Element relates optional elements from the content group.</para>
+			Container relates elements that are all choices in a content group while the <xref xl:href="optional-container.xml"/> relates optional elements from the content group.</para>
 		<para>The motivation for the two is also different. In the Choice Reducing Container, the
 			amount of information at any one point is reduced, but it is not intended to reduce the
-			overall complexity of the document for a single author. The Optional Container Element
+			overall complexity of the document for a single author. The <xref xl:href="optional-container.xml"/>
 			hides parts of the structure permanently from the view of individual authors. It is
 			likely that some authors will never use certain parts of large DTDs.</para>
 	</section>
