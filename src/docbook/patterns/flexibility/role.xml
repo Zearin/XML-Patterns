@@ -70,7 +70,7 @@
 </Document>
 ]]></programlisting>
 
-		<para>The author intends for the &quot;Do not attempt this at home&quot; paragraph to appear
+		<para>The author intends for the “Do not attempt this at home” paragraph to appear
 			emphasized in some way, for example in bold or in a different color. The DTD designer
 			would have had no way of knowing the special needs of the author of the document, so a
 			Role Attribute was placed on the paragraph, to allow for different types of paragraphs
@@ -93,7 +93,8 @@
 
 	<section>
 		<title>Related Patterns</title>
-		<para>Role Attributes are almost always used on <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link> types. <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link>s are
+		<para>Role Attributes are almost always used on <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link> types. 
+		    <link xl:href="/patterns/flexibility/generic.xml">Generic Element</link>s are
 			created when the designer of a document type does not know all of the uses of that
 			element, and the Role Attribute allows the author of a document to make the element more
 			specialized to his or her use of the element.</para>

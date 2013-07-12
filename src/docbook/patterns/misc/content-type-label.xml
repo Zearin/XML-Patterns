@@ -68,14 +68,14 @@
 			instances of the DTD, but it does make the DTD easier to understand and maintain.</para>
 		<para>This pattern increases understandability of the DTD by documenting the intended use of
 			the content types to readers of the DTD. Looking at the above example we can see that it
-			becomes obvious that the Employee&apos;s Number attribute and the PayRecord&apos;s
-			Employee attribute contain the same type of value. If they were both just NMTOKENs this
+			becomes obvious that the <tag class="element">Employee</tag>’s Number attribute and the <tag class="element">PayRecord</tag>’s
+			<tag class="attribute">Employee</tag> attribute contain the same type of value. If they were both just <type>NMTOKEN</type>s this
 			may not have been as obvious.</para>
 		<para>Maintainability of DTDs is increased by allowing all related content types to be
 			changed from a single place. For instance, in the Examples section above if the company
 			this payroll system was created for merges with another company, and the employee
-			numbers from the new company can contain a space, the &quot;NMTOKEN&quot; attribute type
-			is no longer valid. By changing the EmployeeNum parameter entity to &quot;CDATA&quot;,
+			numbers from the new company can contain a space, the <type>NMTOKEN</type> attribute type
+			is no longer valid. By changing the EmployeeNum parameter entity to <type>CDATA</type>,
 			all references to the employee number in the DTD can be changed.</para>
 	</section>
 

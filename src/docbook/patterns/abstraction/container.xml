@@ -55,9 +55,9 @@
 ]]></programlisting>
 
 
-		<para>The above document describes a computer&apos;s configuration. If however processing
+		<para>The above document describes a computer’s configuration. If however processing
 			software was only interested in the hardware aspects of the configuration it would need
-			to check all of the elements and extract the RAM and HardDriveSize elements. Compare
+			to check all of the elements and extract the RAM and <tag class="element">HardDriveSize</tag> elements. Compare
 			this to the following:</para>
 
 		<programlisting language="xml"><![CDATA[
@@ -94,7 +94,7 @@
 			to each type.</para>
 		<para>The <link xl:href="/patterns/metadata/head-body.xml">Head-Body pattern</link> uses two specific types of Container Elements, one for metadata
 			and one for content.</para>
-		<para>The Collection Element is a container for single type of element.</para>
+		<para>The <tag class="element">Collection</tag> Element is a container for single type of element.</para>
 	</section>
 
 	<section>

@@ -85,7 +85,7 @@
 			structured information about the authors of the document and the creation date of the
 			document. The Head-Body pattern is often used at the document level, but it can also be
 			used at levels deeper within a document. For example the pattern could be used inside of
-			a Table element like this:</para>
+			a <tag class="element">Table</tag> element like this:</para>
 
 		<programlisting language="xml"><![CDATA[
 <Document>
@@ -116,8 +116,8 @@
 		<para>Because this introduced two additional elements, the resulting documents are larger
 			than they would be without the application of this pattern</para>
 		<para>The resulting documents are often easier to understand because of the clear separation
-			of metadata and the document body itself. The metadata is in the Head element and the
-			document itself goes in the Body element. Authors and processing software can clearly
+			of metadata and the document body itself. The metadata is in the <tag class="element">Head</tag> element and the
+			document itself goes in the <tag class="element">Body</tag> element. Authors and processing software can clearly
 			distinguish the context of the data they are using.</para>
 		<para>Documents are also often easier to process because they allow metadata to be
 			structured, unlike if attributes were use for the metadata of the document.</para>
@@ -127,13 +127,13 @@
 	<section>
 		<title>Related Patterns</title>
 		<para>The Head-Body pattern consists of two new Container Elements added to the structure of
-			the document, one for the Head element, and one for the Body. This is a specialization
-			of the Separate Metadata and Data.</para>
+			the document, one for the <tag class="element">Head</tag> element, and one for the <tag class="element">Body</tag>. 
+		    This is a specialization of the Separate Metadata and Data.</para>
 	</section>
 	<section>
 		<title>Known Uses</title>
 
-		<para>HEAD and BODY elements in XHTML.</para>
+		<para><tag class="element">HEAD</tag> and <tag class="element">BODY</tag> elements in XHTML.</para>
 		<para>SOAP (Simple Object Access Protocol) uses Header and Body Elements inside an <link xl:href="/patterns/organization/envelope.xml">Envelope</link>
 			element.</para>
 	</section>

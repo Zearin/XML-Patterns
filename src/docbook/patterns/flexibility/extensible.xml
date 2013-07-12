@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<section
-	xmlns="http://docbook.org/ns/docbook" 
-	xmlns:xi="http://www.w3.org/2001/XInclude"
-	xmlns:xl="http://www.w3.org/1999/xlink" 
-	version="5.0"
-	
-	role="pattern">
+<section xmlns="http://docbook.org/ns/docbook" 
+         xmlns:xi="http://www.w3.org/2001/XInclude" 
+         xmlns:xl="http://www.w3.org/1999/xlink"
+         
+         version="5.0" 
+         role="pattern">
 	
 	<info>
 		<title>Extensible Content Model</title>
@@ -50,10 +49,10 @@
             <title>Using DTDs</title>
 
             <para>This example uses a DTD that allows the document instance to extend an Address element. This is done through use a parameter entity which is defined in the DTD, but the creator of the document instance can overwrite.</para>
-            <para>First a DTD is created that defines a simple Address type, consisting only of the Name, Street and City. Realizing that this may not be enough for all users of this document type, the designer defines a parameter entity called local.address that is blank (&quot;&quot;) but can be extended in the document instance.</para>
+            <para>First a DTD is created that defines a simple Address type, consisting only of the Name, Street and City. Realizing that this may not be enough for all users of this document type, the designer defines a parameter entity called local.address that is blank (<code>&quot;&quot;</code>) but can be extended in the document instance.</para>
 
             <example>
-                <title>purchase_order.dtd</title>
+                <title><filename>purchase_order.dtd</filename></title>
 
                 <programlisting language="dtd"><![CDATA[
 <!ENTITY % local.address "">
@@ -68,10 +67,10 @@
 ]]></programlisting>
             </example>
 
-            <para>The creator of a document decides that the address defined in the DTD is inadequate for the document being create, so he extends the definition of an Address to include State and Zip. To do this he creates his own definition of the local.address Parameter Entity. This allows him to add these elements to his own address structure.</para>
+            <para>The creator of a document decides that the address defined in the DTD is inadequate for the document being create, so he extends the definition of an Address to include <tag class="element">State</tag> and <tag class="element">Zip</tag>. To do this he creates his own definition of the local.address Parameter Entity. This allows him to add these elements to his own address structure.</para>
 
             <example>
-                <title>mydoc.xml</title>
+                <title><filename>mydoc.xml</filename></title>
 
 
                 <programlisting language="xml"><![CDATA[
@@ -110,10 +109,11 @@
 				mechanism of deriving types by extension to do this. This example is based on a
 				working draft of the XML Schema proposal, so this example may not be compatible with
 				future versions of the XML Schema. A schema is created to include the simple Address
-				type with a Name, Street, and City.</para>
+				type with a <tag class="element">Name</tag>, <tag class="element">Street</tag>, 
+			    and <tag class="element">City</tag>.</para>
 
             <example>
-                <title>PurchaseOrder.xsd</title>
+                <title><filename>PurchaseOrder.xsd</filename></title>
 
                 <programlisting language="xml"><![CDATA[
 <xsd:schema
@@ -142,10 +142,10 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 
 			<para>The author of a document realizes that this simple address definition will not be
 				adequate, so a new address type is created. The new type is extended from the old
-				type, and adds the State and Zip elements.</para>
+				type, and adds the <tag class="element">State</tag> and <tag class="element">Zip</tag> elements.</para>
 
 			<example>
-				<title>US-Address.xsd</title>
+				<title><filename>US-Address.xsd</filename></title>
 
 
 				<programlisting language="xml"><![CDATA[
@@ -168,7 +168,7 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 				used.</para>
 
 			<example>
-				<title>mydoc.xml</title>
+				<title><filename>mydoc.xml</filename></title>
 
 
 				<programlisting language="xml"><![CDATA[
@@ -216,7 +216,7 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 		<para>This technique has the advantage of not needlessly over complicating the structure of
 			the document type if the flexibility is not needed. Authors can use the document type
 			without even being aware that the extension mechanism exists. The existence of these
-			Extensible Content Models can be made known only to &quot;power users&quot;, if
+			Extensible Content Models can be made known only to “power users”, if
 			desired.</para>
 	</section>
 

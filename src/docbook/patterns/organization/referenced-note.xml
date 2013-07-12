@@ -13,7 +13,7 @@
 		<abstract>
 			<title>Abstract</title>
 			<para>When an area in text needs to refer to a note that will be placed in a different part
-				of the document, a reference is made to a separate entity using an IDREF.</para>
+				of the document, a reference is made to a separate entity using an <tag class="attribute">IDREF</tag>.</para>
 		</abstract>
 	</info>
 
@@ -42,10 +42,11 @@
 		<title>Solution</title>
 
 		<para>The note is put in a element which is not contained within the flow of the text where
-			the note is referenced from. An attribute of type ID is put on the note element, and an
-			element is inserted into the flow of the text with an IDREF that refers to the
-			note&apos;s ID. A different solution would be to simply use an inline element to include
-			the note as such:</para>
+			the note is referenced from. An attribute of type <tag class="attribute">ID</tag> is put 
+		    on the <tag class="element">note</tag> element, and an element is inserted into the flow 
+		    of the text with an <tag class="attribute">IDREF</tag> that refers to the 
+		    <tag class="element">note</tag>’s <tag class="attribute">ID</tag>. A different 
+		    solution would be to simply use an inline element to include the note as such:</para>
 
 		<programlisting language="xml"><![CDATA[
 <Paragraph>This paragraph refers to a note.
@@ -60,10 +61,10 @@
 
 		<itemizedlist>
 			<listitem>
-				<para>The note cannot be referred to from more than one place.</para>
+				<para>The <tag class="element">note</tag> cannot be referred to from more than one place.</para>
 			</listitem>
 			<listitem>
-				<para>The note is not physically removed from the text in the marked up document. It
+				<para>The <tag class="element">note</tag> is not physically removed from the text in the marked up document. It
 					may more difficult for the author of the document to realize how the note will
 					be used in the published form of the document.</para>
 			</listitem>

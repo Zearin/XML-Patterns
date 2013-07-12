@@ -37,13 +37,13 @@
 				<varlistentry>
 					<term>Introduction to XML Design patterns</term>
 					<listitem>
-						<para>Ian Graham and Liam Quin's site which contains 4 patterns, Running Text, Generated Text, Footnote, and Text Blocks.</para>
+						<para>Ian Graham and Liam Quin’s site which contains 4 patterns, Running Text, Generated Text, Footnote, and Text Blocks.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<term>Architectural Design Patterns for XML Documents</term>
 					<listitem>
-						<para>Kyle Downey's article attempts to document a few whole-document design patterns.</para>
+						<para>Kyle Downey’s article attempts to document a few whole-document design patterns.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry>
@@ -71,7 +71,7 @@
 			<para>Links to pages about patterns in area other than XML.</para>
 			<variablelist>
 				<varlistentry>
-					<term>TheServerSide.com's Pattern Collection</term>
+					<term>TheServerSide.com’s Pattern Collection</term>
 					<listitem>
 						<para>A pattern repository focusing on patterns that can be used with Java middleware technologies. They are inviting site visitors to contribute patterns.</para>
 					</listitem>
@@ -85,7 +85,7 @@
 				<varlistentry>
 					<term>Patterns and Software: Essential Concepts and Terminology</term>
 					<listitem>
-						<para>Brad Appleton's excellent page about patterns in the field of object-oriented software.</para>
+						<para>Brad Appleton’s excellent page about patterns in the field of object-oriented software.</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -103,7 +103,7 @@
 				<varlistentry>
 					<term>Elements vs. Attributes</term>
 					<listitem>
-						<para>Robin Cover's page covering the element vs. attributes debate. When should you use an element? When should you use an attribute? Check this page for some good references.</para>
+						<para>Robin Cover’s page covering the element vs. attributes debate. When should you use an element? When should you use an attribute? Check this page for some good references.</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -115,11 +115,11 @@
 				<varlistentry>
 					<term>The XML Catalog</term>
 					<listitem>
-						<para>Oasis' catalog of XML specifications.</para>
+						<para>Oasis’ catalog of XML specifications.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry>
-					<term>Robin Cover's Listing of XML Applications</term>
+					<term>Robin Cover’s Listing of XML Applications</term>
 					<listitem>
 						<para>A comprehensive listing of XML applications and announced industry initiatives.</para>
 					</listitem>

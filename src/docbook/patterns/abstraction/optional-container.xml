@@ -50,8 +50,7 @@
 	<section>
 		<title>Examples</title>
 
-		<para>Lets create a DTD that allows an author to create notes that can be a note to oneself,
-			or an email. The DTD might look like this:</para>
+		<para>Lets create a DTD that allows an author to create notes that can be a note to oneself, or an email. The DTD might look like this:</para>
 
 		<programlisting language="dtd"><![CDATA[
 <!ELEMENT Note (NoteToSelf | Email )>
@@ -64,7 +63,7 @@
 		]]></programlisting>
 
 		<para>If the author of these documents only had to be create notes to himself, he would
-			never need to be aware of the elements that are required in the Email branch of the DTD.
+			never need to be aware of the elements that are required in the <tag class="element">Email</tag> branch of the DTD.
 			He would create his document like this:</para>
 
 		<programlisting language="xml"><![CDATA[
@@ -76,7 +75,7 @@
 		]]></programlisting>
 
 		<para>Although the DTD contains 7 elements, the author would only have to use three
-			elements: Note, NoteToSelf and Email. The author would never be required to use the
+			elements: <tag class="element">Note</tag>, <tag class="element">NoteToSelf</tag> and <tag class="element">Email</tag>. The author would never be required to use the
 			Email element and would not even have to be aware of the existence of the remaining
 			three elements.</para>
 	</section>
@@ -100,8 +99,8 @@
 
 		<para>This actually reduces the number of logical units in the DTD from 7 to 5, but makes
 			things more complicated for users who just want to write notes to themselves, because
-			they now have to be aware of the Recipient, CC, and BCC elements. The Optional Group
-			hides complexity from the authors of documents by introducing optional elements that
+			they now have to be aware of the <tag class="element">Recipient</tag>, <tag class="element">CC</tag>, and <tag class="element">BCC</tag> elements. 
+		    The Optional Group hides complexity from the authors of documents by introducing optional elements that
 			hide the details of a piece of the document that the author might not care about. By
 			introducing a single higher level element, the details of many logical units may be
 			hidden from the author, thereby reducing the learning requirements of the author.</para>
@@ -137,7 +136,6 @@
 
 	<section>
 		<title>Contributions</title>
-		<para>Thanks to Pankaj Kamthan from Concordia University for fixing up a bit of XML in the
-			pattern.</para>
+		<para>Thanks to Pankaj Kamthan from Concordia University for fixing up a bit of XML in the pattern.</para>
 	</section>
 </section>

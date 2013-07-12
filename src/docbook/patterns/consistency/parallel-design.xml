@@ -70,7 +70,7 @@
 			learn. If, for example, in the above example, one of the &quot;id&quot; attributes was
 			IMPLIED and the other one was REQUIRED, this would be a difficult distinction to
 			remember. Users would constantly need to refer to the documentation to remind them which
-			element&apos;s id was required and which one wasn&apos;t.</para>
+			element’s id was required and which one wasn’t.</para>
 	</section>
 	<section>
 		<title>Related Patterns</title>

@@ -50,10 +50,12 @@
 
 		<para>This example shows a very simple <link xl:href="/patterns/organization/envelope.xml">Envelope</link> which consists of sender and a receiver
 			children elements. Note the use of two different namespaces to allow an XML parser to
-			read the document, which contains elements from both the <link xl:href="/patterns/organization/envelope.xml">Envelope</link> (<link xl:href="/patterns/organization/envelope.xml">Envelope</link>.dtd) and the
-			embedded data (my-stuff.dtd)</para>
+			read the document, which contains elements from both the <link xl:href="/patterns/organization/envelope.xml">Envelope</link> (<link xl:href="/patterns/organization/envelope.xml"><filename>Envelope.dtd</filename></link>) and the
+			embedded data.</para>
 
-		<programlisting language="xml"><![CDATA[
+		<example>
+		    <title><filename>my-stuff.dtd</filename></title>
+		    <programlisting language="xml"><![CDATA[
 <e:Envelope xmlsns:e="http://xmlpatterns.com/envelope.dtd">
 	<e:sender name="bob"/>
 	<e:receiver name="http://xmlpatterns.com/message-receiver.cgi"/>
@@ -62,7 +64,7 @@
 		This is my message
 	</myStuff:message>
 </e:Envelope>
-		]]></programlisting>
+		]]></programlisting></example>
 	</section>
 
 	<section>
@@ -82,7 +84,7 @@
 
 	<section>
 		<title>Known Uses</title>
-		<para>SOAP (Simple Object Access Protocol) is an <link xl:href="/patterns/organization/envelope.xml">Envelope</link> for doing remote transport of
+		<para><acronym>SOAP</acronym> (Simple Object Access Protocol) is an <link xl:href="/patterns/organization/envelope.xml">Envelope</link> for doing remote transport of
 			messages.</para>
 	</section>
 	<section>

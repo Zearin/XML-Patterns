@@ -70,7 +70,7 @@
 		<title>Known Uses</title>
 
 		<para>All document types are full of Domain Elements.</para>
-		<para>XHTML is used for markup of documents to be displayed so it contains elements for
+		<para><acronym>XHTML</acronym> is used for markup of documents to be displayed so it contains elements for
 			things such as titles, headings, and paragraphs.</para>
 		<para>The Information and Content Exchange (ICE) Protocol is used for distributing web
 			content, so it contains elements such as sender, receiver, request and response.</para>

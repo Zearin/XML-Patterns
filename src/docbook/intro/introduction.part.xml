@@ -22,16 +22,18 @@
 		<para>A pattern language brings together a number of these patterns in one particular field. It is an attempt to reproduce all of the knowledge needed to create quality items in that field. A pattern language for buildings gives one the power to create building which people will want to live in, a pattern language for software design gives the power to create software which is usable and maintainable. Just as spoken language give people the ability to create an infinite variety of sentences, pattern languages give people the power to create an infinite variety of document types. We just need to create a common vocabulary so we can make useful sentences.</para>
 		<para>This site is an attempt to start to produce an XML Structural Pattern language. This pattern language gives one the power to create document types for XML, which describe documents that are useful, maintainable, easy to author, and easy to process. This pattern language will be most useful if it is shared across the whole XML community. Because of this, your feedback into this process is very important.</para>
 	</article>
-	<article>
+	
+    <article>
 		<title>History</title>
 
-		<para>The concept of patterns was originated by Christopher Alexander. Alexander was an architect. He used patterns to design building and towns. His patterns deal with subjects such as entry ways, gardens and roadways. In the late 1980s people started applying his concept to object oriented software design. The first to do so were Ward Cunningham and Kent Beck, who in 1987 wrote a paper entitled "<link xl:href="http://c2.com/doc/oopsla87.html">Using Pattern Languages for Object-Oriented Programs</link>", which described five patterns that discussed problems in designing Smalltalk windows.</para>
-		<para>The object oriented community quickly recognized the power of patterns and started writing patterns that appeared in articles, workshops and books. The breakthrough work was the "<link xl:href="books/books.part.xml#0201633612">Design Patterns</link>" book, which brought wide scale acceptance of patterns to the object-oriented world. Work has also been done in the areas of analysis patterns, process patterns, and organizational patterns. This site is an attempt to apply the concept of patterns to XML Structural Design.</para>
+		<para>The concept of patterns was originated by Christopher Alexander. Alexander was an architect. He used patterns to design building and towns. His patterns deal with subjects such as entry ways, gardens and roadways. In the late 1980s people started applying his concept to object oriented software design. The first to do so were Ward Cunningham and Kent Beck, who in 1987 wrote a paper entitled “<link xl:href="http://c2.com/doc/oopsla87.html">Using Pattern Languages for Object-Oriented Programs</link>”, which described five patterns that discussed problems in designing Smalltalk windows.</para>
+		<para>The object oriented community quickly recognized the power of patterns and started writing patterns that appeared in articles, workshops and books. The breakthrough work was the “<link xl:href="books/books.part.xml#0201633612">Design Patterns</link>” book, which brought wide scale acceptance of patterns to the object-oriented world. Work has also been done in the areas of analysis patterns, process patterns, and organizational patterns. This site is an attempt to apply the concept of patterns to XML Structural Design.</para>
 	</article>
-	<article>
+	
+    <article>
 		<title>Pattern Forms</title>
 
-		<para>There are many different ways to write patterns. Different authors have different way of organizing the ideas presented. Alexander's original patterns were presented in a fairly informal, narrative style. The patterns presented in "<link xl:href="books/books.part.xml#0201633612">Design Patterns</link>" book were much more fine grained, decomposing each pattern into many sections. The structure used depends on several factors. Each author has his or own preferences. Different subject matters may influence the structure. For example more technical subject areas can call for patterns with more structure. Different audiences may call for different structures as well, novice readers may prefer a more prosy style, while more experienced readers may prefer a more structured approach. The form chosen for this site is a middle of the road one, not as prosy as Alexander's patterns in <link xl:href="books/books.part.xml#0195019199">A Pattern Language</link>, yet not as structured as "<link xl:href="books/books.part.xml#0201633612">Design Patterns</link>" book either.</para>
+		<para>There are many different ways to write patterns. Different authors have different way of organizing the ideas presented. Alexander’s original patterns were presented in a fairly informal, narrative style. The patterns presented in “<link xl:href="books/books.part.xml#0201633612">Design Patterns</link>” book were much more fine grained, decomposing each pattern into many sections. The structure used depends on several factors. Each author has his or own preferences. Different subject matters may influence the structure. For example more technical subject areas can call for patterns with more structure. Different audiences may call for different structures as well, novice readers may prefer a more prosy style, while more experienced readers may prefer a more structured approach. The form chosen for this site is a middle of the road one, not as prosy as Alexander’s patterns in <link xl:href="books/books.part.xml#0195019199">A Pattern Language</link>, yet not as structured as “<link xl:href="books/books.part.xml#0201633612">Design Patterns</link>” book either.</para>
 		<para>What matters is that there is a consistent structure so patterns are easier to understand and compare.</para>
 		<para>Most people would agree that there must be at least five elements in every pattern: a name; a problem description; the context of the problem; the solution; and the rational for the solution. This web site uses the following sections for each pattern:</para>
 
@@ -107,7 +109,8 @@
 			</glossentry>
 		</glossary>
 	</article>
-	<article>
+	
+    <article>
 		<title>Good Design</title>
 
 		<para>The purpose of XML Structural Patterns are to help create document types that are designed well. The goal of a design can be thought of a balancing of forces. There are many competing forces that the designer of a document type must deal with simultaneously. In non-trivial problems, it is impossible for all of the forces to be eliminated completely, so compromises must be made.</para>

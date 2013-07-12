@@ -108,6 +108,6 @@
 
 	<section>
 		<title>Known Uses</title>
-		<para>The Real Estate DTD RELML uses an OTHER as a catch all element.</para>
+		<para>The Real Estate DTD RELML uses an <tag class="element">OTHER</tag> as a catch all element.</para>
 	</section>
 </section>

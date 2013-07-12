@@ -42,8 +42,8 @@
 
 	<section>
 		<title>Examples</title>
-		<para>A element name such as TelephoneDescription is fairly long, PhoneDescription or
-			PhoneDesc might be more appropriate choices.</para>
+		<para>A element name such as <tag class="element">TelephoneDescription</tag> is fairly long, <tag class="element">PhoneDescription</tag> or
+			<tag class="element">PhoneDesc</tag> might be more appropriate choices.</para>
 	</section>
 
 	<section>
@@ -64,7 +64,7 @@
            ]]></programlisting>
 
 
-		<para>The element name TelephoneModelName could easily be shortened to ModelName without
+		<para>The element name <tag class="element">TelephoneModelName</tag> could easily be shortened to ModelName without
 			loosing any understandability of the document.</para>
 	</section>
 
@@ -76,7 +76,7 @@
 	<section>
 		<title>Known Uses</title>
 		<para>HTML uses many element names which are shortened beyond understandability, for example
-			the b, i, dt, and ul elements are very cryptic to novice users. Element names such as
-			font and img convey much more meaning, and are not long enough to cause problems.</para>
+			the <tag class="element">b</tag>, <tag class="element">i</tag>, <tag class="element">dt</tag>, and <tag class="element">ul</tag> elements are very cryptic to novice users. 
+		    Element names such as <tag class="element">font</tag> and <tag class="element">img</tag> convey much more meaning, and are not long enough to cause problems.</para>
 	</section>
 </section>

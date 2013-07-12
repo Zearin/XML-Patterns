@@ -66,13 +66,13 @@
 					Declarations</para>
 			</listitem>
 			<listitem>
-				<para>Use the XLink attribute xlink:show=&quot;embed&quot;. This technique has the
+				<para>Use the XLink attribute <tag class="attribute">xlink:show</tag>=&quot;<tag class="attvalue">embed</tag>&quot;. This technique has the
 					advantage of using a standard, so some tools may be available to do the
 					processing. This is defined in The W3C’s XML Linking Language
 					Specification</para>
 			</listitem>
 			<listitem>
-				<para>Use ID and IDREF attributes. A reference can be made to an entity via an IDREF
+				<para>Use <tag class="attribute">ID</tag> and <tag class="attribute">IDREF</tag> attributes. A reference can be made to an entity via an IDREF
 					attribute. Applications processing this will need to do the processing to do
 					this type of Flyweight.</para>
 			</listitem>
@@ -122,8 +122,8 @@
 		</example>
 
 		<example>
-			<title>ID and IDREF</title>
-			<para>This shows how ID and IDREF attributes can be used as a Flyweight. Note thats this
+			<title><tag class="attribute">ID</tag> and <tag class="attribute">IDREF</tag></title>
+			<para>This shows how <tag class="attribute">ID</tag> and <tag class="attribute">IDREF</tag> attributes can be used as a Flyweight. Note thats this
 				would require some extra work on the part of the processing software to do the
 				substitution.</para>
 

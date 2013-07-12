@@ -11,16 +11,14 @@
 		<title>Multiple Document Types</title>
 
 		<abstract>
-			<para>When a system needs to represent a range of different document types, each document
-				type can be represented by a completely separate declarations.</para>
+			<para>When a system needs to represent a range of different document types, each document type can be represented by a completely separate declarations.</para>
 		</abstract>
 	</info>
 
 
 	<section>
 		<title>Problem</title>
-		<para>A system needs to represent different types of information. This information may be
-			used at different times, or may be used by different parts of the system.</para>
+		<para>A system needs to represent different types of information. This information may be used at different times, or may be used by different parts of the system.</para>
 	</section>
 
 	<section>
@@ -31,23 +29,21 @@
 
 	<section>
 		<title>Forces</title>
-		<para>Processing and authoring of documents can be simplified if different document types
-			are used to represent different sets of data.</para>
+		<para>Processing and authoring of documents can be simplified if different document types are used to represent different sets of data.</para>
 	</section>
 
 	<section>
 		<title>Solution</title>
-		<para>Use different document types to represent different sets of data within the
-			system.</para>
+		<para>Use different document types to represent different sets of data within the system.</para>
 	</section>
 
 	<section>
 		<title>Examples</title>
-		<para>In a payroll system, data about the Employees, and data about the hours they work can
-			be represented by separate documents.</para>
+		
+	    <para>In a payroll system, data about the Employees, and data about the hours they work can be represented by separate documents.</para>
 
 		<example>
-			<title>Employees.dtd:</title>
+			<title><filename>Employees.dtd</filename></title>
 
 			<programlisting language="dtd"><![CDATA[
 <!ELEMENT Employee (Name, HourlyRate)>
@@ -61,7 +57,7 @@
 
 
 		<example>
-			<title>HoursWorked.dtd:</title>
+			<title><filename>HoursWorked.dtd</filename></title>
 
 			<programlisting language="xml"><![CDATA[
 <!ELEMENT PayPeriod (Employee+)>
