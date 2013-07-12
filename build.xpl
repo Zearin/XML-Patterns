@@ -47,11 +47,6 @@
 		primary	=	'false'
 		sequence=	'true' 
 	/>
-		
-	
-		
-	
-	
 	
 	<p:serialization
 		port			='result' 
@@ -64,7 +59,8 @@
 		omit-xml-declaration='false'
 		version			='1.0' 
 	/>
-	<p:serialization
+	
+    <p:serialization
 		port			='xhtml5'
 		doctype-public	=''
 		doctype-system	='"about:legacy-compat"'
@@ -94,7 +90,6 @@
 		<p:delete 
 			match="	processing-instruction('oxygen') | 
 					processing-instruction('xml-stylesheet')
-					
 					" 
 		/>
 		
