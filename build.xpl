@@ -80,8 +80,8 @@
 	<!--	
 		Imports
 	-->
-	<p:import	href='http://xmlcalabash.com/extension/steps/library-1.0.xpl'	/>
-	<p:import	href='http://xmlcalabash.com/extension/steps/fileutils.xpl'		/>
+	<!--<p:import	href='http://xmlcalabash.com/extension/steps/library-1.0.xpl'	/>
+	<p:import	href='http://xmlcalabash.com/extension/steps/fileutils.xpl'		/>-->
 
 
 	<!--
