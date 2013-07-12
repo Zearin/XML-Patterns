@@ -3,6 +3,7 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" 
          xmlns:xl="http://www.w3.org/1999/xlink"
          
+         xreflabel="Extensible Content Model"
          version="5.0" 
          role="pattern">
 	

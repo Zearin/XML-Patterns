@@ -3,8 +3,9 @@
 	xmlns="http://docbook.org/ns/docbook" 
 	xmlns:xi="http://www.w3.org/2001/XInclude"
 	xmlns:xl="http://www.w3.org/1999/xlink" 
-	version="5.0"
 	
+	version="5.0"
+	xreflabel="Multi Root Document Types"
 	role="pattern">
 	
 	<info>
@@ -78,6 +79,7 @@
 
 	<section>
 		<title>Related Patterns</title>
+	    <para><xref xl:href="../universal-root.xml" /> and <xref xl:href="../multi-doc-types.xml" /> are alternatives.</para>
 		<para><link xl:href="/patterns/doc-roots/universal-root.xml">Universal Root</link> and <link xl:href="/patterns/doc-roots/multi-doc-types.xml">Multiple Document Types</link> are alternatives.</para>
 	</section>
 
