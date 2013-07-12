@@ -25,7 +25,7 @@
 	
 	exclude-inline-prefixes="#all"
 	
-	name		=	'untitled'
+	name		=	'build-docbook'
 >
 	
 	
