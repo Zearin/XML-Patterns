@@ -1,10 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<?xml-model  	
-			title		=	'' 	
-			type		=	'application/xml' 	
-			schematypens=	'http://relaxng.org/ns/structure/1.0' 
-			href		=	'http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng' 	
-?>
 <section
 	xmlns="http://docbook.org/ns/docbook" 
 	xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -52,24 +46,16 @@
 	<section>
 		<title>Examples</title>
 
-		<example>
-			<title>Using DTDs</title>
+        <section>
+            <title>Using DTDs</title>
 
-			<para>This example uses a DTD that allows the document instance to extend an Address
-				element. This is done through use a parameter entity which is defined in the DTD,
-				but the creator of the document instance can overwrite.</para>
-			<para>First a DTD is created that defines a simple Address type, consisting only of the
-				Name, Street and City. Realizing that this may not be enough for all users of this
-				document type, the designer defines a parameter entity called local.address that is
-				blank (&quot;&quot;) but can be extended in the document instance.</para>
-			<example>
-				<title>purchase_order.dtd</title>
+            <para>This example uses a DTD that allows the document instance to extend an Address element. This is done through use a parameter entity which is defined in the DTD, but the creator of the document instance can overwrite.</para>
+            <para>First a DTD is created that defines a simple Address type, consisting only of the Name, Street and City. Realizing that this may not be enough for all users of this document type, the designer defines a parameter entity called local.address that is blank (&quot;&quot;) but can be extended in the document instance.</para>
 
-				<screen>
-    
-    </screen>
+            <example>
+                <title>purchase_order.dtd</title>
 
-				<programlisting language="dtd"><![CDATA[
+                <programlisting language="dtd"><![CDATA[
 <!ENTITY % local.address "">
 <!ENTITY % address "Name, Street, City %local.address;">
 <!ELEMENT PurchaseOrder ( Item, ShipTo, BillTo )>
@@ -80,19 +66,15 @@
 <!ELEMENT Street (#PCDATA)>
 <!ELEMENT City   (#PCDATA)>
 ]]></programlisting>
-			</example>
+            </example>
 
-			<para>The creator of a document decides that the address defined in the DTD is
-				inadequate for the document being create, so he extends the definition of an Address
-				to include State and Zip. To do this he creates his own definition of the
-				local.address Parameter Entity. This allows him to add these elements to his own
-				address structure.</para>
+            <para>The creator of a document decides that the address defined in the DTD is inadequate for the document being create, so he extends the definition of an Address to include State and Zip. To do this he creates his own definition of the local.address Parameter Entity. This allows him to add these elements to his own address structure.</para>
 
-			<example>
-				<title>mydoc.xml</title>
+            <example>
+                <title>mydoc.xml</title>
 
 
-				<programlisting language="xml"><![CDATA[
+                <programlisting language="xml"><![CDATA[
 <!DOCTYPE PURCHASE_ORDER SYSTEM "purchase_order.dtd" [
 	<!ENTITY % local.address ", State, Zip" >
 	<!ELEMENT State (#PCDATA)>
@@ -118,10 +100,10 @@
 	</BillTo>
 </PurchaseOrder>
 ]]></programlisting>
-			</example>
-		</example>
+            </example>
+        </section>
 
-		<example>
+		<section>
 			<title>Using XML Schemas</title>
 
 			<para>This next example uses XML Schemas to do the same thing. We use the XML Schema
@@ -130,10 +112,10 @@
 				future versions of the XML Schema. A schema is created to include the simple Address
 				type with a Name, Street, and City.</para>
 
-			<example>
-				<title>PurchaseOrder.xsd</title>
+            <example>
+                <title>PurchaseOrder.xsd</title>
 
-				<programlisting language="xml"><![CDATA[
+                <programlisting language="xml"><![CDATA[
 <xsd:schema
 xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 
@@ -156,7 +138,7 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 
 </xsd:schema>
 ]]></programlisting>
-			</example>
+            </example>
 
 			<para>The author of a document realizes that this simple address definition will not be
 				adequate, so a new address type is created. The new type is extended from the old
@@ -219,7 +201,7 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 </PurchaseOrder>
 ]]></programlisting>
 			</example>
-		</example>
+		</section>
 	</section>
 
 
