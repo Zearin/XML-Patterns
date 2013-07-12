@@ -51,7 +51,7 @@
 	<section>
 		<title>Examples</title>
 
-		<para>Lets create a DTD that allows an author to create notes that can be a note to oneself, or an email. The DTD might look like this:</para>
+		<para>Let’s create a DTD that allows an author to create notes that can be a note to oneself, or an email. The DTD might look like this:</para>
 
 		<programlisting language="dtd"><![CDATA[
 <!ELEMENT Note (NoteToSelf | Email )>
