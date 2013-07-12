@@ -1,8 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<?xml-stylesheet
-				type='text/css' 
-				href='../../../Applications/oxygen/frameworks/xproc/css/xproc.css'
-?>
 <p:declare-step
 	xmlns:local	=	'#empty' 
     xmlns:p		=	'http://www.w3.org/ns/xproc'
